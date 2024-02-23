@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CMP__c</fullName>
+    <externalId>false</externalId>
+    <formula>Precio_de_referencia__c / Factoraje_aplicable__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>C MP=PB / FA
+
+C MP= Costo de materia prima base		
+PB = Precio bruto de referencia		
+FA = Factor aplicable al producto</inlineHelpText>
+    <label>CMP</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

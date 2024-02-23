@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Equipo__c</fullName>
+    <externalId>false</externalId>
+    <label>Equipo</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Administración</fullName>
+                <default>false</default>
+                <label>Administración</label>
+            </value>
+            <value>
+                <fullName>Administración de Ventas</fullName>
+                <default>false</default>
+                <label>Administración de Ventas</label>
+            </value>
+            <value>
+                <fullName>Call Center</fullName>
+                <default>false</default>
+                <label>Call Center</label>
+            </value>
+            <value>
+                <fullName>Convenios</fullName>
+                <default>false</default>
+                <label>Convenios</label>
+            </value>
+            <value>
+                <fullName>Dirección Gral</fullName>
+                <default>false</default>
+                <label>Dirección Gral</label>
+            </value>
+            <value>
+                <fullName>Especificadores</fullName>
+                <default>false</default>
+                <label>Especificadores</label>
+            </value>
+            <value>
+                <fullName>Exportaciones</fullName>
+                <default>false</default>
+                <label>Exportaciones</label>
+            </value>
+            <value>
+                <fullName>Finanzas</fullName>
+                <default>false</default>
+                <label>Finanzas</label>
+            </value>
+            <value>
+                <fullName>Gerencia de Ventas</fullName>
+                <default>false</default>
+                <label>Gerencia de Ventas</label>
+            </value>
+            <value>
+                <fullName>Industriales</fullName>
+                <default>false</default>
+                <label>Industriales</label>
+            </value>
+            <value>
+                <fullName>KAM Nacional</fullName>
+                <default>false</default>
+                <label>KAM Nacional</label>
+            </value>
+            <value>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+                <label>Marketing</label>
+            </value>
+            <value>
+                <fullName>Muestras</fullName>
+                <default>false</default>
+                <label>Muestras</label>
+            </value>
+            <value>
+                <fullName>Operaciones</fullName>
+                <default>false</default>
+                <label>Operaciones</label>
+            </value>
+            <value>
+                <fullName>Planeación y TI</fullName>
+                <default>false</default>
+                <label>Planeación y TI</label>
+            </value>
+            <value>
+                <fullName>Presidente de Consejo</fullName>
+                <default>false</default>
+                <label>Presidente de Consejo</label>
+            </value>
+            <value>
+                <fullName>Proyectos</fullName>
+                <default>false</default>
+                <label>Proyectos</label>
+            </value>
+            <value>
+                <fullName>Región Bajío</fullName>
+                <default>false</default>
+                <label>Región Bajío</label>
+            </value>
+            <value>
+                <fullName>Región Centro</fullName>
+                <default>false</default>
+                <label>Región Centro</label>
+            </value>
+            <value>
+                <fullName>Región Centro Distribuidores</fullName>
+                <default>false</default>
+                <label>Región Centro Distribuidores</label>
+            </value>
+            <value>
+                <fullName>Región Jr Noroeste</fullName>
+                <default>false</default>
+                <label>Región Jr Noroeste</label>
+            </value>
+            <value>
+                <fullName>Región Norte</fullName>
+                <default>false</default>
+                <label>Región Norte</label>
+            </value>
+            <value>
+                <fullName>Región Obra Publica</fullName>
+                <default>false</default>
+                <label>Región Obra Publica</label>
+            </value>
+            <value>
+                <fullName>Región Occidente</fullName>
+                <default>false</default>
+                <label>Región Occidente</label>
+            </value>
+            <value>
+                <fullName>Región Sureste</fullName>
+                <default>false</default>
+                <label>Región Sureste</label>
+            </value>
+            <value>
+                <fullName>Tiendas_Centro</fullName>
+                <default>false</default>
+                <label>Tiendas Centro</label>
+            </value>
+            <value>
+                <fullName>Tiendas Norte</fullName>
+                <default>false</default>
+                <label>Tiendas Norte</label>
+            </value>
+            <value>
+                <fullName>Tiendas Sur</fullName>
+                <default>false</default>
+                <label>Tiendas Sur</label>
+            </value>
+            <value>
+                <fullName>Unidades Moviles</fullName>
+                <default>false</default>
+                <label>Unidades Moviles</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

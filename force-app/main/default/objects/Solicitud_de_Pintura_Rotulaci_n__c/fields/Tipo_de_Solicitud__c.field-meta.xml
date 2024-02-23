@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tipo_de_Solicitud__c</fullName>
+    <externalId>false</externalId>
+    <label>Tipo de Solicitud</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Nuevo Distribuidor</fullName>
+                <default>false</default>
+                <label>Nuevo Distribuidor</label>
+            </value>
+            <value>
+                <fullName>Nuevo Punto de Venta</fullName>
+                <default>false</default>
+                <label>Nuevo Punto de Venta</label>
+            </value>
+            <value>
+                <fullName>Renovación</fullName>
+                <default>false</default>
+                <label>Renovación</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

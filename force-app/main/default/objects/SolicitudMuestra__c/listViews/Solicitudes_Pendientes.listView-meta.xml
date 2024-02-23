@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Solicitudes_Pendientes</fullName>
+    <columns>CREATED_DATE</columns>
+    <columns>NAME</columns>
+    <columns>Estatus__c</columns>
+    <columns>fecha_entrega__c</columns>
+    <columns>entrega__c</columns>
+    <columns>OWNER.FIRST_NAME</columns>
+    <columns>region__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Estatus__c</field>
+        <operation>equals</operation>
+        <value>Nuevo,Autorizado,Preparación de Muestra</value>
+    </filters>
+    <label>Solicitudes Pendientes por Atender</label>
+    <sharedTo>
+        <role>Muestras</role>
+    </sharedTo>
+</ListView>

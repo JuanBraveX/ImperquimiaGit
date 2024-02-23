@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>01</fullName>
+        <default>false</default>
+        <label>E-Commerce</label>
+    </customValue>
+    <customValue>
+        <fullName>02</fullName>
+        <default>false</default>
+        <label>Mostrador</label>
+    </customValue>
+    <customValue>
+        <fullName>03</fullName>
+        <default>false</default>
+        <label>Obras y Proyectos</label>
+    </customValue>
+    <customValue>
+        <fullName>04</fullName>
+        <default>false</default>
+        <label>Distribuidores</label>
+    </customValue>
+    <customValue>
+        <fullName>05</fullName>
+        <default>false</default>
+        <label>Des. Negocios</label>
+    </customValue>
+    <customValue>
+        <fullName>06</fullName>
+        <default>false</default>
+        <label>Industriales</label>
+    </customValue>
+    <customValue>
+        <fullName>07</fullName>
+        <default>false</default>
+        <label>Exportación</label>
+    </customValue>
+    <customValue>
+        <fullName>08</fullName>
+        <default>false</default>
+        <label>Call Center</label>
+    </customValue>
+    <customValue>
+        <fullName>09</fullName>
+        <default>false</default>
+        <label>Retail</label>
+    </customValue>
+    <customValue>
+        <fullName>10</fullName>
+        <default>false</default>
+        <label>Ventas Directas</label>
+    </customValue>
+    <customValue>
+        <fullName>20</fullName>
+        <default>false</default>
+        <label>Mayorista</label>
+    </customValue>
+    <customValue>
+        <fullName>30</fullName>
+        <default>false</default>
+        <label>Otras Ventas</label>
+    </customValue>
+    <masterLabel>Canal de distribución</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

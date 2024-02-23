@@ -1,0 +1,127 @@
+<aura:component controller="IMP_ConsultaInventarioController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >    
+    <aura:html tag="style">
+        .slds-modal__container {
+        min-heigth:  800px !important;
+        min-width: 99% !important;
+        }
+        .slds-popover_tooltip
+        {
+        min-width: 60% !important;
+        
+        background-color:#fdc182;
+        }
+    </aura:html>
+    
+    <aura:attribute name="recordId" type="Id"/>
+    <aura:handler name="init" value="{! this }" action="{! c.init }"/>
+    <aura:attribute name="data" type="Object"/>
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="codigoProd" type="String" />
+    <aura:attribute name="selectedValue" type="String" />
+    <aura:attribute name="spinner" type="boolean" default="false"/>
+    <aura:attribute name="listEnvios" type="list"/>
+    <!--Buscador Dinamico-->
+    <aura:attribute name="selectRecordName" type="String"/>
+    <aura:attribute name="picklistValues" type="List"/>
+    <aura:attribute name="currentText" type="String"/>
+    <aura:attribute name="listProds" type="list"/>
+    
+    
+    
+    <aura:if isTrue="{!v.spinner}">  
+        <lightning:spinner alternativeText="Loading.." title="Loading.." variant="brand" size="large"/>                            
+    </aura:if> 
+    
+    
+    
+    <article class="slds-card" style ="height:100%">
+        
+        <lightning:card class="slds-theme_backgroundColor-lightblue height:100%">
+
+            <lightning:layoutItem size="12" padding="around-small">
+                <div class="slds-grid slds-gutters ">
+                    <div class=" slds-grid slds-col"> 
+                        <div id="variants" class=" slds-grid slds-p-vertical_x-small  slds-p-horizontal_x-small slds-grid slds-grid_vertical-align-center">                                
+                            <lightning:icon class="slds-icon slds-icon_large" iconName="standard:poll" alternativeText="Account" title="Account" />
+                            <br></br>
+                            <h1 class="slds-text-heading_small slds-p-left_x-small">Disponibilidad de Inventario</h1>
+                        </div>
+                        <br></br>
+                    </div>
+            </div>
+                <center>
+                    <div onfocusout="{!c.closeDropDown}" class="slds-p-top_x-small">         
+                        <div class="slds-combobox_container slds-col slds-size_6-of-6 slds-medium-size_5-of-12">
+                            <div class="slds-size--1-of-1 slds-p-horizontal_x-small slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click" aura:id="resultBox" aria-expanded="false" aria-haspopup="listbox" role="combobox">
+                                <!-- below lightning:input is for user to type text -->
+                                <div class="slds-form-element__control" role="none">                 
+                                    <lightning:input  required="true" messageWhenValueMissing="Selecciona el Producto" aura:id="userinput" label="Buscar Producto" name="searchText" autocomplete="off"  onchange="{!c.searchField}" onclick="{!c.getPickListValues}" value="{!v.selectRecordName}" type="search" class="leftspace text"/>
+                                </div>
+                                <!-- below code is for showing picklist values based on the text-->
+                                <div id="listbox-id-1" class="slds-dropdown slds-dropdown_length-with-icon-7 slds-dropdown_fluid" role="listbox">
+                                    <ul class="slds-listbox slds-listbox_vertical" role="presentation" >
+                                        <aura:iteration items="{!v.picklistValues}" var="serecord" indexVar="hdtv">
+                                            <li role="presentation" class="slds-listbox__item">
+                                                <div data-name="{!serecord.ProductCode}" onmousedown="{!c.setSelectedRecord}"  class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta" role="option">
+                                                    <span class="slds-media__body">
+                                                        <div class="slds-grid slds-wrap">
+                                                            <div class="slds-col slds-size_2-of-12 slds-medium-size_1-of-12">
+                                                                <lightning:icon iconName="standard:product" alternativeText="Warning!" title="Warning" />
+                                                            </div>
+                                                            <div class="slds-col slds-size_10-of-12 slds-medium-size_11-of-12 slds-text-align_left">
+                                                                <span class="slds-listbox__option-text slds-listbox__option-text_entity slds-text-align_left">{!serecord.Name}</span>
+                                                                <span class="slds-listbox__option-text slds-listbox__option-text_entity slds-text-align_left">{!serecord.ProductCode}</span>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                    </span>
+                                                </div>
+                                            </li>
+                                        </aura:iteration>
+                                    </ul>
+                                </div>
+                                
+                            </div>  
+                        </div>
+                    </div> 
+                    
+                    <div class=" slds-combobox_container slds-col slds-size_6-of-6 slds-medium-size_5-of-12 slds-p-top_small">
+                        <div class="slds-size--1-of-1 slds-p-horizontal_x-small slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click"  aria-expanded="false" aria-haspopup="listbox" role="combobox">
+                            <!-- below lightning:input is for user to type text -->
+                            <div class="slds-form-element__control" role="none">                 
+                                <lightning:select class="text" name="mySelect" label="Selecciona un Almacén" aura:id="selectAlmacen" value="{!v.selectedValue}">    
+                                    <aura:iteration items="{!v.listEnvios}" var="option" >
+                                        <option selected="{!option==v.selectedValue?'.selected':''}" text="{!option}" value="{!option}"/>
+                                    </aura:iteration>
+                                </lightning:select>  
+                            </div>                   
+                        </div>  
+                    </div>
+                    <div class=" slds-combobox_container slds-col slds-size_5-of-6 slds-medium-size_5-of-12 slds-large-size_2-of-12 slds-p-top_medium">
+                        <lightning:button variant="brand" label="Consultar Inventario" title="Brand action" onclick="{! c.handleClick }" />
+                    </div>
+                </center>
+            </lightning:layoutItem>
+            <br></br>
+            <lightning:layoutItem size="12" padding="around-small">
+                <!--class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_striped slds-max-medium-table_stacked"-->
+                <div class="Container Flipped"> 
+                    <div class="table--size">
+                        <div style="height: 350px">
+                            <lightning:datatable
+                                                 keyField="id"
+                                                 data="{!v.data}"
+                                                 columns="{!v.columns}"
+                                                 hideCheckboxColumn="true"
+                                                 class="slds-table slds-table--bordered slds-table--striped slds-table--cell-buffer slds-table--fixed-layout slds-max-medium-table_stacked"
+                                                 resizeColumnDisabled="true"
+                                                 suppressBottomBar="true"
+                                                 onrowaction="{!c.handleDelete}"
+                                                 showRowNumberColumn="true"/>
+                        </div>
+                    </div>
+                </div> 
+            </lightning:layoutItem>
+        </lightning:card>
+    </article>
+</aura:component>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Creaci_n_por_ejecutivo</fullName>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>OPPORTUNITY.AMOUNT</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>IMP_SemaforoProbabilidad__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CORE.USERS.FIRST_NAME</field>
+        <operation>equals</operation>
+        <value>Melissa</value>
+    </filters>
+    <label>Creación por ejecutivo</label>
+    <sharedTo>
+        <role>Asesor_de_Call_Center</role>
+        <role>Coordinador_Distribuidores</role>
+    </sharedTo>
+</ListView>

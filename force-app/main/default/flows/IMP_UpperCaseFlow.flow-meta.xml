@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>57.0</apiVersion>
+    <assignments>
+        <description>Actualiza el nombre de la cuenta y su dirección</description>
+        <name>UpperCaseAddressAndName</name>
+        <label>UpperCase</label>
+        <locationX>182</locationX>
+        <locationY>311</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Name</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ToUpperCaseName</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Delegacion__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ToUpperCaseDelegacion</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Colonia__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ToUpperCaseColonia</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>ValidaCalle</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Convertir a mayusculas calle</description>
+        <name>UpperCaseCalle</name>
+        <label>UpperCaseCalle</label>
+        <locationX>50</locationX>
+        <locationY>551</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.IMP_Calle__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ToUpperCaseCalle</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>ValidaNumeroInterior</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Convertir a mayúsculas el número interior</description>
+        <name>UpperCaseNumeroInterior</name>
+        <label>UpperCaseNumeroInterior</label>
+        <locationX>50</locationX>
+        <locationY>887</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Numero_Interior__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ToUpperCaseNumInterior</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <description>Valida Calle</description>
+        <name>ValidaCalle</name>
+        <label>ValidaCalle</label>
+        <locationX>182</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>ValidaNumeroInterior</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Resultado predeterminado</defaultConnectorLabel>
+        <rules>
+            <name>NoEsVacio</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.IMP_Calle__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue></stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>UpperCaseCalle</targetReference>
+            </connector>
+            <label>NoEsVacio</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>ValidaNumeroInterior</name>
+        <label>ValidaNumeroInterior</label>
+        <locationX>182</locationX>
+        <locationY>767</locationY>
+        <defaultConnectorLabel>Resultado predeterminado</defaultConnectorLabel>
+        <rules>
+            <name>ValidarNumeroInterior</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Numero_Interior__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue></stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>UpperCaseNumeroInterior</targetReference>
+            </connector>
+            <label>ValidarNumeroInterior</label>
+        </rules>
+    </decisions>
+    <description>Convertir registro en mayúsculas de la cuenta</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>Convertir a mayúsculas</description>
+        <name>ToUpperCaseCalle</name>
+        <dataType>String</dataType>
+        <expression>UPPER({!$Record.IMP_Calle__c})</expression>
+    </formulas>
+    <formulas>
+        <description>Convertir a mayúsculas colonia</description>
+        <name>ToUpperCaseColonia</name>
+        <dataType>String</dataType>
+        <expression>UPPER({!$Record.Colonia__c})</expression>
+    </formulas>
+    <formulas>
+        <description>Convertir a mayúsculas la delegación</description>
+        <name>ToUpperCaseDelegacion</name>
+        <dataType>String</dataType>
+        <expression>UPPER({!$Record.Delegacion__c})</expression>
+    </formulas>
+    <formulas>
+        <description>Convertir a mayusculas</description>
+        <name>ToUpperCaseName</name>
+        <dataType>String</dataType>
+        <expression>UPPER({!$Record.Name})</expression>
+    </formulas>
+    <formulas>
+        <description>Convertir a mayúsculas el número exterior</description>
+        <name>ToUpperCaseNumExterior</name>
+        <dataType>String</dataType>
+        <expression>UPPER({!$Record.Numero_Exterior__c})</expression>
+    </formulas>
+    <formulas>
+        <description>Convertir a mayúsculas número interior</description>
+        <name>ToUpperCaseNumInterior</name>
+        <dataType>String</dataType>
+        <expression>UPPER({!$Record.Numero_Interior__c})</expression>
+    </formulas>
+    <interviewLabel>Convertir registro en mayúsculas de la cuenta {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Convertir registro en mayúsculas de la cuenta v4</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>UpperCaseAddressAndName</targetReference>
+        </connector>
+        <object>Account</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

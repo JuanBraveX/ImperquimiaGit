@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IMP_Geo_Latitude_CheckOut__c</fullName>
+    <description>Geocode para latitude check-out</description>
+    <externalId>false</externalId>
+    <label>Geolocation (Latitud Check-out)</label>
+    <precision>15</precision>
+    <required>false</required>
+    <scale>6</scale>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

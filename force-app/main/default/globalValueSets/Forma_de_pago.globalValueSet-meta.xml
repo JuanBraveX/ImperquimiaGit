@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>1</fullName>
+        <default>false</default>
+        <label>Deposito en efectivo</label>
+    </customValue>
+    <customValue>
+        <fullName>2</fullName>
+        <default>false</default>
+        <label>Cheque - Prenum con Overflow</label>
+    </customValue>
+    <customValue>
+        <fullName>3</fullName>
+        <default>false</default>
+        <label>Cheque - Sin numero c/ Overflow</label>
+    </customValue>
+    <customValue>
+        <fullName>4</fullName>
+        <default>false</default>
+        <label>Cheque - Sin numero c/Overflow</label>
+    </customValue>
+    <customValue>
+        <fullName>6</fullName>
+        <default>false</default>
+        <label>Tarjeta de crédito Amexco</label>
+    </customValue>
+    <customValue>
+        <fullName>A</fullName>
+        <default>false</default>
+        <label>Deposito con cheque</label>
+    </customValue>
+    <customValue>
+        <fullName>C</fullName>
+        <default>false</default>
+        <label>Cheque</label>
+    </customValue>
+    <customValue>
+        <fullName>D</fullName>
+        <default>false</default>
+        <label>Deposito</label>
+    </customValue>
+    <customValue>
+        <fullName>E</fullName>
+        <default>false</default>
+        <label>Efectivo</label>
+    </customValue>
+    <customValue>
+        <fullName>F</fullName>
+        <default>false</default>
+        <label>Tarjeta de crédito</label>
+    </customValue>
+    <customValue>
+        <fullName>G</fullName>
+        <default>false</default>
+        <label>Cheque Prod IQ</label>
+    </customValue>
+    <customValue>
+        <fullName>H</fullName>
+        <default>false</default>
+        <label>Tarjeta de Débito</label>
+    </customValue>
+    <customValue>
+        <fullName>I</fullName>
+        <default>false</default>
+        <label>Nota de Credito</label>
+    </customValue>
+    <customValue>
+        <fullName>L</fullName>
+        <default>false</default>
+        <label>Vales de despensa</label>
+    </customValue>
+    <customValue>
+        <fullName>M</fullName>
+        <default>false</default>
+        <label>Monedero electronico</label>
+    </customValue>
+    <customValue>
+        <fullName>N</fullName>
+        <default>false</default>
+        <label>Por Definir</label>
+    </customValue>
+    <customValue>
+        <fullName>T</fullName>
+        <default>false</default>
+        <label>Transferencia Bancaria</label>
+    </customValue>
+    <customValue>
+        <fullName>V</fullName>
+        <default>false</default>
+        <label>Amazon Tarjeta Débito</label>
+    </customValue>
+    <customValue>
+        <fullName>X</fullName>
+        <default>false</default>
+        <label>Amazon Tarjeta crédito</label>
+    </customValue>
+    <customValue>
+        <fullName>Y</fullName>
+        <default>false</default>
+        <label>Mejoravit</label>
+    </customValue>
+    <customValue>
+        <fullName>Z</fullName>
+        <default>false</default>
+        <label>Dación de pago</label>
+    </customValue>
+    <masterLabel>Forma de pago</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

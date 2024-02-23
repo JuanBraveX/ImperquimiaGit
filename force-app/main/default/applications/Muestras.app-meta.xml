@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Pedido_P_gina_de_registro</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>Order</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Pedido_P_gina_de_registro</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>Order</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override updated by Lightning App Builder during activation.</comment>
+        <content>Visita_Perfecta</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>Event</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override updated by Lightning App Builder during activation.</comment>
+        <content>Visita_Perfecta</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>Event</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Solicitud_de_Avi_n_P_gina_de_registro</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>Solicitud_de_Avi_n__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Solicitud_de_Avi_n_P_gina_de_registro</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>Solicitud_de_Avi_n__c</pageOrSobjectType>
+    </actionOverrides>
+    <brand>
+        <headerColor>#2F9B1C</headerColor>
+        <logo>Productos_Imperquimia</logo>
+        <logoVersion>1</logoVersion>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <description>Aplicación exclusiva para muestras</description>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>true</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <label>Muestras</label>
+    <navType>Standard</navType>
+    <tabs>standard-home</tabs>
+    <tabs>standard-Account</tabs>
+    <tabs>standard-Contact</tabs>
+    <tabs>standard-Opportunity</tabs>
+    <tabs>SolicitudMuestra__c</tabs>
+    <tabs>Solicitud_de_Pintura_Rotulaci_n__c</tabs>
+    <tabs>standard-report</tabs>
+    <tabs>Especificaciones__c</tabs>
+    <tabs>Folio_de_Descuentos__c</tabs>
+    <tabs>Material_Repuesto__c</tabs>
+    <tabs>Producto_Reclamado__c</tabs>
+    <tabs>Solicitud_de_Avi_n__c</tabs>
+    <tabs>Participante_de_la_Licitaci_n__c</tabs>
+    <tabs>Proyecto_Obra_Privada__c</tabs>
+    <tabs>Factura__c</tabs>
+    <tabs>Viaticos__c</tabs>
+    <tabs>Programa_Viaje_Rutas__c</tabs>
+    <tabs>Desgloce_de_Gastos__c</tabs>
+    <tabs>Desarrollo_o_Mejora__c</tabs>
+    <tabs>Programa_de_Facturaci_n__c</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Muestras_UtilityBar</utilityBar>
+</CustomApplication>

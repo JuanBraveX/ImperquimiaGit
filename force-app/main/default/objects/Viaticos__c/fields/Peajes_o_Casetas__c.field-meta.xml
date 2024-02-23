@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Peajes_o_Casetas__c</fullName>
+    <externalId>false</externalId>
+    <formula>Caseta1__c +  Caseta2__c +Caseta3__c  + Caseta4__c + Caseta5__c + Caseta6__c + Caseta7__c + Caseta8__c + Caseta9__c + Caseta10__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Peajes o Casetas</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

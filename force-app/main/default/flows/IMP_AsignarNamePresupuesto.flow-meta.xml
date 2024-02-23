@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>57.0</apiVersion>
+    <assignments>
+        <name>IMP_AsignarCampoNameRegistro</name>
+        <label>Asignar el Campo Name al registro</label>
+        <locationX>536</locationX>
+        <locationY>359</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Name</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Nombre</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <description>Flujo utilizado para asignar el nombre del presupuesto</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>Canal</name>
+        <dataType>String</dataType>
+        <expression>IF(  Text({!$Record.IMP_CanalVentas__c}) = &apos;01&apos;, &apos;E-Commerce&apos;, 
+IF( Text({!$Record.IMP_CanalVentas__c}) = &apos;02&apos;, &apos;Mostrador&apos;, 
+IF(  Text({!$Record.IMP_CanalVentas__c}) = &apos;03&apos;, &apos;Obras y Proyectos&apos;, 
+IF( Text({!$Record.IMP_CanalVentas__c}) = &apos;04&apos;, &apos;Distribuidores&apos;,
+IF( Text({!$Record.IMP_CanalVentas__c}) = &apos;05&apos;, &apos;Des. Negocios&apos;,
+IF( Text({!$Record.IMP_CanalVentas__c}) = &apos;06&apos;, &apos;Industriales&apos;, 
+IF( Text({!$Record.IMP_CanalVentas__c}) = &apos;07&apos;, &apos;Exportación&apos;, 
+IF( Text({!$Record.IMP_CanalVentas__c}) = &apos;08&apos;, &apos;Call Center&apos;, 
+IF( Text({!$Record.IMP_CanalVentas__c}) = &apos;09&apos;, &apos;Retail&apos;, 
+IF( Text({!$Record.IMP_CanalVentas__c}) = &apos;10&apos;, &apos;Ventas Directas&apos;, 
+IF( Text({!$Record.IMP_CanalVentas__c}) = &apos;20&apos;, &apos;Mayorista&apos;, 
+IF( Text({!$Record.IMP_CanalVentas__c}) = &apos;30&apos;, &apos;Mayorista&apos;, &apos;Otras Ventas&apos; ))))))))))))</expression>
+    </formulas>
+    <formulas>
+        <name>Nombre</name>
+        <dataType>String</dataType>
+        <expression>{!Canal} &amp; &apos; - &apos; &amp; {!$Record.IMP_Vendedor__r.FirstName} &amp; &apos; &apos; &amp; {!$Record.IMP_Vendedor__r.LastName}</expression>
+    </formulas>
+    <interviewLabel>IMP_AsignarNamePresupuesto {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Asignar Nombre Presupuesto</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>410</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>IMP_AsignarCampoNameRegistro</targetReference>
+        </connector>
+        <object>Presupuesto__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

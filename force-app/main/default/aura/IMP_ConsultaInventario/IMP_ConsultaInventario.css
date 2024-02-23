@@ -1,0 +1,106 @@
+.THIS lightning-primitive-header-actions 
+{
+    display: none;
+}
+.THIS .SemaforoSuccess lightning-primitive-cell-factory > span > div > lightning-icon > lightning-primitive-icon > svg
+{
+    fill:green;
+}
+.THIS .SemaforoError lightning-primitive-cell-factory > span > div > lightning-icon > lightning-primitive-icon > svg
+{
+    fill:red;
+}
+.THIS .LinternaYellow lightning-primitive-cell-factory > span > div > lightning-icon > lightning-primitive-icon > svg
+{
+    fill:yellow;
+}
+.THIS .LinternaGreen lightning-primitive-cell-factory > span > div > lightning-icon > lightning-primitive-icon > svg
+{
+    fill:green;
+}
+.THIS .LinternaRed lightning-primitive-cell-factory > span > div > lightning-icon > lightning-primitive-icon > svg
+{
+    fill:red;
+}
+.THIS .eighty-percentt 
+{
+    font-size:12px;
+    zoom:86%;
+    
+}
+.THIS .Content
+{
+    width: 100%;
+}
+.THIS .slds-th__action
+{ 
+    justify-content: center !important; 
+}
+.THIS .slds-file-selector__button
+{
+    
+}
+
+@media screen and (max-width: 767px) {
+    
+    .THIS .slds-file-selector__button {
+        font-size: 0px !important; 
+    }
+    .THIS .slds-file-selector__text
+    {
+        font-size: 0px !important; 
+        display:none !important;
+    }
+    .THIS .paddingFamiliasPhone{
+        padding-left:0px !important;
+    }
+    .THIS .iconResponsiveLarge{
+        display:none !important;
+    }
+    .THIS .iconResponsiveSmall
+    {
+        display:inline !important;
+        margin-top:2.5rem !important;
+    }
+    .THIS .positionHelper
+    {
+        right:10%;
+        top:5rem;
+    }
+    .THIS .vistaBrowser
+    {
+        display:none !important;
+    }
+    .THIS .iconPhone
+    {
+        top:1rem;
+    }
+    
+}
+
+
+.THIS .text{
+    text-align: justify;
+    font-size: 15px;
+    
+}
+@media screen and (min-width: 768px) {
+    .THIS .iconResponsiveLarge{
+        display:inline !important;
+    }
+    .THIS .iconResponsiveSmall
+    {
+        display:none !important;
+    }
+    .THIS .positionHelper
+    {
+        right:10%;
+        top:1.5rem;
+    }
+    .THIS .vistaPhone
+    {
+        display:none !important;
+        
+    }
+    
+}

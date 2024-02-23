@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Puntos_clave_a_desarrollar__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Acuerdos o puntos por resolver.
+Ventajas de Imperquimia (Promoción del mes, descuentos, distribución, diferenciadores)
+Venta Cruzada (Desarrollo del portafolio de del cliente)
+Escucha activa del cliente (Ofrecer una solución)
+Contra propuesta (Si es necesaria)</inlineHelpText>
+    <label>Puntos clave a desarrollar</label>
+    <required>false</required>
+    <type>TextArea</type>
+</CustomField>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Alimentos</fullName>
+        <default>false</default>
+        <label>Alimentos</label>
+    </customValue>
+    <customValue>
+        <fullName>Estacionamiento</fullName>
+        <default>false</default>
+        <label>Estacionamiento</label>
+    </customValue>
+    <customValue>
+        <fullName>Gasolina</fullName>
+        <default>false</default>
+        <label>Gasolina</label>
+    </customValue>
+    <customValue>
+        <fullName>Hoteles</fullName>
+        <default>false</default>
+        <label>Hoteles</label>
+    </customValue>
+    <customValue>
+        <fullName>Mantto. o equipo de transporte</fullName>
+        <default>false</default>
+        <label>Mantto. o equipo de transporte</label>
+    </customValue>
+    <customValue>
+        <fullName>Papelería</fullName>
+        <default>false</default>
+        <label>Papelería</label>
+    </customValue>
+    <customValue>
+        <fullName>Peajes o Casetas</fullName>
+        <default>false</default>
+        <label>Peajes o Casetas</label>
+    </customValue>
+    <customValue>
+        <fullName>Servicio de Internet</fullName>
+        <default>false</default>
+        <label>Servicio de Internet</label>
+    </customValue>
+    <customValue>
+        <fullName>Taxis, Autobuses, Avión</fullName>
+        <default>false</default>
+        <label>Taxis, Autobuses, Avión</label>
+    </customValue>
+    <masterLabel>Tipo de gasto viaticos</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IMP_Factura</fullName>
+    <fields>Name</fields>
+    <fields>IMP_NombreCliente__c</fields>
+    <fields>IMP_Pedido__c</fields>
+    <fields>IMP_FechaFactura__c</fields>
+    <fields>IMP_MontoFactura__c</fields>
+    <label>IMP_Factura</label>
+</CompactLayout>

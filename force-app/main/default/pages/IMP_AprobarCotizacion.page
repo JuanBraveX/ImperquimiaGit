@@ -1,0 +1,8 @@
+<apex:page standardController="Quote">
+    <h1>Edit Quote</h1>
+    <apex:form >
+        <apex:inputField value="{! Quote.Name }"/>
+        <apex:inputField value="{! Quote.Requiereaprobacion__c }"/>
+        <apex:commandButton action="{! save }" value="Save" />
+    </apex:form>
+</apex:page>

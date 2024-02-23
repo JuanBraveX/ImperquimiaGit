@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Nota__c</fullName>
+    <defaultValue>&quot;La información contenida en descripción marca las características,  particularidades y generalidades de aplicación de los descuentos o precios solicitados,  y por consiguiente, aquellos puntos que no se encuentren asentados en la presente solicitud NO PODRÁN SER APLICADOS. Únicamente podrán hacerse extensivos los descuentos a los complementos de un sistema de acuerdo a previo análisis.&quot;</defaultValue>
+    <externalId>false</externalId>
+    <label>Nota</label>
+    <length>32768</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

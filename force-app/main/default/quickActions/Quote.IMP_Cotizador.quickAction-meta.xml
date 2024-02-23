@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Botón para desplegar el cotizador personalizado</description>
+    <height>3000</height>
+    <label>Cotizador</label>
+    <lightningComponent>IMP_CotizadorProductos</lightningComponent>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <type>LightningComponent</type>
+    <width>-100</width>
+</QuickAction>

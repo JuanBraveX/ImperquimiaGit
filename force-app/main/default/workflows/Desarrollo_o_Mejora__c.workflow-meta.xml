@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Desarrollo_Aprobado</fullName>
+        <description>Desarrollo Aprobado</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>arosas@imperquimia.com.mx</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Desarrollo_o_Mejora/Solicitud_DM_Aprobada</template>
+    </alerts>
+    <alerts>
+        <fullName>Desarrollo_Rechazado</fullName>
+        <description>Desarrollo Rechazado</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>arosas@imperquimia.com.mx</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Desarrollo_o_Mejora/Solicitud_DM_Rechazada</template>
+    </alerts>
+    <alerts>
+        <fullName>Desarrollo_detenido</fullName>
+        <description>Desarrollo detenido</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>arosas@imperquimia.com.mx</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Desarrollo_o_Mejora/Solicitud_Detenida</template>
+    </alerts>
+    <alerts>
+        <fullName>Fecha_estimada_de_entrega</fullName>
+        <description>Fecha estimada de entrega</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>arosas@imperquimia.com.mx</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Desarrollo_o_Mejora/Fecha_estimada_de_entrega</template>
+    </alerts>
+    <alerts>
+        <fullName>Solicitud_Concluida</fullName>
+        <description>Solicitud Concluida</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>arosas@imperquimia.com.mx</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>desarrollo@imperquimia.com.mx</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>rtrejo@imperquimia.com.mx</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Desarrollo_o_Mejora/Solicitud_Concluida</template>
+    </alerts>
+    <alerts>
+        <fullName>Solicitud_I_D</fullName>
+        <description>Solicitud I+D</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>arosas@imperquimia.com.mx</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Desarrollo_o_Mejora/Solicitud_I_D</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Detenido</fullName>
+        <field>Estatus_de_la_solicitud__c</field>
+        <literalValue>Detenido por falta de información</literalValue>
+        <name>Estatus Detenido</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Enviar_notificaci_n</fullName>
+        <field>Enviar_correo__c</field>
+        <literalValue>1</literalValue>
+        <name>Enviar notificación</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Estatus_Autorizado</fullName>
+        <field>Estatus_de_la_solicitud__c</field>
+        <literalValue>Aprobado</literalValue>
+        <name>Estatus Autorizado</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Estatus_Canalizado</fullName>
+        <field>Estatus_de_la_solicitud__c</field>
+        <literalValue>Trabajando</literalValue>
+        <name>Estatus Canalizado</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Estatus_Rechazado</fullName>
+        <field>Estatus_de_la_solicitud__c</field>
+        <literalValue>Rechazado</literalValue>
+        <name>Estatus Rechazado</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Estatus_Trabjando</fullName>
+        <field>Estatus_de_la_solicitud__c</field>
+        <literalValue>Trabajando</literalValue>
+        <name>Estatus Trabjando</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Estatus_en_Proceso</fullName>
+        <field>Estatus_de_la_solicitud__c</field>
+        <literalValue>En proceso de aprobación</literalValue>
+        <name>Estatus en Proceso</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+</Workflow>

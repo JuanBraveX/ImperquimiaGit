@@ -1,0 +1,85 @@
+<aura:component controller="IMP_CrearClienteSap_CC" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickActionWithoutHeader" access="global" >
+    <aura:html tag="style">
+        .cuf-content {
+        padding: 0 0rem !important;
+        }
+        .slds-p-around--medium {
+        padding: 0rem !important;
+        }       
+        .slds-modal__content{
+        overflow-y:hidden !important;
+        height:unset !important;
+        max-height:unset !important;
+        }
+    </aura:html>	
+    <aura:attribute name="spinner" type="boolean" default="false"/>
+    <aura:attribute name="recordId" type="String"/>
+    <aura:attribute name="accounts" type="List"/>
+    <aura:attribute name="token" type="String"/>
+    <aura:attribute name="status" type="String"/>
+    <aura:attribute name="mensaje" type="String"/>
+    <aura:attribute name="enviadoSap" type="String"/>
+    <aura:attribute name="validToken" type="String"/>
+    <aura:attribute name="currentAcc" type="Account"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+        
+    <!--<div style="background: white">
+        <div class="slds-col slds-size_1-of-1">
+            <div class="slds-media__body">
+                <h4 class="slds-grid slds-grid_align-center" style="font-weight:bold; font-family:Helvetica; font-size: 14px;">¿Está seguro de crear cliente en SAP?</h4>
+            </div>
+            <div class="slds-grid slds-size_1-of-1 slds-grid_align-center slds-p-top_small slds-p-bottom_small">
+                <lightning:button variant="brand" label="Aceptar" title="Aceptar" aura:id="disablebuttonid" onclick="{!c.altaSAP}" disabled="true"/>
+            </div>
+        </div>
+    </div>-->
+    
+    <div class="slds-col modal-header slds-modal__header">
+        <h2 class="title slds-text-heading--medium">Crear Cliente en SAP</h2>
+    </div>
+    <div class="slds-col modal-body ">
+        
+        <aura:if isTrue="{!v.enviadoSap == true}">
+            <div class="slds-text-heading_small" style="padding:0.5rem;color:#585858"><center>El Cliente "{!v.currentAcc.Name}" ya fue sincronizado a SAP ({!v.currentAcc.id_de_sap__c}).</center></div>
+            <aura:set attribute="else">
+                <aura:if isTrue="{!v.status == 'ERROR'}">
+                    <div class="slds-text-heading_small" >
+                        <center> <p>No se puede completar el envio a SAP, falta completar los siguientes campos:</p></center>
+                        <center> <p style="padding:0.5rem;color:#585858">{!v.mensaje} </p> </center>
+                    </div>
+                    <aura:set attribute="else">
+                        <aura:if isTrue="{!v.validToken == false}">
+                            <div class="slds-text-heading_small" >
+                                <center> <p>Servicio inactivo, contacta a tu administrador de Salesforce para mas información.</p></center>
+                            </div>
+                            <aura:set attribute="else">
+                                <div class="slds-text-heading_small slds-p-top_xx-small slds-p-bottom_xx-small" >
+                                    <center> <p>Si continua, se sincronizará la cuenta con SAP.</p></center>
+                                </div>
+                            </aura:set>
+                        </aura:if>
+                    </aura:set>
+                </aura:if>
+            </aura:set>
+        </aura:if> 
+        <aura:if isTrue="{!v.spinner}">  
+            <div class="demo-only" style="height:6rem;position:relative">
+                <div class="slds-spinner_container">
+                    <div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+                        <span class="slds-assistive-text">Loading</span>
+                        <div class="slds-spinner__dot-a"></div>
+                        <div class="slds-spinner__dot-b"></div>
+                    </div>
+                </div>
+            </div>    
+        </aura:if> 
+    </div>
+    <div class="slds-col modal-footer slds-modal__footer">        
+        <lightning:button variant="neutral" label="Cancelar" onclick="{!c.cancelClick }" /> 
+        <aura:if isTrue="{! AND (v.status == 'SUCCESS', v.validToken )}">
+            <lightning:button variant="brand" label="¿Desea continuar?" onclick="{!c.altaSAP}" />
+        </aura:if> 
+        
+    </div>
+</aura:component>

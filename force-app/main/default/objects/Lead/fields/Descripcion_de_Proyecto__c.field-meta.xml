@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Descripcion_de_Proyecto__c</fullName>
+    <description>Área de texto largo para almacenar la descripción del proyecto</description>
+    <externalId>false</externalId>
+    <label>Descripcion del Proyecto</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>LongTextArea</type>
+    <visibleLines>4</visibleLines>
+</CustomField>

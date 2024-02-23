@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Vendedor__c</fullName>
+    <description>Lista de selección de vendedor</description>
+    <externalId>false</externalId>
+    <label>Vendedor</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>001</fullName>
+                <default>false</default>
+                <label>Metropolitan</label>
+            </value>
+            <value>
+                <fullName>002</fullName>
+                <default>false</default>
+                <label>Centro</label>
+            </value>
+            <value>
+                <fullName>003</fullName>
+                <default>false</default>
+                <label>Centro-Bajio</label>
+            </value>
+            <value>
+                <fullName>004</fullName>
+                <default>false</default>
+                <label>Sureste</label>
+            </value>
+            <value>
+                <fullName>005</fullName>
+                <default>false</default>
+                <label>Norte</label>
+            </value>
+            <value>
+                <fullName>006</fullName>
+                <default>false</default>
+                <label>Pacifico</label>
+            </value>
+            <value>
+                <fullName>007</fullName>
+                <default>false</default>
+                <label>Frontera</label>
+            </value>
+            <value>
+                <fullName>100</fullName>
+                <default>false</default>
+                <label>GTE NAL OBR Y PROY</label>
+            </value>
+            <value>
+                <fullName>101</fullName>
+                <default>false</default>
+                <label>GTE TEC REG CENTRO</label>
+            </value>
+            <value>
+                <fullName>102</fullName>
+                <default>false</default>
+                <label>ATO CENTRO 1-1</label>
+            </value>
+            <value>
+                <fullName>103</fullName>
+                <default>false</default>
+                <label>ATO CENTRO 1-2</label>
+            </value>
+            <value>
+                <fullName>104</fullName>
+                <default>false</default>
+                <label>ATO CENTRO 1-3</label>
+            </value>
+            <value>
+                <fullName>105</fullName>
+                <default>false</default>
+                <label>ATO CENTRO 1-4</label>
+            </value>
+            <value>
+                <fullName>106</fullName>
+                <default>false</default>
+                <label>ATO CENTRO 1-5</label>
+            </value>
+            <value>
+                <fullName>107</fullName>
+                <default>false</default>
+                <label>ATO CENTRO 1-6</label>
+            </value>
+            <value>
+                <fullName>108</fullName>
+                <default>false</default>
+                <label>ATO CENTRO 1-7</label>
+            </value>
+            <value>
+                <fullName>109</fullName>
+                <default>false</default>
+                <label>ATO CENTRO 3-1</label>
+            </value>
+            <value>
+                <fullName>110</fullName>
+                <default>false</default>
+                <label>ATO CENTRO 3-2</label>
+            </value>
+            <value>
+                <fullName>111</fullName>
+                <default>false</default>
+                <label>ATO CENTRO 6-1</label>
+            </value>
+            <value>
+                <fullName>112</fullName>
+                <default>false</default>
+                <label>ATO CENTRO 6-2</label>
+            </value>
+            <value>
+                <fullName>113</fullName>
+                <default>false</default>
+                <label>GTE TEC REG SUR</label>
+            </value>
+            <value>
+                <fullName>114</fullName>
+                <default>false</default>
+                <label>ATO SUR 2-1</label>
+            </value>
+            <value>
+                <fullName>115</fullName>
+                <default>false</default>
+                <label>ATO SUR 2-2</label>
+            </value>
+            <value>
+                <fullName>116</fullName>
+                <default>false</default>
+                <label>ATO SUR 2-3</label>
+            </value>
+            <value>
+                <fullName>117</fullName>
+                <default>false</default>
+                <label>ATO SUR 2-4</label>
+            </value>
+            <value>
+                <fullName>118</fullName>
+                <default>false</default>
+                <label>GTE TEC REG NORTE</label>
+            </value>
+            <value>
+                <fullName>119</fullName>
+                <default>false</default>
+                <label>ATO NORTE 4-1</label>
+            </value>
+            <value>
+                <fullName>120</fullName>
+                <default>false</default>
+                <label>ATO NORTE 4-2</label>
+            </value>
+            <value>
+                <fullName>121</fullName>
+                <default>false</default>
+                <label>ATO NORTE 4-3</label>
+            </value>
+            <value>
+                <fullName>122</fullName>
+                <default>false</default>
+                <label>ATO NORTE 5-1</label>
+            </value>
+            <value>
+                <fullName>123</fullName>
+                <default>false</default>
+                <label>ATO NORTE 5-2</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

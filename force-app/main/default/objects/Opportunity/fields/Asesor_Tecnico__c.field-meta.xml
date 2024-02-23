@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Asesor_Tecnico__c</fullName>
+    <externalId>false</externalId>
+    <label>Asesor Técnico</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Martín Hernández</fullName>
+                <default>false</default>
+                <label>Martín Hernández</label>
+            </value>
+            <value>
+                <fullName>Julio Cisneros</fullName>
+                <default>false</default>
+                <label>Julio Cisneros</label>
+            </value>
+            <value>
+                <fullName>Sergio Quiñones</fullName>
+                <default>false</default>
+                <label>Sergio Quiñones</label>
+            </value>
+            <value>
+                <fullName>Luis Nava</fullName>
+                <default>false</default>
+                <label>Luis Nava</label>
+            </value>
+            <value>
+                <fullName>Felipe Noh</fullName>
+                <default>false</default>
+                <label>Felipe Noh</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

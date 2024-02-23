@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Asesor_T_cnico__c</fullName>
+    <externalId>false</externalId>
+    <label>Asesor Técnico</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Julio Jonathan Cisneros</fullName>
+                <default>false</default>
+                <label>Julio Jonathan Cisneros</label>
+            </value>
+            <value>
+                <fullName>Felipe Gabriel Noh Pool</fullName>
+                <default>false</default>
+                <label>Felipe Gabriel Noh Pool</label>
+            </value>
+            <value>
+                <fullName>Sergio Arturo Quiñones Jiménez</fullName>
+                <default>false</default>
+                <label>Sergio Arturo Quiñones Jiménez</label>
+            </value>
+            <value>
+                <fullName>Luis Maximiliano Nava</fullName>
+                <default>false</default>
+                <label>Luis Maximiliano Nava</label>
+            </value>
+            <value>
+                <fullName>Gustavo Eduardo Calderón Caletti</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Gustavo Eduardo Calderón Caletti</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

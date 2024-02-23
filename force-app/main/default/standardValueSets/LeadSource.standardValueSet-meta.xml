@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Activación en calle</fullName>
+        <default>false</default>
+        <label>Activación en calle</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Google Adwords</fullName>
+        <default>false</default>
+        <label>Anuncio / Búsqueda Google</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Bim Objects</fullName>
+        <default>false</default>
+        <label>Bim Objects</label>
+    </standardValue>
+    <standardValue>
+        <fullName>BIMSA</fullName>
+        <default>false</default>
+        <label>BIMSA</label>
+    </standardValue>
+    <standardValue>
+        <fullName>BIMSA BR</fullName>
+        <default>false</default>
+        <label>BIMSA BR</label>
+    </standardValue>
+    <standardValue>
+        <fullName>BIMSA Visitas</fullName>
+        <default>false</default>
+        <label>BIMSA Visitas</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Bot</fullName>
+        <default>false</default>
+        <label>Bot / Chat en vivo</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Camionetas</fullName>
+        <default>false</default>
+        <label>Camionetas</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Cliente Existente</fullName>
+        <default>false</default>
+        <label>Cliente Existente</label>
+    </standardValue>
+    <standardValue>
+        <fullName>CMIC</fullName>
+        <default>false</default>
+        <label>CMIC</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Conferencia</fullName>
+        <default>false</default>
+        <label>Conferencia / Webinar</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Convenio</fullName>
+        <default>false</default>
+        <label>Convenio</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Correo Electronico</fullName>
+        <default>false</default>
+        <label>Correo Resuelve</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Empleado</fullName>
+        <default>false</default>
+        <label>Empleado / Relaciones Publicas</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Espectacular</fullName>
+        <default>false</default>
+        <label>Espectacular</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Exposición</fullName>
+        <default>false</default>
+        <label>Exposición</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Facebook</fullName>
+        <default>false</default>
+        <label>Facebook</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Fachada de la tienda</fullName>
+        <default>false</default>
+        <label>Fachada de la tienda</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Instagram</fullName>
+        <default>false</default>
+        <label>Instagram</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Keobra</fullName>
+        <default>false</default>
+        <label>Keobra</label>
+    </standardValue>
+    <standardValue>
+        <fullName>LinkedIn</fullName>
+        <default>false</default>
+        <label>LinkedIn</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Llamada outbound</fullName>
+        <default>false</default>
+        <label>Llamada outbound</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Mercado Libre</fullName>
+        <default>false</default>
+        <label>Mercado Libre</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Negobit</fullName>
+        <default>false</default>
+        <label>Negobit</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Periódico</fullName>
+        <default>false</default>
+        <label>Periódico</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Prospección</fullName>
+        <default>false</default>
+        <label>Prospección</label>
+    </standardValue>
+    <standardValue>
+        <fullName>QR</fullName>
+        <default>false</default>
+        <label>QR</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Radio</fullName>
+        <default>false</default>
+        <label>Radio</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Recomendación</fullName>
+        <default>false</default>
+        <label>Recomendado de otro cliente</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Revistas</fullName>
+        <default>false</default>
+        <label>Revistas</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Sitio Web</fullName>
+        <default>false</default>
+        <label>Sitio Web</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Spotify</fullName>
+        <default>false</default>
+        <label>Spotify</label>
+    </standardValue>
+    <standardValue>
+        <fullName>TV</fullName>
+        <default>false</default>
+        <label>TV</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Twitter</fullName>
+        <default>false</default>
+        <label>Twitter</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Visitas O&amp;P</fullName>
+        <default>false</default>
+        <label>Visitas O&amp;P</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Visitas Tiendas</fullName>
+        <default>false</default>
+        <label>Visitas Tiendas</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Whats app</fullName>
+        <default>false</default>
+        <label>Whats app</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Youtube</fullName>
+        <default>false</default>
+        <label>Youtube</label>
+    </standardValue>
+</StandardValueSet>

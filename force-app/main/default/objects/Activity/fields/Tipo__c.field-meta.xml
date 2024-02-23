@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tipo__c</fullName>
+    <externalId>false</externalId>
+    <label>Tipo</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Check In</fullName>
+                <default>false</default>
+                <label>Check In</label>
+            </value>
+            <value>
+                <fullName>Check Out</fullName>
+                <default>false</default>
+                <label>Check Out</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

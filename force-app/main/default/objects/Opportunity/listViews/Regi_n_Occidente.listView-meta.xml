@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Regi_n_Occidente</fullName>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>ValorProyecto__c</columns>
+    <columns>Total_sin_Impuesto__c</columns>
+    <columns>CORE.USERS.FULL_NAME</columns>
+    <columns>IMP_SemaforoProbabilidad__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Equipo__c</field>
+        <operation>equals</operation>
+        <value>Región Occidente</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>equals</operation>
+        <value>Prospección,Evaluación Técnica,Cotización presentada,Primera revisión,Negociación,Segunda Revisión,Orden de Compra,Pendiente de Pago</value>
+    </filters>
+    <label>Región Occidente</label>
+    <sharedTo>
+        <role>Gerente_Nacional_de_Ventas</role>
+    </sharedTo>
+</ListView>

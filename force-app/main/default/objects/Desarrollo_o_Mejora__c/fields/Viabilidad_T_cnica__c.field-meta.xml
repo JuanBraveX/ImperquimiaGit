@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Viabilidad_T_cnica__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Si cumple, describa si se cuentan con los recursos técnicos y conocimientos para el desarrollo del proyecto.
+
+Si no cumple, justifique el por que no es viable por asuntos técnicos, sea por información, capacitación o tecnologia de la empresa.</inlineHelpText>
+    <label>Viabilidad Técnica</label>
+    <length>131072</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

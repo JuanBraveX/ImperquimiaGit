@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Clasificaci_n_de_los_productos__c</fullName>
+    <externalId>false</externalId>
+    <label>Clasificación de los productos</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>DURADERO</fullName>
+                <default>false</default>
+                <label>DURADERO</label>
+            </value>
+            <value>
+                <fullName>NO DURADERO</fullName>
+                <default>false</default>
+                <label>NO DURADERO</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

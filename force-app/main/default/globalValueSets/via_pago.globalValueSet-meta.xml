@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>C</fullName>
+        <default>false</default>
+        <label>Cheque</label>
+    </customValue>
+    <customValue>
+        <fullName>D</fullName>
+        <default>false</default>
+        <label>Deposito</label>
+    </customValue>
+    <customValue>
+        <fullName>E</fullName>
+        <default>false</default>
+        <label>Efectivo</label>
+    </customValue>
+    <customValue>
+        <fullName>F</fullName>
+        <default>false</default>
+        <label>Tarjeta de crédito</label>
+    </customValue>
+    <customValue>
+        <fullName>G</fullName>
+        <default>false</default>
+        <label>Cheque Prod IQ</label>
+    </customValue>
+    <customValue>
+        <fullName>H</fullName>
+        <default>false</default>
+        <label>Tarjeta de Débito</label>
+    </customValue>
+    <customValue>
+        <fullName>I</fullName>
+        <default>false</default>
+        <label>Nota de Credito</label>
+    </customValue>
+    <customValue>
+        <fullName>N</fullName>
+        <default>false</default>
+        <label>Por Definir</label>
+    </customValue>
+    <customValue>
+        <fullName>T</fullName>
+        <default>false</default>
+        <label>Transferencia Bancaria</label>
+    </customValue>
+    <masterLabel>Via de pago</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

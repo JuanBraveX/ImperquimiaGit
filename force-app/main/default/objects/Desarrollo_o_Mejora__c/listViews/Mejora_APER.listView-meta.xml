@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mejora_APER</fullName>
+    <columns>Identificacion_Solicitud__c</columns>
+    <columns>NAME</columns>
+    <columns>Estatus_de_la_solicitud__c</columns>
+    <columns>Fecha_estimada_de_entrega__c</columns>
+    <columns>Ejecutor__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Tipo_de_Solicitud__c</field>
+        <operation>equals</operation>
+        <value>Mejora</value>
+    </filters>
+    <filters>
+        <field>Area_ID__c</field>
+        <operation>equals</operation>
+        <value>APER</value>
+    </filters>
+    <label>Mejora APER</label>
+</ListView>

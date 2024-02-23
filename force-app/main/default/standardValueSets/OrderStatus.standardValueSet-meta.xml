@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <groupingStringEnum>OrderStatusCode</groupingStringEnum>
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Draft</fullName>
+        <default>false</default>
+        <label>Draft</label>
+        <groupingString>Draft</groupingString>
+    </standardValue>
+    <standardValue>
+        <fullName>Activated</fullName>
+        <default>false</default>
+        <label>Activated</label>
+        <groupingString>Activated</groupingString>
+    </standardValue>
+    <standardValue>
+        <fullName>No relevante</fullName>
+        <default>false</default>
+        <label>No relevante</label>
+        <groupingString>Draft</groupingString>
+    </standardValue>
+    <standardValue>
+        <fullName>A</fullName>
+        <default>false</default>
+        <label>A - No tratado</label>
+        <groupingString>Draft</groupingString>
+    </standardValue>
+    <standardValue>
+        <fullName>B</fullName>
+        <default>false</default>
+        <label>B - Tratado parcialmente</label>
+        <groupingString>Draft</groupingString>
+    </standardValue>
+    <standardValue>
+        <fullName>C</fullName>
+        <default>false</default>
+        <label>C - Tratado completamente</label>
+        <groupingString>Draft</groupingString>
+    </standardValue>
+</StandardValueSet>

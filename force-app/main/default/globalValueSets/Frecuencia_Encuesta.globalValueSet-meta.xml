@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>SIEMPRE</fullName>
+        <default>false</default>
+        <label>SIEMPRE</label>
+    </customValue>
+    <customValue>
+        <fullName>CASI SIEMPRE</fullName>
+        <default>false</default>
+        <label>CASI SIEMPRE</label>
+    </customValue>
+    <customValue>
+        <fullName>CASI NUNCA</fullName>
+        <default>false</default>
+        <label>CASI NUNCA</label>
+    </customValue>
+    <customValue>
+        <fullName>NUNCA</fullName>
+        <default>false</default>
+        <label>NUNCA</label>
+    </customValue>
+    <masterLabel>Frecuencia Encuesta</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

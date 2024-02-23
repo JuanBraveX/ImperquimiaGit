@@ -1,0 +1,64 @@
+<aura:component controller="IMP_SyncingMobile_cc" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickActionWithoutHeader" access="global" >
+    <aura:html tag="style">
+        .cuf-content {
+            padding: 0 0rem !important;
+        }
+        .slds-p-around--medium {
+            padding: 0rem !important;
+        }       
+        .slds-modal__content{
+            overflow-y:hidden !important;
+            height:unset !important;
+            max-height:unset !important;
+        }
+    </aura:html>
+    <aura:attribute name="recordId" type="String"/>
+    <aura:attribute name="modalHeader" type="String"/>
+    <aura:attribute name="isSyncing" type="Boolean" default='false'/>
+    <aura:attribute name="isUnSyncing" type="Boolean" default='false'/>
+    <aura:attribute name="spinner" type="Boolean" default='false'/>
+
+    <aura:attribute name="isRemSyncing" type="Boolean" default='false'/>
+    <aura:attribute name="cotizacion" type="Quote" />
+
+    <aura:handler name="init" value="{!this }" action="{!c.doInit }"/>
+    
+    <aura:if isTrue='{!v.spinner}'>
+        <div class="{! $Browser.isPhone ? '' : 'spinnerCss'}">
+            <lightning:spinner alternativeText="Loading" variant="brand" size="medium" />
+        </div>
+    </aura:if>
+
+    <div class="slds-col modal-header slds-modal__header">
+        <h2 class="title slds-text-heading--medium">{!v.modalHeader}</h2>
+    </div>
+    <div class="slds-col modal-body ">
+        
+        <aura:if isTrue='{!v.isSyncing}'>
+            <div class="slds-p-around_small">
+                <p>Si continúa, sustituirá todos los productos de oportunidad por las partidas de cotizaciones.</p>
+                <br />
+                <p>Una vez sincronizado un cotización, se actualizan automáticamente productos de oportunidad y partidas de cotizaciones.</p>
+            </div>
+        </aura:if>
+        <aura:if isTrue='{!v.isUnSyncing}'>
+            <div class="slds-p-around_small">
+                <p>Si detiene la sincronización ahora, las futuras actualizaciones a partidas de cotizaciones no se sincronizarán con los productos de la oportunidad.</p>
+            </div>
+        </aura:if>
+        <aura:if isTrue='{!v.isRemSyncing}'>
+            <div class="slds-p-around_small">
+                <p>El cotización {!v.cotizacion.Opportunity.SyncedQuote.Name} ya está sincronizado con esta oportunidad. Una oportunidad se puede sincronizar con un único cotización. Si continúa, {!v.cotizacion.Opportunity.SyncedQuote.Name} no se sincronizará.</p>
+                <br />
+                <p>Si continúa, sustituirá todos los productos de oportunidad por las partidas de cotizaciones.</p>
+                <br />
+                <p>Una vez sincronizado un cotización, se actualizan automáticamente productos de oportunidad y partidas de cotizaciones.</p>
+                
+            </div>
+        </aura:if>
+    </div>
+    <div class="slds-col modal-footer slds-modal__footer">        
+        <lightning:button variant="neutral" label="Cancelar" onclick="{!c.cancelClick }" />      
+        <lightning:button variant="brand" label="¿Desea continuar?" onclick="{!c.saveClick }" />
+    </div>
+</aura:component>

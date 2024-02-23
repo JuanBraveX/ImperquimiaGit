@@ -1,0 +1,452 @@
+<apex:page controller="IMP_CotizacionPDF_CC" renderAs="pdf" docType="html-5.0" applyHtmlTag="false" applyBodyTag="false" showHeader="false" sidebar="false" standardStylesheets="false" title="PDF Cotización">
+    <html>
+        <head>
+            <style>
+                @page {
+                    margin-top:2.8cm;
+                    margin-bottom:1.5cm;
+                    margin-left:2cm;
+                    margin-right:1cm;
+                    background:url("{!$Resource.IMP_MarcaAgua}");
+                    background-repeat: repeat; 
+                    background-size: 40px 40px;        
+                    
+                    background-position: center center;
+                    @top-center {
+                        content:element(header); 
+                    }
+                    @bottom-center {
+                        content:element(footerPDF);
+                    }
+                }
+                .pageNumber:before {
+                    content:counter(page);
+                }
+                .pageCount:before {
+                    content:counter(pages);
+                }
+                div.header {
+                    position: running(header);
+                }
+                div.footerPDF {
+                    display: inline-block;
+                    padding: 5px;
+                    position: running(footerPDF);
+                }
+                .displayBlock {
+                    display: inline-block;
+                }
+                .box1 {
+                    width:50%
+                    margin: 3px;
+                    border: 1px solid #000000;
+                    padding: 0px 3px 2px 3px;
+                    
+                }
+                .box2 {
+                    width:50%
+                    margin: 3px;
+                    margin-top: 10px;
+                    border: 1px solid #000000;
+                    padding: 0px 3px 2px 3px;
+                    
+                }
+                .box3 {
+                    width:50%
+                    margin: 3px;
+                    border: 1px solid #000000;
+                    padding: 0px 3px 2px 3px;
+                    margin-left: 10px;
+                }
+                .styleHeaderT {
+                    width:50%
+                    font-weight:bold;
+                    font-size:16px;
+                    background:#E5E3E3;
+                }
+                .styleFontTC {
+                    width:50%
+                    font-weight:normal;
+                    font-size:14px;
+                    color:#0c0cff;
+                    height: 100px;
+                }
+                .content {
+                    background:#EFEFEF;
+                    height:30px;
+                    font-size: 15px;
+                    width:800px;
+                    color:#000000;
+                    font-weight:bold;
+                }
+                .styleColumn {
+                    text-align: center;
+                    font-size: 15px;
+                    line-height: 100%;
+                    margin:6px;
+                    color:#000000;
+                    border-top: 1px solid #000000;
+                    border-bottom: 1px solid #000000;
+                }
+                .styleColumnProdDesc {
+                    text-align: center;
+                    font-size: 15px;
+                    line-height: 100%;
+                    width: 5% !Important;
+                    margin:6px;
+                    color:#000000;
+                    border-top: 1px solid #000000;
+                    border-bottom: 1px solid #000000;
+                }
+                .styleColumnPos {
+                    border-top: 1px solid #000000;
+                    border-left: 1px solid #000000;
+                    border-bottom: 1px solid #000000;
+                    text-align: center;
+                    font-size: 15px;
+                    line-height: 100%;
+                    margin:6px;
+                    color:#000000;
+                }
+                .styleColumnTotal {
+                    border-top: 1px solid #000000;
+                    border-bottom: 1px solid #000000;
+                    border-right: 1px solid #000000;
+                    text-align: center;
+                    font-size: 15px;
+                    line-height: 100%;
+                    margin:6px;
+                    color:#000000;
+                }
+                .styleLines {
+                    font-size: 15px;
+                    font-weight:bold;
+                    width:500px;
+                }
+                .styleLines2 {
+                    font-size: 15px;
+                    font-weight:normal;
+                    width:500px;
+                    border-top: 1px solid #000000;
+                    text-align:right;
+                }
+                .styleBody {
+                    text-align: center;
+                    font-size: 14px;
+                    line-height: 100%;
+                    border-collapse:collapse;
+                    border: 0px solid #9E9C9C;
+                    color:#000000;
+                    border-bottom: 1px solid #000000;
+                }
+             
+
+
+
+                .styleBodyPos {
+                    text-align: center;
+                    font-size: 14px;
+                    line-height: 100%;
+                    border-collapse:collapse;
+                    border: 0px solid #9E9C9C;
+                    color:#000000;
+                    border-left: 1px solid #000000;
+                    border-bottom: 1px solid #000000;
+
+                }
+                .styleBodyTotal {
+                    text-align: center;
+                    font-size: 14px;
+                    line-height: 100%;
+                    border-collapse:collapse;
+                    border: 0px solid #9E9C9C;
+                    color:#000000;
+                    border-right: 1px solid #000000;
+                    border-bottom: 1px solid #000000;
+                }
+                
+
+                .styleRowProductCode {
+                    text-align: center;
+                    font-size: 14px;
+                    line-height: 100%;
+                    border-top: 1px solid #000000;
+                    color:#000000;
+                    border-left: 1px solid #000000;
+                    width: 20% !important;
+                }
+
+                .styleRowProdDesc  {
+                    text-align: left;
+                    font-size: 14px;
+                    line-height: 100%;
+                    border-top: 1px solid #000000;
+                    color:#000000;
+                    width: 30% !important;
+                }
+
+                .styleRowCantidad {
+                    text-align: center;
+                    font-size: 14px;
+                    line-height: 100%;
+                    border-top: 1px solid #000000;
+                    color:#000000;
+                    width: 25% !important;
+                }
+
+                .styleRowTotal {
+                    text-align: center;
+                    font-size: 14px;
+                    line-height: 100%;
+                    border-top: 1px solid #000000;
+                    color:#000000;
+                    border-right: 1px solid #000000;
+                    width: 25% !important;
+                }
+
+                .styleRowLeftMiddle {
+                    text-align: center;
+                    font-size: 14px;
+                    line-height: 100%;
+                    border-collapse:collapse;
+                    border: 0px solid #9E9C9C;
+                    color:#000000;
+                    border-left: 1px solid #000000;
+                }
+
+                .styleRowLeftBottom {
+                    text-align: center;
+                    font-size: 14px;
+                    line-height: 100%;
+                    border-collapse:collapse;
+                    border: 0px solid #9E9C9C;
+                    color:#000000;
+                    border-left: 1px solid #000000;
+                    border-bottom: 1px solid #000000;
+                }
+
+                .styleMiddle {
+                    text-align: right;
+                    font-size: 14px;
+                    line-height: 100%;
+                    border-collapse:collapse;
+                    border: 0px solid #9E9C9C;
+                    color:#000000;
+                }
+
+                .styleRowRightMiddle {
+                    text-align: center;
+                    font-size: 14px;
+                    line-height: 100%;
+                    border-collapse:collapse;
+                    border: 0px solid #9E9C9C;
+                    color:#000000;
+                    border-right: 1px solid #000000;
+                }
+
+                .styleMiddleBottom{
+                    text-align: right;
+                    font-size: 14px;
+                    line-height: 100%;
+                    border-collapse:collapse;
+                    border: 0px solid #9E9C9C;
+                    color:#000000;
+                    border-bottom: 1px solid #000000;
+                }
+
+                .styleRowRightBottom{
+                    text-align: center;
+                    font-size: 14px;
+                    line-height: 100%;
+                    border-collapse:collapse;
+                    border: 0px solid #9E9C9C;
+                    color:#000000;
+                    border-right: 1px solid #000000;
+                    border-bottom: 1px solid #000000;
+                }
+               
+            </style>
+        </head>
+        <body>
+            <div class="header">
+                <table>
+                    <tbody>
+                        <th>
+                            <apex:image id="headerComer" url="{!$Resource.IMP_HeaderImperquimiaPDF}" width="150px"/>
+                        </th>
+                        <th style="width:20px"/>
+                        <th>
+                            <apex:image id="headerC" url="{!$Resource.IMP_HeaderImperquimiaSADeCVPDF}" width="375px"/>
+                        </th>
+                        <th style="width:40px"/>
+                        <th>
+                            <p style="float:right;font-weight:normal;font-size:12px">
+                                página <span class="pageNumber"/> de <span class="pageCount"/>
+                            </p>
+                        </th>
+                    </tbody>
+                </table>
+            </div>
+            <table style="width:100%;border-spacing: 10px;">
+                <tr>
+                    <td style="border: 1px solid black;width:50%;height:145px" valign="top" >
+                        <table style="width:100%;outline:none">
+                            <tr>
+                                <td class="styleHeaderT">Empresa</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                <p style="font-weight:blue; color:#0c0cff;font-size:14px">{!cuenta.Name}</p>
+                                <p style="font-weight:blue; color:#0c0cff;font-size:14px">{!direccionCompleta}</p>
+                                </td>
+
+                            </tr>
+                        </table>
+                    </td>
+                    <td style="border: 1px solid black;width:50%" rowspan="2" valign="top">
+                        <table style="width:100%;">
+                            <tr>
+                                <td class="styleHeaderT">Información</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p style="font-weight:bold; color:#000000;font-size:14px"> Número de Documento: <span style="font-weight:normal;">{!datosCotizacion.QuoteNumber}</span> </p>
+                                    <p style="font-weight:bold; color:#000000;font-size:14px"> Fecha Documento: <span style="font-weight:normal;"><apex:outputText value="{0,date,dd'.'MM'.'yyyy}"><apex:param value="{!datosCotizacion.createdDate}" /></apex:outputText></span> </p>
+                                    <p style="font-weight:bold; color:#000000;font-size:14px"> No. Cliente: <span style="font-weight:normal;">{!cuenta.id_de_sap__c}</span> </p>
+                                    <p style="font-weight:bold; color:#000000;font-size:14px"> Fecha Inicio Validez: <span style="font-weight:normal;"><apex:outputText value="{0,date,dd'.'MM'.'yyyy}"><apex:param value="{!datosCotizacion.createdDate}" /></apex:outputText></span> </p>
+                                    <p style="font-weight:bold; color:#000000;font-size:14px"> Fecha fin Validez: <span style="font-weight:normal;"><apex:outputText value="{0,date,dd'.'MM'.'yyyy}"><apex:param value="{!datosCotizacion.ExpirationDate}" /></apex:outputText></span> </p>
+                                    <p style="font-weight:bold; color:#000000;font-size:14px"> Teléfono: <span style="font-weight:normal;">{!cuenta.Phone}</span> </p>
+                                    <!--p style="font-weight:bold; color:#000000;font-size:14px"> Fax: <span style="font-weight:normal;">{!cuenta.Fax}</span> </p-->
+                                    <p style="font-weight:bold; color:#000000;font-size:14px"> Correo: <span style="font-weight:normal;">{!cuenta.CorreoElectronico__c}</span> </p>
+                                    <p style="font-weight:bold; color:#000000;font-size:14px"> Cotización confidencial protegida por la ley </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top" style="border: 1px solid black;">
+                        <table style="width:100%;">
+                            <tr>
+                                <td class="styleHeaderT"> Destinatario de Mercancia</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                <p style="color:#0c0cff;font-size:14px">{!cuenta.Name}</p>
+                                <p style="color:#0c0cff;font-size:14px">{!direccionCompleta}</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <div style="padding-left:9px;padding-right:6px;">
+                <table style="background:#E5E3E3;margin-top:4px;border-left: 1px solid #000000;border-right: 1px solid #000000;border-top: 1px solid #000000;width:100%;">
+                    <tr>
+                        <td class="content">Info. Cabecera</td>
+                    </tr>
+                </table>
+                <table style="border: 1px solid #000000;width:100%;">
+                    <tr>
+                        <td style="font-weight:bold; color:#000000;font-size:14px;">No orden compra.</td>
+                        <td style="font-weight:normal; color:#000000;font-size:14px;">{!datosCotizacion.QuoteNumber}</td>
+                        <td style="font-weight:bold; color:#000000;font-size:14px;">Fecha orden comp.</td>
+                        <td style="font-weight:normal; color:#000000;font-size:14px;"><apex:outputText value="{0,date,dd'.'MM'.'yyyy}"><apex:param value="{!datosCotizacion.createdDate}"/></apex:outputText></td>
+                    </tr>                   
+                    <tr>
+                        <td style="font-weight:bold; color:#000000;font-size:14px;">Peso Bruto:</td>
+                        <td style="font-weight:normal; color:#000000;font-size:14px;">{!resultadoPesos} KG</td>
+                       
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold; color:#000000;font-size:14px;">Condición de pago:</td>
+                        <td style="font-weight:normal; color:#000000;font-size:14px;">{!datosCotizacion.condiciones_de_pago__c}</td>
+                        <td style="font-weight:bold; color:#000000;font-size:14px;">Fecha entrega.</td>
+                        <td style="font-weight:normal; color:#000000;font-size:14px;"><apex:outputText value="{0,date,dd'.'MM'.'yyyy}"><apex:param value="{!datosCotizacion.Fecha_de_entrega__c}"/></apex:outputText></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold; color:#000000;font-size:14px;">Condiciones de entrega:</td>
+                        <td style="font-weight:normal; color:#000000;font-size:14px;">{!cuenta.Intercoms_1__c}  {!cuenta.Intercoms_2__c}</td>
+                    </tr>
+                </table>
+            </div>
+            <div style="padding-left:9px;padding-right:6px;padding-top:8px;">
+                <table style="border-collapse: collapse;width:100%;" cellspacing="10" cellpadding="10">
+                    <tr>
+                        <th class="styleColumnPos">Material</th>
+                        <th class="styleColumnProdDesc">Descripción</th>
+                        <th class="styleColumn">Cantidad</th>
+                        <th class="styleColumnTotal">Precio Unitario</th>
+                    </tr>
+                </table>
+                    <apex:repeat value="{!productsQuote}" var="producto"  >
+                        <table style="page-break-inside: avoid; border-collapse: collapse;width:100%;" cellspacing="4" cellpadding="4">
+                            <tr>
+                                <td class="styleRowProductCode">{!producto.Product2.ProductCode}</td>
+                                <td class="styleRowProdDesc"><p>{!producto.Product2.Name}</p> <p>{!producto.Product2.Description}</p></td>
+                                <td class="styleRowCantidad">{!producto.Quantity} UN</td>
+                                <td class="styleRowTotal"><apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!producto.UnitPrice}"/></apex:outputText> UN</td>
+    
+                            </tr>
+                            
+                             <tr>
+                                <td class="styleRowLeftMiddle" colspan="2">&nbsp;</td>
+                                <td class="styleMiddle">Promoción de Ventas</td>
+                                <td class="styleRowRightMiddle">{! IF(producto.IMP_DescuentoPromo__c != NULL  , producto.IMP_DescuentoPromo__c  , 0.00) } %</td>
+                            </tr>
+                            
+                            <tr>
+                                <td class="styleRowLeftMiddle" colspan="2">&nbsp;</td>
+                                <td class="styleMiddle">Promoción de Ventas</td>
+                                <td class="styleRowRightMiddle">{! IF(producto.Descuento_adicional__c != NULL  , producto.Descuento_adicional__c  , 0.00) } %</td>
+                            </tr>
+    
+                          
+    
+                            <tr>
+                                <td class="styleRowLeftBottom" colspan="2">&nbsp;</td>
+                                <td class="styleMiddleBottom"><b>Total</b></td>
+                                <td class="styleRowRightBottom"><apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!producto.PrecioTotalConDescuentos__c}"/></apex:outputText> {!datosCotizacion.CurrencyIsoCode}</td>
+                            </tr>
+                        </table>
+                    </apex:repeat>
+              
+            </div>
+            <div class="row" style="page-break-inside: avoid;padding-top:4px;padding-left:9px;padding-right:6px;">
+                <div style="border-left: 1px solid #000000;border-right: 1px solid #000000;border-top: 1px solid #000000;">
+                    <table style="border-collapse: separate; padding: 20px 3px 3px 100px;">
+                        <tr>
+                            <td class="styleLines">Subtotal:</td>
+                            <td style="width:450px;"></td>
+                            <td class="styleLines2">{!subtotal} {!datosCotizacion.CurrencyIsoCode}</td>
+                        </tr>
+                        <tr>
+                            <td class="styleLines">IVA repercutido {!IVA} %</td>
+                            <td style="width:450px;"></td>
+                            <td class="styleLines2">{!impuestos} {!datosCotizacion.CurrencyIsoCode}</td>
+                        </tr>
+                    </table>
+                </div>
+                <div style="border: 1px solid #000000;">
+                    <table style="border-collapse: separate; padding: 20px 3px 3px 100px;">
+                        <tr>
+                            <td class="styleLines">Total Final:</td>
+                            <td style="width:450px;"></td>
+                            <td class="styleLines2">{!totalFinal} {!datosCotizacion.CurrencyIsoCode}</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="footerPDF">
+                    <table style="border-collapse: collapse; padding: 20px 3px 3px 100px;">
+                        <tr>
+                            <td>Firma</td>
+                            <td style="width:450px;border-bottom: 1px solid #000000;"></td>
+                            <td>Fecha</td>
+                            <td style="width:450px;border-bottom: 1px solid #000000;"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </body>
+    </html>
+</apex:page>

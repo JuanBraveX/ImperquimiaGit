@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Loss_Reason__c</fullName>
+    <externalId>false</externalId>
+    <label>Razón de perdida</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Calidad</fullName>
+                <default>false</default>
+                <label>Calidad</label>
+            </value>
+            <value>
+                <fullName>Cancelación del proyecto</fullName>
+                <default>false</default>
+                <label>Cancelación del proyecto</label>
+            </value>
+            <value>
+                <fullName>Competencia</fullName>
+                <default>false</default>
+                <label>Competencia</label>
+            </value>
+            <value>
+                <fullName>Datos de Contacto Incorrectos</fullName>
+                <default>false</default>
+                <label>Datos de contacto incorrectos</label>
+            </value>
+            <value>
+                <fullName>Disponibilidad de Material</fullName>
+                <default>false</default>
+                <label>Disponibilidad de Material</label>
+            </value>
+            <value>
+                <fullName>No responde</fullName>
+                <default>false</default>
+                <label>No responde</label>
+            </value>
+            <value>
+                <fullName>Precio</fullName>
+                <default>false</default>
+                <label>Precio</label>
+            </value>
+            <value>
+                <fullName>Servicio</fullName>
+                <default>false</default>
+                <label>Servicio</label>
+            </value>
+            <value>
+                <fullName>Sin presupuesto</fullName>
+                <default>false</default>
+                <label>Sin presupuesto</label>
+            </value>
+            <value>
+                <fullName>Sólo buscaba cotizar</fullName>
+                <default>false</default>
+                <label>Sólo buscaba cotizar</label>
+            </value>
+            <value>
+                <fullName>No esta interesado</fullName>
+                <default>false</default>
+                <label>No esta interesado</label>
+            </value>
+            <value>
+                <fullName>Duplicado</fullName>
+                <default>false</default>
+                <label>Duplicado</label>
+            </value>
+            <value>
+                <fullName>Facturado en otra sucursal.</fullName>
+                <default>false</default>
+                <label>Facturado en otra sucursal.</label>
+            </value>
+            <value>
+                <fullName>Error en la gestión</fullName>
+                <default>false</default>
+                <label>Error en la gestión</label>
+            </value>
+            <value>
+                <fullName>Especificación</fullName>
+                <default>false</default>
+                <label>Especificación</label>
+            </value>
+            <value>
+                <fullName>Política</fullName>
+                <default>false</default>
+                <label>Política</label>
+            </value>
+            <value>
+                <fullName>Desierta (Se convoca nuevamente)</fullName>
+                <default>false</default>
+                <label>Desierta (Se convoca nuevamente)</label>
+            </value>
+            <value>
+                <fullName>Falta de Documentación</fullName>
+                <default>false</default>
+                <label>Falta de Documentación</label>
+            </value>
+            <value>
+                <fullName>Falta de Información</fullName>
+                <default>false</default>
+                <label>Falta de Información</label>
+            </value>
+            <value>
+                <fullName>Compro con Distribuidor</fullName>
+                <default>false</default>
+                <label>Compro con Distribuidor</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

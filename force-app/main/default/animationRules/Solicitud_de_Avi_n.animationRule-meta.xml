@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AnimationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <animationFrequency>always</animationFrequency>
+    <developerName>Solicitud_de_Avi_n</developerName>
+    <isActive>true</isActive>
+    <masterLabel>Solicitud de Avión</masterLabel>
+    <recordTypeContext>Master</recordTypeContext>
+    <recordTypeName>__MASTER__</recordTypeName>
+    <sobjectType>Solicitud_de_Avi_n__c</sobjectType>
+    <targetField>Estatus__c</targetField>
+    <targetFieldChangeToValues>Boletos Programados</targetFieldChangeToValues>
+</AnimationRule>

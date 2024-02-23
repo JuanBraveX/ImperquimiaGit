@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pregunta8__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Le han ofrecido el acompañamiento de nuestro equipo de especificación</inlineHelpText>
+    <label>Acompañamiento de Especificadores</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Frecuencia_Encuesta</valueSetName>
+    </valueSet>
+</CustomField>

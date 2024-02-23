@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Solicitud_de_Avi_n__c</entityName>
+    <fieldName>Estatus__c</fieldName>
+    <masterLabel>Solicitud de Avión</masterLabel>
+    <recordTypeName>__MASTER__</recordTypeName>
+</PathAssistant>

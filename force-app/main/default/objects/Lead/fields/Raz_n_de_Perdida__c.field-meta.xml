@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Raz_n_de_Perdida__c</fullName>
+    <externalId>false</externalId>
+    <label>Razón de Perdida</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>No contesto</fullName>
+                <default>false</default>
+                <label>No contesto</label>
+            </value>
+            <value>
+                <fullName>No esta interesado</fullName>
+                <default>false</default>
+                <label>No esta interesado</label>
+            </value>
+            <value>
+                <fullName>Precio</fullName>
+                <default>false</default>
+                <label>Precio</label>
+            </value>
+            <value>
+                <fullName>Compro el material en otro lado</fullName>
+                <default>false</default>
+                <label>Compro el material en otro lado</label>
+            </value>
+            <value>
+                <fullName>Sólo quería saber precios</fullName>
+                <default>false</default>
+                <label>Sólo quería saber precios</label>
+            </value>
+            <value>
+                <fullName>Calidad del servicio</fullName>
+                <default>false</default>
+                <label>Calidad del servicio</label>
+            </value>
+            <value>
+                <fullName>Duplicado</fullName>
+                <default>false</default>
+                <label>Duplicado</label>
+            </value>
+            <value>
+                <fullName>Compro con Distribuidor</fullName>
+                <default>false</default>
+                <label>Compro con Distribuidor</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

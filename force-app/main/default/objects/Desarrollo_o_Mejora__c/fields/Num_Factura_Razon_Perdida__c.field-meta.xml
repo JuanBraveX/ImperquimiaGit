@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Num_Factura_Razon_Perdida__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(TEXT( Oportunidad__r.StageName )=&quot;Ganada&quot;, Oportunidad__r.facturacion__c ,IF(TEXT( Oportunidad__r.StageName )=&quot;Perdida&quot;,TEXT( Oportunidad__r.Loss_Reason__c ),&quot;&quot;))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Núm. Factura/ Razón de Pérdida</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

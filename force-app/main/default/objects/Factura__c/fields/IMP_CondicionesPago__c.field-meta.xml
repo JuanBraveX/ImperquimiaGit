@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IMP_CondicionesPago__c</fullName>
+    <description>Clave a través de la cual se definen las condiciones de pago en forma de tipos de descuento y plazos de pago.</description>
+    <externalId>false</externalId>
+    <label>Condiciones de pago</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>NT00</fullName>
+                <default>false</default>
+                <label>Pagado a la recepción</label>
+            </value>
+            <value>
+                <fullName>NT08</fullName>
+                <default>false</default>
+                <label>Vencimiento 08 días</label>
+            </value>
+            <value>
+                <fullName>NT15</fullName>
+                <default>false</default>
+                <label>Vencimiento 15 días</label>
+            </value>
+            <value>
+                <fullName>NT20</fullName>
+                <default>false</default>
+                <label>Vencimiento 20 días</label>
+            </value>
+            <value>
+                <fullName>NT30</fullName>
+                <default>false</default>
+                <label>Vencimiento 30 días</label>
+            </value>
+            <value>
+                <fullName>NT45</fullName>
+                <default>false</default>
+                <label>Vencimiento 45 días</label>
+            </value>
+            <value>
+                <fullName>NT60</fullName>
+                <default>false</default>
+                <label>Vencimiento 60 díías</label>
+            </value>
+            <value>
+                <fullName>NT90</fullName>
+                <default>false</default>
+                <label>Vencimiento 90 días</label>
+            </value>
+            <value>
+                <fullName>NT120</fullName>
+                <default>false</default>
+                <label>Vencimiento 120 días</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

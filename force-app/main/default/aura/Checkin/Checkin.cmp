@@ -1,0 +1,260 @@
+<aura:component controller="CheckinController" implements="flexipage:availableForAllPageTypes,force:appHostable,force:hasRecordId,force:lightningQuickAction">
+    
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="recordType" type="String" />
+    <aura:attribute name="type" type="String" />
+    <aura:attribute name="distancia" type="String" />
+    <aura:attribute name="distanciaMinima" type="Integer" />
+    <aura:attribute name="description" type="String" />
+    <aura:attribute name="currentDate" type="Date"/>
+    <aura:attribute name="lat" type="Decimal" />
+    <aura:attribute name="long" type="Decimal" />
+    <aura:attribute name="lstRecord" type="List" />
+    <aura:attribute name="latRecord" type="Decimal" />
+    <aura:attribute name="longRecord" type="Decimal" />
+    <aura:attribute name="showSpinner" type="boolean" default="false" />
+    <aura:attribute name="isModalOpen" type="boolean" default="false"/>
+    <aura:attribute name="disableBtn" type="boolean" default="true"/>
+    <aura:attribute name="disableCheckIn" type="boolean" default="false"/>
+    <aura:attribute name="dataCountryAndState" type="CheckinController" />
+    <aura:attribute name="EventCheckIn" type="Event" default="{'sobjectType': 'Event', Tipo__c: '', IMP_Pais__c: '', IMP_Estado__c: '', IMP_Ciudad__c : '', IMP_Calle__c:'', IMP_CodigoPostal__c: '', Geolocation__latitude__s: null, Geolocation__longitude__s: null  }" ></aura:attribute>
+    <aura:attribute name="CheckInPending" type="boolean" default="false"/>
+    <aura:attribute name="IdCheckInPending" type="String" default="false"/>
+    <aura:attribute name="IsEventAnotherUser" type="boolean" default="false" />
+
+    <aura:attribute name="nameAnotherUser" type="String"></aura:attribute>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+   
+    
+    <aura:if isTrue="{!v.CheckInPending}">
+        
+        
+
+            <lightning:button aura:id = "idBtnCheckPending"
+                label = "Check pendiente - Ir al registro"
+                iconName = "utility:change_record_type"
+                iconPosition = "left"
+                variant = "neutral"
+                title = "Realizar Check In"
+                onclick = "{!c.geolocalization}"
+                class = "changeMe" />
+
+        <aura:set attribute="else">
+
+            <aura:if isTrue="{! equals(v.type, 'Check completado')}">
+
+                <lightning:button aura:id = "idBtnCheckCompleted"
+                    label = "Check completado"
+                    iconName = "utility:change_record_type"
+                    iconPosition = "left"
+                    variant = "neutral"
+                    title = "Realizar Check In"
+                    onclick = "{!c.geolocalization}"
+                    class = "changeMe" />
+
+                <aura:set attribute="else">
+          
+                    <lightning:button aura:id = "idBtn"
+                        label = "{! 'Realizar ' + v.type }"
+                        iconName = "utility:change_record_type"
+                        iconPosition = "left"
+                        variant = "neutral"
+                        title = "Realizar Check In"
+                        onclick = "{!c.geolocalization}"
+                        class = "changeMe" />
+                </aura:set>
+
+            </aura:if>
+        </aura:set>
+    </aura:if>
+    
+   
+    
+    
+    	<aura:if isTrue="{!v.isModalOpen}">
+             
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <!-- Modal/Popup Box Header Starts here-->
+                    <header class="slds-modal__header">
+                        <lightning:buttonIcon iconName="utility:close"
+                                              onclick="{! c.closeModel }"
+                                              alternativeText="close"
+                                              variant="bare-inverse"
+                                              class="slds-modal__close"/>
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Geolocalización</h2>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_large" id="modal-content-id-1">
+                        <p>Para realizar el check-in deberá indicar la dirección y una vez completado dar click en el botón "Obtener ubicación", se deberá iluminar
+                           el botón "Registrar Ubicación" de color azul, de lo contrario verifique que <b>Mi Dirección Actual</b> sea igual o aproximada con la <b>Dirección del cliente</b>.<br /><br />
+                           
+                            <div class="slds-align_absolute-center">
+                                <b><span class="TitleCheck">{!v.type}</span></b>
+                            </div><br /><br />
+
+                            <aura:if isTrue="{!v.IsEventAnotherUser }">
+                                <ui:message title="" severity="warning" closable="false">
+                                   <b><ui:outputText value="{!'No puede realizar check-In, check-Out, por que pertenece al usuario: ' + v.nameAnotherUser}" /></b>
+                                </ui:message>
+                            </aura:if>
+                            
+                            <article class="slds-card">
+                                <div class="slds-card__header slds-grid">
+                                    <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                                        <div class="slds-media__figure">
+                                            <span class="slds-icon_container slds-icon-standard-account" title="account">
+                                              
+                                               
+                                                <span class="slds-assistive-text">account</span>
+                                            </span>
+                                            <lightning:icon iconName="standard:tour_check" size="small" />
+                                        </div>
+                                        <div class="slds-media__body">
+                                            <h2 class="slds-card__header-title">
+                                                <span>Dirección cliente</span>
+                                            </h2>
+                                        </div>
+                                        <div class="slds-no-flex"></div>
+                                    </header>
+                                </div>
+                                <div class="slds-card__body slds-card__body_inner">
+                                    <div class="slds-grid slds-wrap slds-gutters">
+                                        <div class="slds-col  slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-1">
+                                            &nbsp;
+                                        </div>
+
+                                        <div class="slds-col  slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-1">
+                                            <lightning:button label="Obtener ubicación" 
+                                                name="getLocation" 
+                                                variant="brand" 
+                                                onclick="{!c.getLocationOfAddres}" 
+                                                disabled="{!v.disableCheckIn}"
+                                                class ="slds-hint-parent AlinearDer" />
+                                        </div>
+                                        <div class="slds-col  slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-1">
+                                          
+                                            <lightning:select name="picklistPais" aura:id="picklistPais" label="País:"  
+                                                    value="{!v.dataCountryAndState.CheckInEvent.IMP_Pais__c}" required="true" tabindex="1"
+                                                    disabled="{!v.disableCheckIn}"
+                                                    messageWhenValueMissing="Debe seleccionar el país">
+                                                    <option value="">[Seleccione]</option>
+                                                    <aura:iteration items="{!v.dataCountryAndState.ListCountry}" var="item">
+                                                        <option text="{!item}" value="{!item}"/>
+                                                    </aura:iteration>
+                                            </lightning:select>
+                                        </div>
+                                        <div class="slds-col  slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-1">
+                                            <lightning:select name="picklistEstado" aura:id="picklistEstado" label="Estado o provincia:"  
+                                                value="{!v.dataCountryAndState.CheckInEvent.IMP_Estado__c}" required="true" tabindex="1"
+                                                disabled="{!v.disableCheckIn}"
+                                                messageWhenValueMissing="Debe seleccionar el estado">
+                                                <option value="">[Seleccione]</option>
+                                                <aura:iteration items="{!v.dataCountryAndState.ListState}" var="item">
+                                                    <option text="{!item}" value="{!item}"/>
+                                                </aura:iteration>
+                                            </lightning:select>
+                                        </div>
+                                        <div class="slds-col  slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-1">
+                                            <lightning:input aura:id="Ciudad" label="Alcaldía o Municipio:"
+                                                        name="Ciudad"
+                                                        required="true"
+                                                        disabled="{!v.disableCheckIn}"
+                                                        value="{!v.dataCountryAndState.CheckInEvent.IMP_Ciudad__c}"
+                                                        placeholder=""/>
+                                        </div>
+        
+                                        <div class="slds-col  slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-1">
+                                            <lightning:input aura:id="Calle" label="Calle y Número:"
+                                                        name="Calle"
+                                                        required="true"
+                                                        disabled="{!v.disableCheckIn}"
+                                                        value="{!v.dataCountryAndState.CheckInEvent.IMP_Calle__c}"
+                                                        placeholder=""/>
+                                        </div>
+                                        <div class="slds-col  slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-1">
+                                            <lightning:input aura:id="CodigoPostal" label="Código postal:"
+                                                        name="CodigoPostal"
+                                                        required="true"
+                                                        disabled="{!v.disableCheckIn}"
+                                                        value="{!v.dataCountryAndState.CheckInEvent.IMP_CodigoPostal__c}"
+                                                        placeholder=""/>
+                                        </div>
+                                        <div class="slds-col  slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-1">
+                                            <aura:if isTrue="{! equals(v.type, 'Check In')}">
+                                                <lightning:input name="Description" label="Descripción" value="{!v.description}" />
+                                            </aura:if>
+                                        </div>
+                                        <div class="slds-col  slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-1">
+                                            <br/>
+                                            <ui:message title="Geolocalización" severity="info" closable="false">
+                                                <b>Latitud:   {!v.latRecord}</b><br />
+                                                <b>Longuitud: {!v.longRecord}</b>
+                                            </ui:message>
+                                            <br />
+                                        </div>
+                                        <div class="slds-col  slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-1">
+                                          
+                                        </div>
+                                    </div>
+                                </div>
+                                <footer class="slds-card__footer">
+                                   &nbsp;
+                                </footer>
+                            </article>
+                           
+                            <aura:if isTrue="{!v.showSpinner}">
+                                <lightning:spinner alternativeText="Loading" size="medium" variant="brand"/>
+                            </aura:if>
+                           
+                            <ui:message title="Geolocalización" severity="info" closable="false">
+                                <b>Mi Direccion Actual</b><br /><br />
+                                <b>Latitud:   {!v.lat}</b><br />
+                                <b>Longuitud: {!v.long}</b><br /><br /><br />
+                                <b>Distancia: <lightning:formattedNumber value="{!v.distancia}" style="decimal" minimumFractionDigits="2" maximumFractionDigits="2" /> Metros</b><br />
+                                <b>Distancia mínima: {!v.distanciaMinima } metros</b>
+                            </ui:message>
+
+                          
+                            <div>
+                                <div class="slds-align_absolute-center">
+                                	<lightning:formattedDateTime aura:id="dt"
+                                                             value="{!v.currentDate}"
+                                                             month="short"
+                                                             day="numeric"
+                                                             year="numeric"
+                                                             hour="2-digit"
+                                                             minute="2-digit"
+                                                             second="2-digit"
+                                                             hour12="true"
+                                                             timeZone="{!$Locale.timezone}"/>
+                                </div><br />
+                             
+                           </div><br /><br />
+                            Al realizar el check in, podra corroborar que se guardo de forma correcta en el panel de eventos con el estatus del check in.
+                        </p>
+                    </div>
+                    <footer class="slds-modal__footer">
+                        <lightning:button variant="neutral"
+                            label="Cancel"
+                            title="Cancel"
+                            onclick="{! c.closeModel }"/>
+
+                        <aura:if isTrue="{! and (not( equals(v.type, 'Check completado')), not(v.IsEventAnotherUser))  }">
+                            <lightning:button variant="brand"
+                                label="Registrar Ubicación"
+                                title="Registrar Ubicación"
+                                onclick="{!c.submitDetails}"
+                                disabled="{!v.disableBtn}" />
+                        </aura:if>
+
+                       
+                      
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </aura:if>
+    
+</aura:component>

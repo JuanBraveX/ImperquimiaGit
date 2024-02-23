@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Encuesta_realizada_por__c</fullName>
+    <externalId>false</externalId>
+    <label>Encuesta realizada por</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Ángel Martínez Chapital</fullName>
+                <default>false</default>
+                <label>Ángel Martínez Chapital</label>
+            </value>
+            <value>
+                <fullName>Arturo Magaña</fullName>
+                <default>false</default>
+                <label>Arturo Magaña</label>
+            </value>
+            <value>
+                <fullName>Claudia Martínez Olivares</fullName>
+                <default>false</default>
+                <label>Claudia Martínez Olivares</label>
+            </value>
+            <value>
+                <fullName>Diego Villalta</fullName>
+                <default>false</default>
+                <label>Diego Villalta</label>
+            </value>
+            <value>
+                <fullName>Laura Perea</fullName>
+                <default>false</default>
+                <label>Laura Perea</label>
+            </value>
+            <value>
+                <fullName>Luz María Alvarado</fullName>
+                <default>false</default>
+                <label>Luz María Alvarado</label>
+            </value>
+            <value>
+                <fullName>Miguel Medina</fullName>
+                <default>false</default>
+                <label>Miguel Medina</label>
+            </value>
+            <value>
+                <fullName>Omar García</fullName>
+                <default>false</default>
+                <label>Omar García</label>
+            </value>
+            <value>
+                <fullName>Santiago Miranda</fullName>
+                <default>false</default>
+                <label>Santiago Miranda</label>
+            </value>
+            <value>
+                <fullName>Christian Méndez Lemus</fullName>
+                <default>false</default>
+                <label>Christian Méndez Lemus</label>
+            </value>
+            <value>
+                <fullName>Luis Nava Granados</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Luis Nava Granados</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

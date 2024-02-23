@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Nombre_del_Ejecutivo__c</fullName>
+    <externalId>false</externalId>
+    <label>Nombre del Ejecutivo</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>No conoce el nombre del ejecutivo</fullName>
+                <default>false</default>
+                <label>No conoce el nombre del ejecutivo</label>
+            </value>
+            <value>
+                <fullName>Alexis Montes de Oca</fullName>
+                <default>false</default>
+                <label>Alexis Montes de Oca</label>
+            </value>
+            <value>
+                <fullName>Alexis Salinas</fullName>
+                <default>false</default>
+                <label>Alexis Salinas</label>
+            </value>
+            <value>
+                <fullName>Carla Romero</fullName>
+                <default>false</default>
+                <label>Carla Romero</label>
+            </value>
+            <value>
+                <fullName>Cesar Rosas</fullName>
+                <default>false</default>
+                <label>Cesar Rosas</label>
+            </value>
+            <value>
+                <fullName>Daniel Martínez Vázquez</fullName>
+                <default>false</default>
+                <label>Daniel Martínez Vázquez</label>
+            </value>
+            <value>
+                <fullName>Edgar Bringas</fullName>
+                <default>false</default>
+                <label>Edgar Bringas</label>
+            </value>
+            <value>
+                <fullName>Edgar López</fullName>
+                <default>false</default>
+                <label>Edgar López</label>
+            </value>
+            <value>
+                <fullName>Erika Pamela Alva</fullName>
+                <default>false</default>
+                <label>Erika Pamela Alva</label>
+            </value>
+            <value>
+                <fullName>Esmeralda Zarate</fullName>
+                <default>false</default>
+                <label>Esmeralda Zarate</label>
+            </value>
+            <value>
+                <fullName>Iván González</fullName>
+                <default>false</default>
+                <label>Iván González</label>
+            </value>
+            <value>
+                <fullName>Jorge Luis Muñoz</fullName>
+                <default>false</default>
+                <label>Jorge Luis Muñoz</label>
+            </value>
+            <value>
+                <fullName>Jorge Román</fullName>
+                <default>false</default>
+                <label>Jorge Román</label>
+            </value>
+            <value>
+                <fullName>José Granados Muñoz</fullName>
+                <default>false</default>
+                <label>José Granados Muñoz</label>
+            </value>
+            <value>
+                <fullName>José Ortega</fullName>
+                <default>false</default>
+                <label>José Ortega</label>
+            </value>
+            <value>
+                <fullName>José Rodríguez</fullName>
+                <default>false</default>
+                <label>José Rodríguez</label>
+            </value>
+            <value>
+                <fullName>León Arriaga</fullName>
+                <default>false</default>
+                <label>León Arriaga</label>
+            </value>
+            <value>
+                <fullName>Luis Enrique Orta</fullName>
+                <default>false</default>
+                <label>Luis Enrique Orta</label>
+            </value>
+            <value>
+                <fullName>Manuel Careaga</fullName>
+                <default>false</default>
+                <label>Manuel Careaga</label>
+            </value>
+            <value>
+                <fullName>María Gutiérrez</fullName>
+                <default>false</default>
+                <label>María Gutiérrez</label>
+            </value>
+            <value>
+                <fullName>Mario Cuevas Hernández</fullName>
+                <default>false</default>
+                <label>Mario Cuevas Hernández</label>
+            </value>
+            <value>
+                <fullName>Matías Pech</fullName>
+                <default>false</default>
+                <label>Matías Pech</label>
+            </value>
+            <value>
+                <fullName>Melissa Corona</fullName>
+                <default>false</default>
+                <label>Melissa Corona</label>
+            </value>
+            <value>
+                <fullName>Miguel Ángel Molina</fullName>
+                <default>false</default>
+                <label>Miguel Ángel Molina</label>
+            </value>
+            <value>
+                <fullName>Norma Alarcón</fullName>
+                <default>false</default>
+                <label>Norma Alarcón</label>
+            </value>
+            <value>
+                <fullName>Olga María Vargas</fullName>
+                <default>false</default>
+                <label>Olga María Vargas</label>
+            </value>
+            <value>
+                <fullName>Ricardo Gómez</fullName>
+                <default>false</default>
+                <label>Ricardo Gómez</label>
+            </value>
+            <value>
+                <fullName>Ricardo Lujan</fullName>
+                <default>false</default>
+                <label>Ricardo Lujan</label>
+            </value>
+            <value>
+                <fullName>Roberto Medina</fullName>
+                <default>false</default>
+                <label>Roberto Medina</label>
+            </value>
+            <value>
+                <fullName>Ricardo Rubio</fullName>
+                <default>false</default>
+                <label>Ricardo Rubio</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

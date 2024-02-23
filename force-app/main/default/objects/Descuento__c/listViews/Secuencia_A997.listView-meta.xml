@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Secuencia_A997</fullName>
+    <columns>NAME</columns>
+    <columns>IMP_ClaseCondicion__c</columns>
+    <columns>IMP_OrganizacionVentas__c</columns>
+    <columns>IMP_OficinaVentas__c</columns>
+    <columns>IMP_GrupoClientes__c</columns>
+    <columns>IMP_GrupoMateriales__c</columns>
+    <columns>IMP_FechaInicial__c</columns>
+    <columns>IMP_FechaFinal__c</columns>
+    <columns>IMP_ImportePorcentaje__c</columns>
+    <columns>IMP_UnidadCondicion__c</columns>
+    <columns>IMP_Valido__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>IMP_SecuenciaAcceso__c</field>
+        <operation>equals</operation>
+        <value>A997</value>
+    </filters>
+    <filters>
+        <field>IMP_ClaseCondicion__c</field>
+        <operation>equals</operation>
+        <value>KA00</value>
+    </filters>
+    <filters>
+        <field>IMP_OrganizacionVentas__c</field>
+        <operation>equals</operation>
+        <value>IMPQ</value>
+    </filters>
+    <filters>
+        <field>IMP_OficinaVentas__c</field>
+        <operation>equals</operation>
+        <value>IMPQ</value>
+    </filters>
+    <filters>
+        <field>IMP_GrupoClientes__c</field>
+        <operation>equals</operation>
+        <value>17</value>
+    </filters>
+    <label>Secuencia A997</label>
+</ListView>

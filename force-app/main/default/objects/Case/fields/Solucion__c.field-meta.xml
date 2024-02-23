@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Solucion__c</fullName>
+    <externalId>false</externalId>
+    <label>Solución</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Cambio físico</fullName>
+                <default>false</default>
+                <label>Cambio físico</label>
+            </value>
+            <value>
+                <fullName>Nota de Crédito</fullName>
+                <default>false</default>
+                <label>Nota de Crédito</label>
+            </value>
+            <value>
+                <fullName>Reposición de material</fullName>
+                <default>false</default>
+                <label>Reposición de material</label>
+            </value>
+            <value>
+                <fullName>Aclaración</fullName>
+                <default>false</default>
+                <label>Aclaración</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

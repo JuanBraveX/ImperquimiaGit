@@ -1,0 +1,672 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Confirmaci_n_de_Entrega</fullName>
+        <description>Confirmación de Entrega</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Confirmaci_n_Entrega_en_Almacen</template>
+    </alerts>
+    <alerts>
+        <fullName>Entregado_al_Ejecutivo</fullName>
+        <description>Entregado al Ejecutivo</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>fhernandez@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Entregado_al_Ejecutivo</template>
+    </alerts>
+    <alerts>
+        <fullName>Envio_Muestra_Acapulco</fullName>
+        <description>Envio Muestra Acapulco</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>acapulco@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Not_Envio_a_Tiendas</template>
+    </alerts>
+    <alerts>
+        <fullName>Envio_Muestra_Cancun</fullName>
+        <description>Envio Muestra Cancun</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>cancun@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Not_Envio_a_Tiendas</template>
+    </alerts>
+    <alerts>
+        <fullName>Envio_Muestra_Chihuahua</fullName>
+        <description>Envio Muestra Chihuahua</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>chihuahua@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Not_Envio_a_Tiendas</template>
+    </alerts>
+    <alerts>
+        <fullName>Envio_Muestra_Cuernavaca</fullName>
+        <description>Envio Muestra Cuernavaca</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>cuernavaca@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Not_Envio_a_Tiendas</template>
+    </alerts>
+    <alerts>
+        <fullName>Envio_Muestra_Culiacan</fullName>
+        <description>Envio Muestra Culiacan</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>culiacan@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Not_Envio_a_Tiendas</template>
+    </alerts>
+    <alerts>
+        <fullName>Envio_Muestra_Ermita</fullName>
+        <description>Envio Muestra Ermita</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>ermita@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Not_Envio_a_Tiendas</template>
+    </alerts>
+    <alerts>
+        <fullName>Envio_Muestra_Guadalajara</fullName>
+        <description>Envio Muestra Guadalajara</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>guadalajara@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Not_Envio_a_Tiendas</template>
+    </alerts>
+    <alerts>
+        <fullName>Envio_Muestra_Hermosillo</fullName>
+        <description>Envio Muestra Hermosillo</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>hermosillo@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Not_Envio_a_Tiendas</template>
+    </alerts>
+    <alerts>
+        <fullName>Envio_Muestra_La_Raza</fullName>
+        <description>Envio Muestra La Raza</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>laraza@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Not_Envio_a_Tiendas</template>
+    </alerts>
+    <alerts>
+        <fullName>Envio_Muestra_Leon</fullName>
+        <description>Envio Muestra Leon</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>leon@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Not_Envio_a_Tiendas</template>
+    </alerts>
+    <alerts>
+        <fullName>Envio_Muestra_Merida</fullName>
+        <description>Envio Muestra Merida</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>merida@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Not_Envio_a_Tiendas</template>
+    </alerts>
+    <alerts>
+        <fullName>Envio_Muestra_MeridaII</fullName>
+        <description>Envio Muestra MeridaII</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>merida2@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Not_Envio_a_Tiendas</template>
+    </alerts>
+    <alerts>
+        <fullName>Envio_Muestra_Mixcoac</fullName>
+        <description>Envio Muestra Mixcoac</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>mixcoac@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Not_Envio_a_Tiendas</template>
+    </alerts>
+    <alerts>
+        <fullName>Envio_Muestra_Monterrey</fullName>
+        <description>Envio Muestra Monterrey</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>monterrey@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Not_Envio_a_Tiendas</template>
+    </alerts>
+    <alerts>
+        <fullName>Envio_Muestra_Perisur</fullName>
+        <description>Envio Muestra Perisur</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>perisur@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Not_Envio_a_Tiendas</template>
+    </alerts>
+    <alerts>
+        <fullName>Envio_Muestra_Queretaro</fullName>
+        <description>Envio Muestra Queretaro</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>queretaro@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Not_Envio_a_Tiendas</template>
+    </alerts>
+    <alerts>
+        <fullName>Envio_Muestra_Riviera</fullName>
+        <description>Envio Muestra Riviera</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>riviera@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Not_Envio_a_Tiendas</template>
+    </alerts>
+    <alerts>
+        <fullName>Envio_Muestra_Satelite</fullName>
+        <description>Envio Muestra Satelite</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>satelite@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Not_Envio_a_Tiendas</template>
+    </alerts>
+    <alerts>
+        <fullName>Envio_Muestra_Tijuana</fullName>
+        <description>Envio Muestra Tijuana</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>tijuana@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Not_Envio_a_Tiendas</template>
+    </alerts>
+    <alerts>
+        <fullName>Envio_Muestra_Veracruz</fullName>
+        <description>Envio Muestra Veracruz</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>veracruz@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Not_Envio_a_Tiendas</template>
+    </alerts>
+    <alerts>
+        <fullName>Envio_Muestra_Villahermosa</fullName>
+        <description>Envio Muestra Villahermosa</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>villahermosa@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Not_Envio_a_Tiendas</template>
+    </alerts>
+    <alerts>
+        <fullName>Muestra_Aprobada_Acapulco</fullName>
+        <description>Muestra Aprobada Acapulco</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>acapulco@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Notif_de_aprobacion_a_Tiendas</template>
+    </alerts>
+    <alerts>
+        <fullName>Muestra_Aprobada_Cancun</fullName>
+        <description>Muestra Aprobada Cancun</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>cancun@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Notif_de_aprobacion_a_Tiendas</template>
+    </alerts>
+    <alerts>
+        <fullName>Muestra_Aprobada_Chihuahua</fullName>
+        <description>Muestra Aprobada Chihuahua</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>chihuahua@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Notif_de_aprobacion_a_Tiendas</template>
+    </alerts>
+    <alerts>
+        <fullName>Muestra_Aprobada_Cuernavaca</fullName>
+        <description>Muestra Aprobada Cuernavaca</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>cuernavaca@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Notif_de_aprobacion_a_Tiendas</template>
+    </alerts>
+    <alerts>
+        <fullName>Muestra_Aprobada_Culiacan</fullName>
+        <description>Muestra Aprobada Culiacan</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>culiacan@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Notif_de_aprobacion_a_Tiendas</template>
+    </alerts>
+    <alerts>
+        <fullName>Muestra_Aprobada_Ermita</fullName>
+        <description>Muestra Aprobada Ermita</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>ermita@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Notif_de_aprobacion_a_Tiendas</template>
+    </alerts>
+    <alerts>
+        <fullName>Muestra_Aprobada_Guadalajara</fullName>
+        <description>Muestra Aprobada Guadalajara</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>guadalajara@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Notif_de_aprobacion_a_Tiendas</template>
+    </alerts>
+    <alerts>
+        <fullName>Muestra_Aprobada_Hermosillo</fullName>
+        <description>Muestra Aprobada Hermosillo</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>hermosillo@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Notif_de_aprobacion_a_Tiendas</template>
+    </alerts>
+    <alerts>
+        <fullName>Muestra_Aprobada_La_Raza</fullName>
+        <description>Muestra Aprobada La Raza</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>laraza@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Notif_de_aprobacion_a_Tiendas</template>
+    </alerts>
+    <alerts>
+        <fullName>Muestra_Aprobada_Leon</fullName>
+        <description>Muestra Aprobada Leon</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>leon@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Notif_de_aprobacion_a_Tiendas</template>
+    </alerts>
+    <alerts>
+        <fullName>Muestra_Aprobada_Merida</fullName>
+        <description>Muestra Aprobada Merida</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>merida@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Notif_de_aprobacion_a_Tiendas</template>
+    </alerts>
+    <alerts>
+        <fullName>Muestra_Aprobada_MeridaII</fullName>
+        <description>Muestra Aprobada MeridaII</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>merida2@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Notif_de_aprobacion_a_Tiendas</template>
+    </alerts>
+    <alerts>
+        <fullName>Muestra_Aprobada_Mixcoac</fullName>
+        <description>Muestra Aprobada Mixcoac</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>mixcoac@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Notif_de_aprobacion_a_Tiendas</template>
+    </alerts>
+    <alerts>
+        <fullName>Muestra_Aprobada_Monterrey</fullName>
+        <description>Muestra Aprobada Monterrey</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>monterrey@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Notif_de_aprobacion_a_Tiendas</template>
+    </alerts>
+    <alerts>
+        <fullName>Muestra_Aprobada_Perisur</fullName>
+        <description>Muestra Aprobada Perisur</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>perisur@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Notif_de_aprobacion_a_Tiendas</template>
+    </alerts>
+    <alerts>
+        <fullName>Muestra_Aprobada_Queretaro</fullName>
+        <description>Muestra Aprobada Queretaro</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>queretaro@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Notif_de_aprobacion_a_Tiendas</template>
+    </alerts>
+    <alerts>
+        <fullName>Muestra_Aprobada_Riviera</fullName>
+        <description>Muestra Aprobada Riviera</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>riviera@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Notif_de_aprobacion_a_Tiendas</template>
+    </alerts>
+    <alerts>
+        <fullName>Muestra_Aprobada_Satelite</fullName>
+        <description>Muestra Aprobada Satelite</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>satelite@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Notif_de_aprobacion_a_Tiendas</template>
+    </alerts>
+    <alerts>
+        <fullName>Muestra_Aprobada_Tijuana</fullName>
+        <description>Muestra Aprobada Tijuana</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>tijuana@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Notif_de_aprobacion_a_Tiendas</template>
+    </alerts>
+    <alerts>
+        <fullName>Muestra_Aprobada_Veracruz</fullName>
+        <description>Muestra Aprobada Veracruz</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>veracruz@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Notif_de_aprobacion_a_Tiendas</template>
+    </alerts>
+    <alerts>
+        <fullName>Muestra_Aprobada_Villahermosa</fullName>
+        <description>Muestra Aprobada Villahermosa</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>villahermosa@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Notif_de_aprobacion_a_Tiendas</template>
+    </alerts>
+    <alerts>
+        <fullName>Muestra_Autorizada</fullName>
+        <description>Muestra Autorizada</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Muestra_aprobada_PP</template>
+    </alerts>
+    <alerts>
+        <fullName>Muestra_Entregada</fullName>
+        <description>Muestra Entregada</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>fhernandez@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Muestra_Entregada</template>
+    </alerts>
+    <alerts>
+        <fullName>Muestra_No_Entregada</fullName>
+        <description>Muestra No Entregada</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>fhernandez@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Muestra_No_Entregada</template>
+    </alerts>
+    <alerts>
+        <fullName>Notif_Autorizado</fullName>
+        <description>Notif Autorizado</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Muestra_aprobada_PT</template>
+    </alerts>
+    <alerts>
+        <fullName>Notificacion_Rechazo_de_Muestra</fullName>
+        <description>Notificacion Rechazo de Muestra</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Rechazo_de_Muestra</template>
+    </alerts>
+    <alerts>
+        <fullName>Preparaci_n_de_Muestra_LAPER</fullName>
+        <ccEmails>cviveros@imperquimia.com.mx</ccEmails>
+        <ccEmails>amsantamaria@imperquimia.com.mx</ccEmails>
+        <description>Preparación de Muestra LAPER</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>fhernandez@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Preparaci_n_de_Muestra_LAPER</template>
+    </alerts>
+    <alerts>
+        <fullName>Preparaci_n_de_Muestra_LConcretos</fullName>
+        <ccEmails>cflores@imperquimia.com.mx</ccEmails>
+        <ccEmails>amsantamaria@imperquimia.com.mx</ccEmails>
+        <description>Preparación de Muestra LConcretos</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>fhernandez@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Preparaci_n_de_Muestra_LConcretos</template>
+    </alerts>
+    <alerts>
+        <fullName>Preparaci_n_de_Muestra_LPinturas</fullName>
+        <ccEmails>stinoco@imperquimia.com.mx</ccEmails>
+        <ccEmails>amsantamaria@imperquimia.com.mx</ccEmails>
+        <description>Preparación de Muestra LPinturas</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>fhernandez@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Preparaci_n_de_Muestra_LPinturas</template>
+    </alerts>
+    <alerts>
+        <fullName>Preparaci_n_de_Muestras_en_Planta_PL</fullName>
+        <ccEmails>amsantamaria@imperquimia.com.mx</ccEmails>
+        <description>Preparación de Muestras en Planta PL</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>fhernandez@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Muestras/Preparacion_de_muestra_planta</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Confirmaci_n_Entrega</fullName>
+        <field>Estatus__c</field>
+        <literalValue>Muestra entregada</literalValue>
+        <name>Confirmación Entrega</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Entrega_Almacen</fullName>
+        <description>Actualizar estatus de entregado en Almacen</description>
+        <field>Estatus__c</field>
+        <literalValue>Muestra en Almacén</literalValue>
+        <name>Entrega Almacen</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Entrega_Tienda</fullName>
+        <field>Estatus__c</field>
+        <literalValue>Muestra entregada</literalValue>
+        <name>Entrega Tienda</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Estatus_Aprobado</fullName>
+        <description>Actualizar el estatus de la solicitud a aprobado</description>
+        <field>Estatus__c</field>
+        <literalValue>Autorizado</literalValue>
+        <name>Estatus Aprobado</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Estatus_Autorizado</fullName>
+        <field>Estatus__c</field>
+        <literalValue>Autorizado</literalValue>
+        <name>Estatus Autorizado</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Estatus_Rechazado</fullName>
+        <description>Actualizar el estatus de rechazado</description>
+        <field>Estatus__c</field>
+        <literalValue>Rechazado</literalValue>
+        <name>Estatus Rechazado</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>No_Entregado_Tienda</fullName>
+        <field>Estatus__c</field>
+        <literalValue>Muestra no entregada</literalValue>
+        <name>No Entregado Tienda</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Preparaci_n_de_Muestra</fullName>
+        <field>Estatus__c</field>
+        <literalValue>Preparación de Muestra</literalValue>
+        <name>Preparación de Muestra</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+</Workflow>

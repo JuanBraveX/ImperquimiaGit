@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Responsable__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(TEXT( Area_ID__c )=&quot;Concretos&quot;,&quot;César Flores&quot;,IF(TEXT(Area_ID__c)=&quot;Pinturas y Selladores&quot;,&quot;Samuel Tinoco&quot;,IF(OR(TEXT(Area_ID__c)=&quot;Poliuretanos&quot;,TEXT(Area_ID__c)=&quot;Epóxicos&quot;,TEXT(Area_ID__c)=&quot;Asfalticos&quot;,TEXT(Area_ID__c)=&quot;Resinas&quot;),&quot;Claudia Viveros&quot;,&quot;&quot;)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Responsable</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

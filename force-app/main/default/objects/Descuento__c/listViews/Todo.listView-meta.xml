@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Todo</fullName>
+    <columns>NAME</columns>
+    <columns>IMP_ClaseCondicion__c</columns>
+    <columns>IMP_OrganizacionVentas__c</columns>
+    <columns>IMP_OficinaVentas__c</columns>
+    <columns>IMP_NumeroMaterial__c</columns>
+    <columns>IMP_ImportePorcentaje__c</columns>
+    <columns>IMP_FechaInicial__c</columns>
+    <columns>IMP_FechaFinal__c</columns>
+    <filterScope>Mine</filterScope>
+    <label>Todo</label>
+</ListView>

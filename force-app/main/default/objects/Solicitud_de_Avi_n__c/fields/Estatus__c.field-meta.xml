@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Estatus__c</fullName>
+    <externalId>false</externalId>
+    <label>Estatus</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Nuevo</fullName>
+                <default>true</default>
+                <label>Nuevo</label>
+            </value>
+            <value>
+                <fullName>En revisión</fullName>
+                <default>false</default>
+                <label>En revisión</label>
+            </value>
+            <value>
+                <fullName>Pendiente de aprobación</fullName>
+                <default>false</default>
+                <label>Pendiente de aprobación</label>
+            </value>
+            <value>
+                <fullName>Rechazado</fullName>
+                <default>false</default>
+                <label>Rechazado</label>
+            </value>
+            <value>
+                <fullName>Aprobado</fullName>
+                <default>false</default>
+                <label>Aprobado</label>
+            </value>
+            <value>
+                <fullName>Boletos Programados</fullName>
+                <default>false</default>
+                <label>Boletos Programados</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Revisado__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Confirmar a que oportunidad ya se hizo un primer acercamiento</description>
+    <externalId>false</externalId>
+    <label>Revisado</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

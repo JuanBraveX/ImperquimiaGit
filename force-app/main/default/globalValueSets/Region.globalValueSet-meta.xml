@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>CENTRO</fullName>
+        <default>false</default>
+        <label>CENTRO</label>
+    </customValue>
+    <customValue>
+        <fullName>BAJIO</fullName>
+        <default>false</default>
+        <label>BAJIO</label>
+    </customValue>
+    <customValue>
+        <fullName>NORTE</fullName>
+        <default>false</default>
+        <label>NORTE</label>
+    </customValue>
+    <customValue>
+        <fullName>NOROESTE</fullName>
+        <default>false</default>
+        <label>NOROESTE</label>
+    </customValue>
+    <customValue>
+        <fullName>OCCIDENTE</fullName>
+        <default>false</default>
+        <label>OCCIDENTE</label>
+    </customValue>
+    <customValue>
+        <fullName>SUR</fullName>
+        <default>false</default>
+        <label>SUR</label>
+    </customValue>
+    <masterLabel>Region</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

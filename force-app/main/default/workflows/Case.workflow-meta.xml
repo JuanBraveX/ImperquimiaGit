@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Aprobacion_Cliente</fullName>
+        <description>Aprobacion Cliente</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>atencionaclientes@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>groldan@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Casos/Aprobacion_del_Cliente</template>
+    </alerts>
+    <alerts>
+        <fullName>Caso_Cerrado_falta_de_informaci_n</fullName>
+        <description>Caso Cerrado/falta de información</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>arosas@imperquimia.com.mx</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Casos/Notif_Cierre_de_caso_Falta_de_Informacion</template>
+    </alerts>
+    <alerts>
+        <fullName>EscalacionAtencionC</fullName>
+        <description>EscalacionAtencionC</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Casos/Caso_Escalado_1</template>
+    </alerts>
+    <alerts>
+        <fullName>Escalacion_Calidad</fullName>
+        <description>Escalacion Calidad</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Casos/Caso_Escalado_2</template>
+    </alerts>
+    <alerts>
+        <fullName>Garantia_Escalada</fullName>
+        <description>Garantia Escalada</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Casos/Escalado_Garantia</template>
+    </alerts>
+    <alerts>
+        <fullName>Garantia_resuleta</fullName>
+        <description>Garantia resuleta</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Casos/Caso_Garantia_Resuelto</template>
+    </alerts>
+    <alerts>
+        <fullName>Nuevo_Caso_LAPER</fullName>
+        <description>Nuevo Caso LAPER</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>arosas@imperquimia.com.mx</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Casos/Nuevo_caso_LAPER</template>
+    </alerts>
+    <alerts>
+        <fullName>Nuevo_Caso_LConcretos</fullName>
+        <description>Nuevo Caso LConcretos</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>arosas@imperquimia.com.mx</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Casos/Nuevo_caso_Concretos</template>
+    </alerts>
+    <alerts>
+        <fullName>Nuevo_Caso_LPinturas</fullName>
+        <description>Nuevo Caso LPinturas</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>arosas@imperquimia.com.mx</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Casos/Nuevo_caso_Pinturas</template>
+    </alerts>
+    <alerts>
+        <fullName>Rechazo_Cliente</fullName>
+        <description>Rechazo Cliente</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>atencionaclientes@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>groldan@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Casos/Rechazo_del_Cliente</template>
+    </alerts>
+    <alerts>
+        <fullName>Rechazo_reclamacion_evidencia</fullName>
+        <description>Rechazo reclamacion evidencia</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Casos/Rechazo_Rev_Doctos_Casos</template>
+    </alerts>
+    <alerts>
+        <fullName>Recordatorio_Atencion_a_Reclamaciones</fullName>
+        <description>Recordatorio Atención a Reclamaciones</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>arosas@imperquimia.com.mx</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Casos/Recordatario_Atencion_a_Reclamaciones</template>
+    </alerts>
+    <alerts>
+        <fullName>Recordatorio_Calidad</fullName>
+        <description>Recordatorio Calidad</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>arosas@imperquimia.com.mx</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Casos/Recordatario_Calidad</template>
+    </alerts>
+    <alerts>
+        <fullName>Recordatorio_Desarrollo</fullName>
+        <description>Recordatorio Desarrollo</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>arosas@imperquimia.com.mx</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Casos/Recordatario_Desarrollo</template>
+    </alerts>
+    <alerts>
+        <fullName>Recordatorio_Ejecutivo</fullName>
+        <description>Recordatorio Ejecutivo</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>arosas@imperquimia.com.mx</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Casos/Recordatario_Feedback_Ejecutivo</template>
+    </alerts>
+    <alerts>
+        <fullName>Resolucion_Caso</fullName>
+        <description>Resolucion Caso</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>arosas@imperquimia.com.mx</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Casos/Notif_Analisis_Concluido_AR</template>
+    </alerts>
+    <alerts>
+        <fullName>Resolucion_Caso_Ejecu</fullName>
+        <description>Resolucion Caso Ejecu</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Casos/Notif_Analisis_Concluido_Ejec</template>
+    </alerts>
+    <alerts>
+        <fullName>Respuesta_de_Laboratorio_a_CC</fullName>
+        <description>Respuesta de Laboratorio a CC</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>groldan@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Casos/Respuesta_de_Laboratorio_a_Calidad</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Actualizacion_En_Proceso</fullName>
+        <field>Status</field>
+        <literalValue>Enproceso</literalValue>
+        <name>Actualizacion En Proceso</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Actualizacion_Escalado</fullName>
+        <field>Status</field>
+        <literalValue>Escalado</literalValue>
+        <name>Actualizacion Escalado</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Casio_resuelto</fullName>
+        <field>Status</field>
+        <literalValue>Cerrado</literalValue>
+        <name>Casio resuelto</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Escalacion_Calidad</fullName>
+        <field>Status</field>
+        <literalValue>Enproceso</literalValue>
+        <name>Escalacion Calidad</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Escalado</fullName>
+        <field>Status</field>
+        <literalValue>Escalado</literalValue>
+        <name>Escalado</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Estatus_Control_de_Calidad</fullName>
+        <field>Status</field>
+        <literalValue>Control de Calidad</literalValue>
+        <name>Estatus Control de Calidad</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Estatus_No_Procede</fullName>
+        <field>Status</field>
+        <literalValue>Merged</literalValue>
+        <name>Estatus No Procede</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Estatus_Nuevo</fullName>
+        <description>Al rechazar el proceso, el estatus se devuelve a Nuevo para que el usuario pueda enviar de nuevo la solicitud</description>
+        <field>Status</field>
+        <literalValue>Nuevo</literalValue>
+        <name>Estatus Nuevo</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Estatus_Procede</fullName>
+        <field>Status</field>
+        <literalValue>Procede</literalValue>
+        <name>Estatus Procede</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Estatus_Rechazado_por_Informaci_n</fullName>
+        <field>Status</field>
+        <literalValue>Rechazado por evidencia</literalValue>
+        <name>Estatus Rechazado por Información</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Nuevo</fullName>
+        <description>Regresa el estatus a Nuevo por rechazo de evidencia</description>
+        <field>Status</field>
+        <literalValue>Nuevo</literalValue>
+        <name>Nuevo</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+</Workflow>

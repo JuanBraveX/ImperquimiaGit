@@ -1,0 +1,121 @@
+<aura:component controller ="IMP_AprobarCotizacionController" implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global" >
+    <aura:attribute name="recordId" type="String"/>
+    <aura:attribute name="cotizacion" type="Quote"/>
+    <aura:handler name="init" value="{! this }" action="{! c.init }"/>
+    <aura:attribute name="spinnerPopUp" type="boolean" default="false"/>
+    <aura:attribute name="listQuoteLineItems" type="List" />
+    <aura:attribute name="fieldMap" type="Map"/>
+    <aura:attribute name="quote" type="Quote" default="{'sobjectType':'Quote', 
+                                                       'AprobacionCliente__c': ''}"/>
+    <c:IMP_LightningToast aura:id="messageContainer" />
+    <div>        
+        <article class="slds-card">
+            <div class="slds-align_absolute-center">
+                <lightning:card class="anchoImg" aura:id="anchoCardImg">                            
+                    <img src="https://imperquimia.mx/vistas/img/logobg.png" width="200" height="200" />                      
+                </lightning:card>
+                <h1 class="slds-align_absolute-center" >Cotizaciones electrónicas</h1>
+                <lightning:card title="Oferta" class="anchoOferta" aura:id="anchoCardOferta">
+                    <p>
+                        <strong><span >Nombre: </span></strong>
+                        <lightning:formattedText value= "{!v.cotizacion.Name}" />
+                    </p>
+                    
+                    <p>
+                        <strong><span>Folio: </span></strong>
+                        <lightning:formattedText value= "{!v.cotizacion.QuoteNumber}"/>
+                    </p>
+                    
+                </lightning:card>
+                
+            </div>
+            <div class="slds-card__body">
+                <div class="slds-path slds-card__body_inner">
+                    
+                    <lightning:card class="anchoBoton" aura:id="anchoCard">
+                        
+                        <p>Estimado Cliente,</p>
+                        <p>En respuesta a su solicitud, le hago llegar la siguiente propuesta acerca
+                            de nuestros productos esperando pueda cubrir sus necesidades.</p>
+                        <p>Si esta solución se adapta a sus requerimientos, solicito me apoye con su autorización
+                            para continuar con la gestión.</p>
+                        <p>1. Elegir Aceptada o Rechazada de la lista de selección "Aprobación cliente"</p>
+                        <p style = "text-indent: 13px">Guardar</p>
+                        <br></br>
+                        <p>Agradeciendo su confianza por nosotros, quedo a sus ordenes para cualquier duda o comentario.</p>
+                        
+                        <br></br>
+                        <div >
+                            <table style="border: 1px solid #000;;width:100%;" class="slds-table slds-table_cell-buffer slds-table_bordered">
+                                <tr>
+                                    <th class="styleColumn">Material</th>
+                                    <th class="styleColumn">Descripción</th>
+                                    <th class="styleColumn">Cantidad</th>
+                                    <th class="styleColumn">Precio Unitario</th>
+                                    <th class="styleColumn">Promoción de ventas</th>
+                                    <th class="styleColumn">Promoción de ventas</th>
+                                    <th class="styleColumn">Total</th>
+                                </tr>
+                                <aura:iteration items="{!v.listQuoteLineItems}" var="producto"  >
+                                    <tr>
+                                        <td class="styleBody">{!producto.Product2.ProductCode}</td>
+                                        <td class="styleBody">{!producto.Product2.Name} <br/> {!producto.Product2.Description}</td>
+                                        <td class="styleBody">{!producto.Quantity} UN</td>
+                                        <td class="styleBody"><lightning:formattedNumber value= "{!producto.UnitPrice}" minimumFractionDigits="2"/></td>
+                                        <td class="styleBody">{!producto.DescuentoSAP__c} %</td>
+                                        <td class="styleBody">{!producto.Descuento_adicional__c} %</td>
+                                        <td class="styleBody"><lightning:formattedNumber value= "{!producto.PrecioTotalConDescuentos__c}" style="currency" currencyCode="{!v.cotizacion.CurrencyIsoCode}" minimumFractionDigits="2"/></td>
+                                    </tr>
+                                </aura:iteration>
+                            </table>
+                        </div>
+                        <br></br>
+                        <div class="slds-grid slds-gutters">
+                            
+                            <div class="slds-col">
+                                <div class="slds-col slds-align_absolute-center">
+                                    <strong><span>Aprobación cliente:  </span></strong>
+                                    <lightning:select aura:id="aprobacionPicklist" value="{!v.quote.AprobacionCliente__c}" name="industryPicklist" required="false">
+                                        <option value="" ><p>--Selecciona una opción--</p></option>
+                                        <aura:iteration items="{!v.fieldMap}" var="i" indexVar="key">
+                                            <option text="{!i.value}" value="{!i.key}" selected="{!i.key == v.quote.AprobacionCliente__c ? true : false}"/>
+                                        </aura:iteration>
+                                    </lightning:select>
+                                </div>       
+                            </div>
+                            <div class="slds-col">
+                                <div >
+                                    <div class="slds-col slds-align_absolute-right">
+                                        <lightning:button variant="brand" label="Guardar" title="Brand action" onclick="{! c.handleClick }" />
+                                    </div>                                
+                                </div>         
+                            </div>
+                            
+                            <lightning:card class="anchoTotales" aura:id="anchoCardTotales">
+                                <p>
+                                    <strong><span >Subtotal: </span></strong>
+                                    <lightning:formattedNumber value= "{!v.cotizacion.TotalPartidas__c}" maximumFractionDigits="2" style="currency" currencyCode="{!v.cotizacion.CurrencyIsoCode}" minimumFractionDigits="2"/>
+                                </p>
+                                
+                                <p>
+                                    <strong><span>Impuesto: </span></strong>
+                                    <lightning:formattedNumber value= "{!v.cotizacion.Tax}" maximumFractionDigits="2" style="currency" currencyCode="{!v.cotizacion.CurrencyIsoCode}" minimumFractionDigits="2"/>
+                                </p>
+                                <p>
+                                    <strong><span>Total: </span></strong>
+                                    <lightning:formattedNumber value= "{!v.cotizacion.PrecioTotal__c}" maximumFractionDigits="2" style="currency" currencyCode="{!v.cotizacion.CurrencyIsoCode}" minimumFractionDigits="2"/>
+                                </p>
+                                
+                            </lightning:card>
+                            
+                        </div>
+                        
+                    </lightning:card>
+                </div> 
+                
+            </div>
+            
+        </article>
+        
+    </div>
+</aura:component>

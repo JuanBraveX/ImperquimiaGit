@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opciones__c</fullName>
+    <externalId>false</externalId>
+    <label>Seleccione una de las opciones</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Quiero anexar a mi negocio actual los productos de Imperquimia</fullName>
+                <default>false</default>
+                <label>Quiero anexar a mi negocio actual los productos de Imperquimia</label>
+            </value>
+            <value>
+                <fullName>Busco colocar un punto de venta exclusivo de productos de Imperquimia, aún no tengo el local</fullName>
+                <default>false</default>
+                <label>Busco colocar un punto de venta exclusivo de productos de Imperquimia, aún no tengo el local</label>
+            </value>
+            <value>
+                <fullName>Busco colocar un punto de venta exclusivo de productos de Imperquimia y ya tengo el local</fullName>
+                <default>false</default>
+                <label>Busco colocar un punto de venta exclusivo de productos de Imperquimia y ya tengo el local</label>
+            </value>
+            <value>
+                <fullName>Quiero comercializar algunos productos de Imperquimia</fullName>
+                <default>false</default>
+                <label>Quiero comercializar algunos productos de Imperquimia</label>
+            </value>
+            <value>
+                <fullName>Otra opción</fullName>
+                <default>false</default>
+                <label>Otra opción</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

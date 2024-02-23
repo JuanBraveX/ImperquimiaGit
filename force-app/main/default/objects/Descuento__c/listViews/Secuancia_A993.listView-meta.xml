@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Secuancia_A993</fullName>
+    <columns>NAME</columns>
+    <columns>IMP_ClaseCondicion__c</columns>
+    <columns>IMP_GrupoClientes__c</columns>
+    <columns>IMP_GrupoArticulos__c</columns>
+    <columns>IMP_FechaInicial__c</columns>
+    <columns>IMP_FechaFinal__c</columns>
+    <columns>IMP_ImportePorcentaje__c</columns>
+    <columns>IMP_UnidadCondicion__c</columns>
+    <columns>IMP_Valido__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>IMP_SecuenciaAcceso__c</field>
+        <operation>equals</operation>
+        <value>A993</value>
+    </filters>
+    <label>Secuancia A993</label>
+</ListView>

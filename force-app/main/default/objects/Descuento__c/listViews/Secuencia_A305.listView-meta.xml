@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Secuencia_A305</fullName>
+    <columns>NAME</columns>
+    <columns>IMP_ClaseCondicion__c</columns>
+    <columns>IMP_OrganizacionVentas__c</columns>
+    <columns>IMP_CanalVentas__c</columns>
+    <columns>IMP_NumeroCliente__c</columns>
+    <columns>IMP_NumeroMaterial__c</columns>
+    <columns>IMP_FechaInicial__c</columns>
+    <columns>IMP_FechaFinal__c</columns>
+    <columns>IMP_ImportePorcentaje__c</columns>
+    <columns>IMP_UnidadCondicion__c</columns>
+    <columns>IMP_Valido__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>IMP_SecuenciaAcceso__c</field>
+        <operation>equals</operation>
+        <value>A305</value>
+    </filters>
+    <label>Secuencia A305</label>
+</ListView>

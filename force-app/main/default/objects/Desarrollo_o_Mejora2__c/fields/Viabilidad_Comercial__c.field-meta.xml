@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Viabilidad_Comercial__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Si cumple, describa por qué es viable comercialmente, si hay un mercado establecido, un proyecto, un pedido o una licitacion al que vaya dirigudo.
+
+Si no cumple, justifique  si no hay una meta comercial o si este proyecto no traera mejoras en su comercialización</inlineHelpText>
+    <label>Viabilidad Comercial</label>
+    <length>131072</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

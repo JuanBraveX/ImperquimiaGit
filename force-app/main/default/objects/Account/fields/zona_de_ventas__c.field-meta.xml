@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>zona_de_ventas__c</fullName>
+    <description>Lista de selección de la zona de ventas</description>
+    <externalId>false</externalId>
+    <label>Zona de ventas</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>000001</fullName>
+                <default>false</default>
+                <label>Zona Metropolitana</label>
+            </value>
+            <value>
+                <fullName>000002</fullName>
+                <default>false</default>
+                <label>Zona Centro</label>
+            </value>
+            <value>
+                <fullName>000003</fullName>
+                <default>false</default>
+                <label>Zona Centro Bajío</label>
+            </value>
+            <value>
+                <fullName>000004</fullName>
+                <default>false</default>
+                <label>Zona Sureste</label>
+            </value>
+            <value>
+                <fullName>000005</fullName>
+                <default>false</default>
+                <label>Zona Norte</label>
+            </value>
+            <value>
+                <fullName>000006</fullName>
+                <default>false</default>
+                <label>Zona Pacifico</label>
+            </value>
+            <value>
+                <fullName>000007</fullName>
+                <default>false</default>
+                <label>Zona Frontera</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tipo__c</fullName>
+    <description>Tipo de error</description>
+    <externalId>false</externalId>
+    <label>Tipo</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CREACION_CLIENTES_SFDC</fullName>
+                <default>false</default>
+                <label>CREACION_CLIENTES_SFDC</label>
+            </value>
+            <value>
+                <fullName>CREACION_CLIENTES_SAP</fullName>
+                <default>false</default>
+                <label>CREACION_CLIENTES_SAP</label>
+            </value>
+            <value>
+                <fullName>TOKEN_IIS</fullName>
+                <default>false</default>
+                <label>TOKEN_IIS</label>
+            </value>
+            <value>
+                <fullName>CREAR_PEDIDO_SF</fullName>
+                <default>false</default>
+                <label>CREAR_PEDIDO_SF</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

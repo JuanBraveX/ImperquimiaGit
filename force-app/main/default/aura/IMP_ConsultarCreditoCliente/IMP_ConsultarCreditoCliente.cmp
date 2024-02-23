@@ -1,0 +1,33 @@
+<aura:component controller="IMP_ConsultaCredito" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	
+    <aura:attribute name="spinner" type="boolean" default="false"/>
+    <aura:attribute name="recordId" type="String"/>
+    <aura:attribute name="accounts" type="List"/>
+    <aura:attribute name="idSAP" type="String"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    
+    <div style="background: white">
+        
+        <div class="slds-col slds-size_1-of-1">
+            <div class="slds-media__body">
+                <h4 class="slds-grid slds-grid_align-center" style="font-weight:bold; font-family:Helvetica; font-size: 14px;">Confirmar la consulta de crédito en SAP</h4>
+            </div>
+            <div class="slds-grid slds-size_1-of-1 slds-grid_align-center slds-p-top_small slds-p-bottom_small">
+                <lightning:button variant="brand" label="Aceptar" title="Aceptar" onclick="{!c.updateCredito}" aura:id="disablebuttonid"/>
+            </div>
+        </div>
+    </div>
+    <aura:if isTrue="{!v.spinner}">  
+        <div class="demo-only" style="height:6rem;position:relative">
+            <div class="slds-spinner_container">
+                <div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+                    <span class="slds-assistive-text">Loading</span>
+                    <div class="slds-spinner__dot-a"></div>
+                    <div class="slds-spinner__dot-b"></div>
+                </div>
+            </div>
+        </div>    
+    </aura:if> 
+</aura:component>

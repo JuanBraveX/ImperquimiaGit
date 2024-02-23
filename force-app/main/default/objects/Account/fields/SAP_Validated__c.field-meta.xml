@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SAP_Validated__c</fullName>
+    <description>Verifica los campos obligatorios para poder enviar un cliente a SAP, si no están completos esta dehabilitado</description>
+    <externalId>false</externalId>
+    <formula>AND( 
+    !ISPICKVAL(IMP_PaisFacturacion__c,&quot;&quot;) ,
+    !ISBLANK(Name),
+    !ISBLANK(Phone),
+    !ISBLANK(Colonia__c),
+    !ISBLANK(Delegacion__c),
+    !ISBLANK(IMP_CodigoPostal__c),
+    !ISPICKVAL(billing_address_state__c,&quot;&quot;),
+    !ISBLANK(RFC__c),
+    !ISPICKVAL(Grupo_de_Cuentas__c,&quot;&quot;),
+    !ISPICKVAL(condiciones_de_pago__c,&quot;&quot;),
+    !ISPICKVAL(grupo_de_tesoreria__c,&quot;&quot;),
+    !ISPICKVAL(OrganizacionVentas__c,&quot;&quot;),
+    !ISPICKVAL(clave_delcanal__c,&quot;&quot;),
+    !ISPICKVAL(Sector__c,&quot;&quot;),
+    !ISPICKVAL(grupo__c,&quot;&quot;),
+    !ISPICKVAL(zona_de_ventas__c,&quot;&quot;),
+    !ISPICKVAL(Grupo_de_precios__c,&quot;&quot;),
+    !ISPICKVAL(ListaPrecios__c,&quot;&quot;),
+    !ISPICKVAL(centro_suministrador__c,&quot;&quot;),
+    !ISBLANK ($User.Grupo_de_Vendedor__c),
+    !ISPICKVAL(CurrencyIsoCode,&quot;&quot;),
+    !ISPICKVAL(RegimenFiscal__c,&quot;&quot;),
+    !ISBLANK(Numero_Exterior__c),
+    !ISPICKVAL(Estatus__c,&quot;Sujeta a aprobación&quot;)
+)</formula>
+    <label>SAP Validated</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

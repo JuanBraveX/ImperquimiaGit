@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IMP_EvitarCambiosPedidosOtrosOrigenes</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(  $Profile.Name  &lt;&gt;  &apos;Integraciones&apos;,
+      RecordType.DeveloperName  = &quot;PedidoOtrosOrigenes&quot;,
+      OR(
+         ISCHANGED( EffectiveDate),  
+         ISCHANGED(Status),
+         ISCHANGED( AccountId ), 
+         ISCHANGED(  IMP_ClaseDocumento__c  ),
+         ISCHANGED(  EffectiveDate  ),
+         ISCHANGED(  IMP_CreadoPor__c  ),
+         ISCHANGED(  Status  ),
+         ISCHANGED(  Precio_Total__c  ),
+         ISCHANGED(  condiciones_de_pago__c ),
+         ISCHANGED(  IMP_DescripcionCeBe__c  ), 
+         ISCHANGED(  IMP_CentroBeneficio__c   ),
+         ISCHANGED(  IMP_OficinaVentas__c   ),
+         ISCHANGED(  IMP_CanalVentas__c   ),
+         ISCHANGED(  IMP_CanalDistribucion__c   ),
+         ISCHANGED(  IMP_SectorVentas__c   ),
+         ISCHANGED(   IMP_GrupoVendedor__c  ),
+         ISCHANGED(  IMP_DescripcionGrupoVendedor__c   )
+         ) 
+     )</errorConditionFormula>
+    <errorMessage>No tienes permiso para modificar el registro.</errorMessage>
+</ValidationRule>

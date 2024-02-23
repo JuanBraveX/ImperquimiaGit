@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Area_ID__c</fullName>
+    <externalId>false</externalId>
+    <label>Area de I+D</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>APER</fullName>
+                <default>false</default>
+                <label>APER</label>
+            </value>
+            <value>
+                <fullName>Concretos</fullName>
+                <default>false</default>
+                <label>Concretos</label>
+            </value>
+            <value>
+                <fullName>Pinturas y Selladores</fullName>
+                <default>false</default>
+                <label>Pinturas y Selladores</label>
+            </value>
+            <value>
+                <fullName>Asfalticos</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Asfalticos</label>
+            </value>
+            <value>
+                <fullName>Epóxicos</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Epóxicos</label>
+            </value>
+            <value>
+                <fullName>Resinas</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Resinas</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

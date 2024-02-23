@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Monto_Factura__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(  OR(IMP_ClaseFactura__c  = &quot;S1&quot;,IMP_ClaseFactura__c  = &quot;S3&quot;,IMP_ClaseFactura__c  = &quot;G2&quot;,IMP_ClaseFactura__c  = &quot;YBRE&quot;), IMP_MontoFactura__c  * -1, IMP_MontoFactura__c  * 1)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Monto Factura</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

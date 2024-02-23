@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Grupo_aplicador_A_y_Canal_mostrador</fullName>
+    <columns>NAME</columns>
+    <columns>Canaldistribucion__c</columns>
+    <columns>Descuento__c</columns>
+    <columns>Grupo_de_cliente_del__c</columns>
+    <columns>GrupoProducto__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Activa__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Grupo aplicador A y Canal mostrador</label>
+</ListView>

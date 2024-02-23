@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Asignacion_Cuentas__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( CreatedBy.Username  =  Owner.Username ,false,true)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Asignacion Cuentas</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

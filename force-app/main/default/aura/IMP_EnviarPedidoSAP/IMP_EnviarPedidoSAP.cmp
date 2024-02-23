@@ -1,0 +1,95 @@
+<aura:component access="global" controller="IMP_PedidoSAPController"  implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction,lightning:actionOverride,forceCommunity:availableForAllPageTypes">
+    <aura:html tag="style">
+        .slds-modal__container {
+        min-heigth:  800px !important;
+        min-width: 99% !important;
+        }
+    </aura:html> 
+    <aura:attribute name="recordId" type="Id"/>
+    <aura:handler name="init" value="{! this }" action="{! c.init }"/>
+    <aura:attribute name="data" type="Object"/>
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="pedido" type="Order"/>
+    <aura:attribute name="spinner" type="boolean" default="false"/>
+    <aura:attribute name="credito" type="String" default="Sin Credito"/>
+
+    
+    <aura:if isTrue="{!v.spinner}">  
+        <lightning:spinner alternativeText="Loading.." title="Loading.." variant="brand" size="large"/>                            
+    </aura:if> 
+    
+    <lightning:card variant="Narrow" title="Detalles del Pedido" iconName="standard:orders">
+        <div class="slds-grid slds-wrap slds-var-p-left_small">
+            <div class="slds-col slds-size_1-of-1">
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_6-of-12">
+                        <lightning:input name="pais" readonly="true" label="Nombre de la Cuenta" value="{!v.pedido.Account.Name}" />
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_6-of-12">
+                        <lightning:input name="fechaInicio" readonly="true" type="date" label="Fecha de inicio del pedido" value="{!v.pedido.EffectiveDate}" />
+                    </div>
+                </div>
+            </div>
+            <div class="slds-col slds-size_1-of-1">
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_6-of-12">
+                        <lightning:input name="credito" readonly="true" label="Crédito disponible del Cliente" value="{!v.credito}" />
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </lightning:card>
+    <br></br>
+    
+    <div class="container">        
+        <div class="{! $Browser.isPhone ? 'slds-var-p-around_small' : 'slds-var-p-around_medium'}" style="background: white">
+            <div class="slds-table slds-table--bordered slds-table--striped slds-table--cell-buffer slds-table--fixed-layout  slds-max-medium-table_stacked">
+                <lightning:datatable
+                                     keyField="id"
+                                     data="{!v.data}"
+                                     columns="{!v.columns}"
+                                     hideCheckboxColumn="true"
+                                     class="eighty-percentt Content"
+                                     resizeColumnDisabled="true"
+                                     suppressBottomBar="true"
+                                     onrowaction="{!c.handleDelete}"
+                                     showRowNumberColumn="true"/>
+            </div>
+        </div>
+    </div>
+    
+    <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-size_1-of-1">
+            <div class="slds-grid slds-grid_align-end">
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_5-of-12  slds-large-size_5-of-12" >
+                    <div class="estiloFontTotales">
+                        <strong><span>Total Cliente: </span></strong>
+                        <lightning:formattedNumber value= "{!v.pedido.TotalPedido__c}" maximumFractionDigits="2" style="currency" currencyCode="MXN" minimumFractionDigits="2"/>
+                    </div>
+                </div> 
+            </div>
+        </div>
+        <div class="slds-col slds-size_1-of-1">
+            <aura:if isTrue="{!AND(v.pedido.Account.id_de_sap__c!=null,v.pedido.ViaPago__c!=null)}">
+                <div class="slds-grid slds-grid_align-center">
+                    <lightning:button class="slds-button slds-button_neutral slds-button_stretch slds-size_10-of-12 slds-medium-size_3-of-12  slds-large-size_3-of-12" variant="brand" label="Confirmar Pedido" title="Brand action" onclick="{!c.handleSend}" disabled="{!v.pedido.pedido__c != null}" />
+                </div>               
+                <aura:set attribute="else">
+                    <center>
+                        <div class="slds-text-longform slds-p-top_small "  style="border:1px solid black; border-color:#FFC300; border-width:2px;">
+                            <p><strong> Datos incompletos, por favor completa los siguientes campos: </strong></p>
+                            <ul>
+                                <aura:renderIf isTrue="{!v.pedido.Account.id_de_sap__c==null}">
+                                    <div >* La Cuenta "{!v.pedido.Account.Name}" no esta Sincronizada a SAP.</div>
+                                </aura:renderIf>
+                                <aura:renderIf isTrue="{!v.pedido.ViaPago__c==null}">
+                                    <div>* Vía de Pago del Pedido. </div>
+                                </aura:renderIf>
+                            </ul>
+                        </div>
+                    </center>
+                </aura:set>
+            </aura:if> 
+        </div>
+    </div>
+</aura:component>

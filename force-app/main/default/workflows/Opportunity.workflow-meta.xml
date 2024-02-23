@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Asignaci_n_de_Oportunidades</fullName>
+        <description>Asignación de Oportunidades</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Oportunidades/Asignaci_n_de_Oportunidades</template>
+    </alerts>
+    <alerts>
+        <fullName>EscalacionOportunidades</fullName>
+        <ccEmails>arosas@imperquimia.com.mx</ccEmails>
+        <description>Escalación de Oportunidades</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Gestor_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Oportunidades/Escalaci_n_de_Oportunidad</template>
+    </alerts>
+    <alerts>
+        <fullName>Escalacion_Opo_Direccion_SActualizacion</fullName>
+        <description>Escalacion Opo Direccion SActualizacion</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>rreyes@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Oportunidades/Escalacion_Oport_SActualizacion</template>
+    </alerts>
+    <alerts>
+        <fullName>Escalacion_Opo_GerenteN_SActualizacion</fullName>
+        <description>Escalacion Opo GerenteN SActualizacion</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Gerente_de_Negocio__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Oportunidades/Escalacion_Oport_SActualizacion</template>
+    </alerts>
+    <alerts>
+        <fullName>Escalacion_Opo_JefeInm_SActualizacion</fullName>
+        <description>Escalacion Opo JefeInm SActualizacion</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Gestor_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Oportunidades/Escalacion_Oport_SActualizacion</template>
+    </alerts>
+    <alerts>
+        <fullName>Escalacion_Opo_Propietario_SActividad</fullName>
+        <description>Escalacion Opo Propietario SActividad</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Gerente_de_Negocio__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Gestor_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>arosas@imperquimia.com.mx</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>rreyes@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Oportunidades/Escalacion_Oport_SSeguimiento</template>
+    </alerts>
+    <alerts>
+        <fullName>Escalacion_Opo_Propietario_SActualizacion</fullName>
+        <description>Escalacion Opo Propietario SActualizacion</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Oportunidades/Escalacion_Oport_SActualizacion</template>
+    </alerts>
+    <alerts>
+        <fullName>Soporte_Tecnico_Centro</fullName>
+        <ccEmails>arosas@imperquimia.com.mx</ccEmails>
+        <description>Soporte Tecnico Centro</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>mhernandez@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Oportunidades/Soporte_Tecnico_centro</template>
+    </alerts>
+    <alerts>
+        <fullName>Soporte_Tecnico_Noroeste</fullName>
+        <ccEmails>arosas@imperquimia.com.mx</ccEmails>
+        <description>Soporte Tecnico Noroeste</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>mhernandez@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Oportunidades/Soporte_Tecnico_Noroeste</template>
+    </alerts>
+    <alerts>
+        <fullName>Soporte_Tecnico_Norte</fullName>
+        <ccEmails>arosas@imperquimia.com.mx</ccEmails>
+        <description>Soporte Tecnico Norte</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>mhernandez@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Oportunidades/Soporte_Tecnico_Norte</template>
+    </alerts>
+    <alerts>
+        <fullName>Soporte_Tecnico_Occidente</fullName>
+        <ccEmails>arosas@imperquimia.com.mx</ccEmails>
+        <description>Soporte Tecnico Occidente</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>mhernandez@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Oportunidades/Soporte_Tecnico_Occidente</template>
+    </alerts>
+    <alerts>
+        <fullName>Soporte_Tecnico_Sur</fullName>
+        <ccEmails>arosas@imperquimia.com.mx</ccEmails>
+        <description>Soporte Tecnico Sur</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>mhernandez@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Oportunidades/Soporte_Tecnico_Sur</template>
+    </alerts>
+</Workflow>

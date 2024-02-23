@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Maximo_Esperado</fullName>
+    <active>true</active>
+    <errorConditionFormula>M_ximo_Esperado__c   &lt;   Minimo_Esperado__c</errorConditionFormula>
+    <errorDisplayField>M_ximo_Esperado__c</errorDisplayField>
+    <errorMessage>El valor registrado es menor al Mínimo Esperado</errorMessage>
+</ValidationRule>

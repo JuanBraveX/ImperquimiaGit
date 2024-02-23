@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IMP_Saldo90__c</fullName>
+    <description>Captura el valor del saldo a 90 días mediante el servicio de  consulta de crédito</description>
+    <externalId>false</externalId>
+    <label>Saldo a 90 días</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>3</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

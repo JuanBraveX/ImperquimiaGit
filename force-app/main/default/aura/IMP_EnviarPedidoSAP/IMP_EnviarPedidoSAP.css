@@ -1,0 +1,28 @@
+.THIS {
+}
+.THIS .table--size{
+    width:100%;
+}
+
+
+.THIS .estiloFontTotales{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 16px;
+   
+}
+
+
+.THIS .greenColor lightning-primitive-cell-factory > span > div > lightning-icon > span > lightning-primitive-icon > svg
+{
+    fill:green;
+}
+.THIS .redColor lightning-primitive-cell-factory > span > div > lightning-icon > span > lightning-primitive-icon > svg
+{
+    fill:red;
+}
+
+.THIS .bg-white{
+    background-color: #fff;
+}

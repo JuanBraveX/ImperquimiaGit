@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Especificador__c</fullName>
+    <externalId>false</externalId>
+    <label>Especificador</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Alberto Juárez</fullName>
+                <default>false</default>
+                <label>Alberto Juárez</label>
+            </value>
+            <value>
+                <fullName>José Ramírez</fullName>
+                <default>false</default>
+                <label>José Ramírez</label>
+            </value>
+            <value>
+                <fullName>Pilar Antonio</fullName>
+                <default>false</default>
+                <label>Pilar Antonio</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

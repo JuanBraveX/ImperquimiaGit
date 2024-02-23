@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Viatico__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Relacionar la ruta a una gestión de viaticos</description>
+    <externalId>false</externalId>
+    <label>Viático</label>
+    <referenceTo>Viaticos__c</referenceTo>
+    <relationshipLabel>Programa Viaje-Ruta</relationshipLabel>
+    <relationshipName>Programa_Viaje_Ruta</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

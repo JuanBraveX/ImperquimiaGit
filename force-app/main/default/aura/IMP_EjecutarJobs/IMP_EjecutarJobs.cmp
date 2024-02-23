@@ -1,0 +1,90 @@
+<aura:component access="global" controller="IMP_EjecutarJobs_cc"  implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction,lightning:actionOverride,forceCommunity:availableForAllPageTypes">
+    <aura:html tag="style">
+        .slds-modal__container {
+        min-heigth:  1000px !important;
+        min-width: 10% !important;
+        margin-top: -20px;
+        }
+        .slds-popover_tooltip
+        {
+        min-width: 10% !important;
+        
+        background-color:#fdc182;
+        }
+    </aura:html>  
+    
+    
+    <aura:attribute name="recordId" type="Id"/>
+    <aura:attribute name="perfil" type="String" default="Asistente Pais"/>
+    <aura:attribute name="numero" type="String" default="Pedido : "/>
+    <aura:attribute name="title" type="String" default="Custom Title"/>
+    <aura:attribute name="fechaInicio" type="date" default=""/>
+    <aura:attribute name="fechaFin" type="date" default=""/>
+    <aura:attribute name="tipoBusqueda" type="String" default=""/>
+    <aura:attribute name="spinner" type="Boolean"/>
+
+    <lightning:card>
+
+        <aura:set attribute="title">
+            <lightning:icon iconName="utility:connected_apps" size="small"/>
+            Actualización de Registros en Salesforce
+        </aura:set>
+        <aura:set attribute="footer">
+            
+            <div class="slds-grid slds-grid_vertical">
+                <div class="slds-col slds-var-p-top_medium">
+                    <lightning:button variant="brand" label="Actualizar Materiales" title="reenviarMateriales" onclick="{!c.handleMateriales}"  class="slds-size_12-of-12 slds-button slds-button_neutral slds-button_stretch"/>
+                </div>
+
+                <div class="slds-col slds-var-p-top_medium">
+                    <lightning:button variant="brand" label="Actualizar Precios" title="reenviarPrecios" onclick="{!c.handlePrecios}"  class="slds-size_12-of-12 slds-button slds-button_neutral slds-button_stretch"/>
+                </div>
+                
+                <div class="slds-col slds-var-p-top_medium">
+                    <lightning:button variant="brand" label="Actualizar Documentos" title="reenviarFacturas" onclick="{!c.handleDocumentos}"  class="slds-size_12-of-12 slds-button slds-button_neutral slds-button_stretch"/>
+                </div>
+                
+                  <div class="slds-col slds-var-p-top_medium">
+                    <lightning:button variant="brand" label="Actualizar Descuentos" title="reenviarDescuentos" onclick="{!c.handleDescuentos}" class="slds-size_12-of-12 slds-button slds-button_neutral slds-button_stretch"/>
+                </div>
+                
+                <div class="slds-col slds-var-p-top_medium">
+                    <lightning:button variant="brand" label="Actualizar Pedidos" title="reenviarFacturas" onclick="{!c.handlePedidos}"  class="slds-size_12-of-12 slds-button slds-button_neutral slds-button_stretch"/>
+                </div>
+            </div>
+        </aura:set>
+        <center>Favor de esperar, la actualización puede tardar varios minutos.</center>
+        
+    </lightning:card>
+    
+    <div class="slds-col slds-size_1-of-1">
+
+        <div class="slds-modal " aura:id="modalFechas">
+            <div class=" slds-modal__container">
+                <div class="slds-modal__header">
+                    <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Consulta de {!v.tipoBusqueda}</h1>
+                </div>
+                <div class="slds-modal__content slds-var-p-around_medium" >
+                    <aura:if isTrue='{!v.spinner}'>
+                        <lightning:spinner alternativeText="Loading" variant="brand" size="medium" />
+
+                    </aura:if>
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-col slds-size_1-of-1 slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-var-p-horizontal_xxx-small">
+                            <lightning:input aura:id="fieldRequired"  required="true" type="date" name="fechaInicio" label="{!IF(v.tipoBusqueda=='Materiales','Fecha creación', 'Fecha inicio')}" value="{!v.fechaInicio}"/>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-var-p-horizontal_xxx-small">
+                            <lightning:input aura:id="fieldRequired"  required="true" type="date" name="fechaFin" label="{!IF(v.tipoBusqueda=='Materiales','Fecha de última modificación', 'Fecha fin')}" value="{!v.fechaFin}"/>
+                        </div>
+                    </div> 
+                </div>
+                <footer class="slds-modal__footer">
+                    <lightning:button class="slds-button slds-button_brand" onclick="{!c.cerrarModal}">Cancelar</lightning:button>
+                    <lightning:button class="slds-button slds-button_neutral" aura:id="buscarMateriales" onclick="{!c.buscarMateriales}">Aceptar</lightning:button>
+                </footer>
+            </div>
+        </div>
+        <div class="slds-backdrop" aura:id="backModalFechas"></div>
+    </div>
+    
+</aura:component>

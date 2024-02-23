@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Area__c</fullName>
+    <externalId>false</externalId>
+    <label>Área de control de crédito</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>IMQ</fullName>
+                <default>true</default>
+                <label>Area Control de Grupo Imperquimia</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

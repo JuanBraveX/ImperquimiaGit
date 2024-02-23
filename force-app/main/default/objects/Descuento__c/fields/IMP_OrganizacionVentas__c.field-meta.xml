@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IMP_OrganizacionVentas__c</fullName>
+    <description>Establece la organización de ventas responsable del tratamiento del pedido.</description>
+    <externalId>false</externalId>
+    <label>Organización de ventas</label>
+    <length>5</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

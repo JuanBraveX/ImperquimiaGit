@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ListaPrecios__c</fullName>
+    <externalId>false</externalId>
+    <label>Lista de precios SAP</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>clave_delcanal__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>03</fullName>
+                <default>false</default>
+                <label>Mostrador</label>
+            </value>
+            <value>
+                <fullName>04</fullName>
+                <default>false</default>
+                <label>Distribuidores</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>20</controllingFieldValue>
+            <controllingFieldValue>30</controllingFieldValue>
+            <controllingFieldValue>03</controllingFieldValue>
+            <controllingFieldValue>04</controllingFieldValue>
+            <controllingFieldValue>05</controllingFieldValue>
+            <controllingFieldValue>06</controllingFieldValue>
+            <controllingFieldValue>07</controllingFieldValue>
+            <controllingFieldValue>08</controllingFieldValue>
+            <controllingFieldValue>09</controllingFieldValue>
+            <controllingFieldValue>10</controllingFieldValue>
+            <valueName>04</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>01</controllingFieldValue>
+            <controllingFieldValue>02</controllingFieldValue>
+            <valueName>03</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

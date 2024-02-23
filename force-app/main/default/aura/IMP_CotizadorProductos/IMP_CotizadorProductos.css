@@ -1,0 +1,203 @@
+.THIS .BackGroundC{
+    background-color:blue;
+}
+
+.THIS .articleProd{
+    max-width:100%;
+}
+
+.THIS .estiloFont{
+    padding-top: 15px;
+    padding-bottom: 10px;
+    text-align: right;
+    font-size: 18px;
+    
+}
+.THIS .estiloFontTitulo{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 16px;
+    color: #ff0000;
+    
+}
+
+.THIS .estiloFontTotales{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 16px;
+   
+}
+
+.THIS .estiloBotones{
+    text-align: center;
+}
+
+.THIS .estiloFontProduct{
+    text-align: center;
+    font-size: 12px;
+    color: #828282;
+    
+}
+.THIS .estiloFontCantidad{
+    text-align: center;
+    font-size: 12px;
+    color: #ff0000;
+}
+
+.THIS .estiloFontDescription{
+    text-align: center;
+    font-size: 12px;
+    color: #4285F4 ;
+}
+.THIS .estiloFontCenter{
+    text-align: center;
+    font-size: 12px;
+    color: #686868 ;
+}
+
+.THIS .estiloFontTable{
+    text-align: center;
+    font-size: 10px;
+}
+.THIS .estiloFontTotales{
+    padding-left: 20px;
+    
+    text-align: left;
+    font-size: 17px;
+    
+}
+.THIS .blinkClass {
+    animation: blink 2s;
+    animation-iteration-count: infinite;
+}
+.THIS .blueColor{
+    fill : #FF0000;
+}
+
+.THIS .locked{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-top: -0px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAcZJREFUeNqMkrFLAnEUx79XVlZQFnEEhSRFilNQyy0NzfUvSEOLubU01NBgU1OIuRv0V5QODoFThESJIkkSRKfpXZp5d79+7zrr0MoefLh37/f4/t773gmMMdgjHo+3001OkLPMSXNinFM6CAQCX/0OdESz2aTHntvtDvv9frhcLlQqFSmTyUilUsnNzw7t/V0C9Xp9x+PxhH0+H1KpFGRZhiiKkCSJxMPFYrFsTWNGX6eAqqpBr9eLZDKJQqGwX6vVhnK53H4ikQCJ0rm9v0ug0WgsGIaBfD4PRVGOOe+co2w2C0EQqObvtQKJoFwuIxqNqlb5PRQKIRKJUN5v7xfsXyFxMHBiOd8rYmsHre2uCRzO8eD86hZGRS+GJz0YcE7yJQdhNG6hNflkL494fb5H9jxGl2z/uIJev4KuytAdDxA0EUL/GFrPZ9BbGjTllaPgTxMZM0wADvuEMd3Cqv1loilgEDqqDzeQ79KYXRrn75pZYx0CXROATDVvYni6vkC1eMX30j8xiJ4C1ti8cWZlAyNTc9+3kwD7pwB54JyYxuL67rcHMHqvQP+FCflgrmPlNHq79puJ2ls1Vkhf/utHaicfAgwA718WhRtqRsoAAAAASUVORK5CYII=) no-repeat 1px 0%;
+}
+.THIS .unlocked{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-top: -0px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAcZJREFUeNqMk89LImEYx7+T0+YWpMkyBBuSFCmegrrMpcOed/+HPezF9dalg0Ed7NQpxLwb9FdsevAQeIqQKFFkRVkIR1dn0syZeXufcawoJ3vgM/PO9x2+z495R2CMYVyk0+mXjz85Ec4GJ89JcU5oQ4RD9Pv90TLm9/vj4XAYXq8XrVZLLhQKcr1e9/O9A0eDbrdLt+1AIBAPhULI5XJQFAWSJEGWZUoQr1arzSknA03TiEgwGEQ2m0WlUtntdDozpVJpN5PJgExp39EgFouh1+utmqaJcrkMVVWPOA+cw2KxCEEQSAs7tjBqg5ug2WwimUxqtvwQjUaRSCRo7RLO9sRje8KTIvVtf/D7tSiKbk9kZesX5qQgPvsCmHb7gKlPMHvX0Pu8gv//cNf4i+KfFCV5a0AXo3sBQ1NgiDUIugTBNY9B4xTGQIeu3nFUx7KsITJmWgAcNoQxw8bWHEJ8MjAJA+3aFZSbPJbWPfxZtzT2jsHwM9JxtjIx3F6eoV294H0ZQ0xiooFdNn/x6+YPzH5Zfs5OBuyDBjQD98Ii1r7vPM8A5uQW6I+0oDlY7dhrKn2kOQ1Rv2+nKvnzDx2kceKjAAMALocWITpFuiYAAAAASUVORK5CYII=) no-repeat 0% 0% !important;
+}
+
+.THIS .recordDispRed{
+    background: red;
+}
+.THIS.slds-modal__container{
+    max-width: 90% !important;
+    width:90% !important;
+} 
+
+
+.THIS lightning-primitive-header-actions 
+{
+    display: none;
+}
+.THIS .SemaforoSuccess lightning-primitive-cell-factory > span > div > lightning-icon > lightning-primitive-icon > svg
+{
+    fill:green;
+}
+.THIS .SemaforoError lightning-primitive-cell-factory > span > div > lightning-icon > lightning-primitive-icon > svg
+{
+    fill:red;
+}
+.THIS .LinternaYellow lightning-primitive-cell-factory > span > div > lightning-icon > lightning-primitive-icon > svg
+{
+    fill:yellow;
+}
+.THIS .LinternaGreen lightning-primitive-cell-factory > span > div > lightning-icon > lightning-primitive-icon > svg
+{
+    fill:green;
+}
+.THIS .LinternaRed lightning-primitive-cell-factory > span > div > lightning-icon > lightning-primitive-icon > svg
+{
+    fill:red;
+}
+.THIS .eighty-percentt 
+{
+    font-size:12px;
+    zoom:86%;
+    
+}
+.THIS .Content
+{
+    width: 100%;
+}
+.THIS .slds-th__action
+{ 
+    justify-content: center !important; 
+}
+.THIS .slds-file-selector__button
+{
+    
+}
+
+@media screen and (max-width: 767px) {
+    
+    .THIS .slds-file-selector__button {
+        font-size: 0px !important; 
+    }
+    .THIS .slds-file-selector__text
+    {
+        font-size: 0px !important; 
+        display:none !important;
+    }
+    .THIS .paddingFamiliasPhone{
+        padding-left:0px !important;
+    }
+    .THIS .iconResponsiveLarge{
+        display:none !important;
+    }
+    .THIS .iconResponsiveSmall
+    {
+        display:inline !important;
+        margin-top:2.5rem !important;
+    }
+    .THIS .positionHelper
+    {
+        right:10%;
+        top:5rem;
+    }
+    .THIS .vistaBrowser
+    {
+        display:none !important;
+    }
+    .THIS .iconPhone
+    {
+        top:1rem;
+    }
+
+}
+@media screen and (min-width: 768px) {
+    .THIS .iconResponsiveLarge{
+        display:inline !important;
+    }
+    .THIS .iconResponsiveSmall
+    {
+        display:none !important;
+    }
+    .THIS .positionHelper
+    {
+        right:10%;
+        top:1.5rem;
+    }
+    .THIS .vistaPhone
+    {
+        display:none !important;
+
+    }
+    
+}

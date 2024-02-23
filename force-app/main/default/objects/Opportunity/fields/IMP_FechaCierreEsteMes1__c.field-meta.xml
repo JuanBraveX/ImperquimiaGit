@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IMP_FechaCierreEsteMes1__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(  AND( YEAR(CloseDate) =  YEAR(Today ()), MONTH(CloseDate) =  MONTH(Today ())), True, False)</formula>
+    <label>Fecha de cierre este mes</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Prospección</fullName>
+        <default>false</default>
+        <label>Prospección</label>
+        <closed>false</closed>
+        <forecastCategory>Pipeline</forecastCategory>
+        <probability>10</probability>
+        <won>false</won>
+    </standardValue>
+    <standardValue>
+        <fullName>Evaluación Técnica</fullName>
+        <default>false</default>
+        <label>Evaluación Técnica</label>
+        <closed>false</closed>
+        <forecastCategory>Pipeline</forecastCategory>
+        <probability>30</probability>
+        <won>false</won>
+    </standardValue>
+    <standardValue>
+        <fullName>Cotización presentada</fullName>
+        <default>false</default>
+        <label>Cotización presentada</label>
+        <closed>false</closed>
+        <forecastCategory>Pipeline</forecastCategory>
+        <probability>50</probability>
+        <won>false</won>
+    </standardValue>
+    <standardValue>
+        <fullName>Primera revisión</fullName>
+        <default>false</default>
+        <label>Primera revisión</label>
+        <closed>false</closed>
+        <forecastCategory>Pipeline</forecastCategory>
+        <probability>70</probability>
+        <won>false</won>
+    </standardValue>
+    <standardValue>
+        <fullName>Negociación</fullName>
+        <default>false</default>
+        <label>Negociación</label>
+        <closed>false</closed>
+        <forecastCategory>Pipeline</forecastCategory>
+        <probability>80</probability>
+        <won>false</won>
+    </standardValue>
+    <standardValue>
+        <fullName>Segunda Revisión</fullName>
+        <default>false</default>
+        <label>Segunda Revisión</label>
+        <closed>false</closed>
+        <forecastCategory>Pipeline</forecastCategory>
+        <probability>85</probability>
+        <won>false</won>
+    </standardValue>
+    <standardValue>
+        <fullName>Orden de Compra</fullName>
+        <default>false</default>
+        <label>Orden de Compra</label>
+        <closed>false</closed>
+        <forecastCategory>Pipeline</forecastCategory>
+        <probability>90</probability>
+        <won>false</won>
+    </standardValue>
+    <standardValue>
+        <fullName>Pendiente de Pago</fullName>
+        <default>false</default>
+        <label>Pendiente de Pago</label>
+        <closed>false</closed>
+        <forecastCategory>Pipeline</forecastCategory>
+        <probability>98</probability>
+        <won>false</won>
+    </standardValue>
+    <standardValue>
+        <fullName>Ganada</fullName>
+        <default>false</default>
+        <label>Ganada</label>
+        <closed>true</closed>
+        <forecastCategory>Closed</forecastCategory>
+        <probability>100</probability>
+        <won>true</won>
+    </standardValue>
+    <standardValue>
+        <fullName>Perdida</fullName>
+        <default>false</default>
+        <label>Perdida</label>
+        <closed>true</closed>
+        <forecastCategory>Closed</forecastCategory>
+        <probability>0</probability>
+        <won>true</won>
+    </standardValue>
+</StandardValueSet>

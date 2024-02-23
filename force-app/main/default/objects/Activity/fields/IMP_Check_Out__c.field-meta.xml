@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IMP_Check_Out__c</fullName>
+    <externalId>false</externalId>
+    <formula>IMP_Geo_Latitude_CheckOut__c &lt;&gt; 0 &amp;&amp; IMP_Geo_Longitude_CheckOut__c &lt;&gt; 0</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Check Out</label>
+    <type>Checkbox</type>
+</CustomField>

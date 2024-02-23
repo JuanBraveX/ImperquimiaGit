@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Descuento_por_folio_o_promoci_n__c</fullName>
+    <defaultValue>false</defaultValue>
+    <externalId>false</externalId>
+    <label>Descuento por folio o promoción</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

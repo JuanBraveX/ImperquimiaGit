@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>tipo_desarrollo__c</fullName>
+    <externalId>false</externalId>
+    <label>Tipo Desarrollo</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Obra Nueva</fullName>
+                <default>false</default>
+                <label>Obra Nueva</label>
+            </value>
+            <value>
+                <fullName>Adecuacion</fullName>
+                <default>false</default>
+                <label>Adecuacion</label>
+            </value>
+            <value>
+                <fullName>Remodelación</fullName>
+                <default>false</default>
+                <label>Remodelación</label>
+            </value>
+            <value>
+                <fullName>Ampliación</fullName>
+                <default>false</default>
+                <label>Ampliación</label>
+            </value>
+            <value>
+                <fullName>Rehabilitación</fullName>
+                <default>false</default>
+                <label>Rehabilitación</label>
+            </value>
+            <value>
+                <fullName>Mantenimiento</fullName>
+                <default>false</default>
+                <label>Mantenimiento</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

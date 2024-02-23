@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Consecuencia_Potencial_de_Falla__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Describa las posibilidades de que falle el producto al ser aplicado o condiciones a tomar en cuenta.</inlineHelpText>
+    <label>Consecuencia Potencial de Falla</label>
+    <length>131072</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

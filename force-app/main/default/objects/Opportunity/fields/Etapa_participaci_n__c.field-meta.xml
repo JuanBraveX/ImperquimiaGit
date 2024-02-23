@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Etapa_participaci_n__c</fullName>
+    <externalId>false</externalId>
+    <label>Etapa de participación</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Publicación de la convocatoria</fullName>
+                <default>false</default>
+                <label>Publicación de la convocatoria</label>
+            </value>
+            <value>
+                <fullName>Solicitud de acceso para la visita</fullName>
+                <default>false</default>
+                <label>Solicitud de acceso para la visita</label>
+            </value>
+            <value>
+                <fullName>Visita a las instalaciones</fullName>
+                <default>false</default>
+                <label>Visita a las instalaciones</label>
+            </value>
+            <value>
+                <fullName>Junta de aclaraciones</fullName>
+                <default>false</default>
+                <label>Junta de aclaraciones</label>
+            </value>
+            <value>
+                <fullName>Presentación y apertura de proposiciones</fullName>
+                <default>false</default>
+                <label>Presentación y apertura de proposiciones</label>
+            </value>
+            <value>
+                <fullName>Notificación de Fallo</fullName>
+                <default>false</default>
+                <label>Notificación de Fallo</label>
+            </value>
+            <value>
+                <fullName>Firma de Contrato</fullName>
+                <default>false</default>
+                <label>Firma de Contrato</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

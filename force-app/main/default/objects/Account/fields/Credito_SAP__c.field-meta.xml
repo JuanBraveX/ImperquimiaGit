@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Credito_SAP__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Seleccionado si el cliente tiene crédito SAP y falso si el crédito esta vencido</description>
+    <externalId>false</externalId>
+    <label>Crédito SAP</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

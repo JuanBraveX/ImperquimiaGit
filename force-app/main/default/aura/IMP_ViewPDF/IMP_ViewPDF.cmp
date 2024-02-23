@@ -1,0 +1,23 @@
+<aura:component controller="IMP_ViewPDF_CC" implements="force:lightningQuickActionWithoutHeader,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,lightning:actionOverride,forceCommunity:availableForAllPageTypes" access="global">
+    <lightning:navigation aura:id="navService"/>
+    <aura:handler name="init" value="{!this}" action="{!c.loadPDF}" />
+    <aura:attribute name="spinner" type="boolean" default="false"/>
+    <aura:attribute name="typeDevice" type="String" default="" />
+    <aura:attribute name="recordId" type="String"/>
+    <aura:attribute name="typeObject" type="String"/>
+    <ltng:require styles="{!$Resource.ModalWidthCSS}"/>
+  
+    <aura:if isTrue="{!v.spinner}">  
+        <lightning:spinner alternativeText="Loading.." title="Loading.." variant="brand" size="large"/>                            
+    </aura:if> 
+  
+    <aura:if isTrue="{! and( equals(v.typeDevice, 'DESKTOP') , equals(v.typeObject, 'Quote'))}">
+        <iframe src="{! '/apex/IMP_CotizacionPDF?id=' + v.recordId}" width="100%" height="700px" style="vertical-align: top !important;" frameBorder="0"/>
+    </aura:if>
+
+    <aura:if isTrue="{! and( equals(v.typeDevice, 'DESKTOP') , equals(v.typeObject, 'Order'))}">
+        <iframe src="{! '/apex/IMP_PedidoPDF?id=' + v.recordId}" width="100%" height="700px" style="vertical-align: top !important;" frameBorder="0"/>
+    </aura:if>
+  
+   
+</aura:component>

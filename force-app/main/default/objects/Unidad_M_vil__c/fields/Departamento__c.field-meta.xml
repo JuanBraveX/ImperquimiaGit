@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Departamento__c</fullName>
+    <externalId>false</externalId>
+    <label>Departamento</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Región Centro</fullName>
+                <default>false</default>
+                <label>Región Centro</label>
+            </value>
+            <value>
+                <fullName>Región Centro Distribuidores</fullName>
+                <default>false</default>
+                <label>Región Centro Distribuidores</label>
+            </value>
+            <value>
+                <fullName>Región Bajío</fullName>
+                <default>false</default>
+                <label>Región Bajío</label>
+            </value>
+            <value>
+                <fullName>Región Sureste</fullName>
+                <default>false</default>
+                <label>Región Sureste</label>
+            </value>
+            <value>
+                <fullName>Región Occidente</fullName>
+                <default>false</default>
+                <label>Región Occidente</label>
+            </value>
+            <value>
+                <fullName>Región Norte</fullName>
+                <default>false</default>
+                <label>Región Norte</label>
+            </value>
+            <value>
+                <fullName>Región Noroeste</fullName>
+                <default>false</default>
+                <label>Región Noroeste</label>
+            </value>
+            <value>
+                <fullName>Tiendas</fullName>
+                <default>false</default>
+                <label>Tiendas</label>
+            </value>
+            <value>
+                <fullName>Call Center</fullName>
+                <default>false</default>
+                <label>Call Center</label>
+            </value>
+            <value>
+                <fullName>Especificadores</fullName>
+                <default>false</default>
+                <label>Especificadores</label>
+            </value>
+            <value>
+                <fullName>Región Obra Pública</fullName>
+                <default>false</default>
+                <label>Región Obra Pública</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

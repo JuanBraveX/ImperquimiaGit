@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Importacion__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Este campo sirve para indicar si la oportunidad proviene de una base externa , y deberá marcarse en caso de que se quiera aplicar la regla</description>
+    <externalId>false</externalId>
+    <label>Importación</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

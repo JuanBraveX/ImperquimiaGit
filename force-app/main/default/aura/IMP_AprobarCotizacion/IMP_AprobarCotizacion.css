@@ -1,0 +1,116 @@
+.THIS .styleColumn {
+    text-align: center;
+    font-size: 15px;
+    line-height: 100%;
+    margin:6px;
+    color:#000000;
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+}
+.THIS.styleColumnPos {
+    border-top: 1px solid #000000;
+    border-left: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+    text-align: center;
+    font-size: 15px;
+    line-height: 100%;
+    margin:6px;
+    color:#000000;
+}
+
+.THIS .styleBody {
+    text-align: center;
+    font-size: 14px;
+    line-height: 100%;
+    border-collapse:collapse;
+    border: 0px solid #9E9C9C;
+    color:#000000;
+    border-bottom: 1px solid #000000;
+}
+.THIS.styleBodyPos {
+    text-align: center;
+    font-size: 14px;
+    line-height: 100%;
+    border-collapse:collapse;
+    border: 0px solid #9E9C9C;
+    color:#000000;
+    border-left: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+}
+.THIS .charge {
+    margin-top: 20px;
+}
+
+.THIS .slds-align_absolute-center {
+    margin-bottom: 20px;
+}
+
+.THIS .slds-file--card {
+    height: 80px;
+}
+.THIS .anchoBoton {
+   min-height: 800px;
+}
+.THIS .margenBtn {
+  margin-right: 15px;
+}
+.THIS .anchoCard {
+  height: auto;
+}
+.THIS .anchoOferta {
+   min-height: 50px;
+   margin-right: 15px;
+    
+}
+.THIS .anchoCardOferta {
+  height: 50px;
+}
+.THIS .anchoImg {
+   min-height: 40px;
+   margin-right: 15px;
+    margin-top: 0px;
+    margin-left: 10px;
+
+}
+.THIS .anchoCardImg {
+  height: 40px;
+}
+.THIS .anchoTotales {
+   min-height: 50px;
+   margin-right: 15px;
+    margin-top: -20px;
+}
+.THIS .anchoCardTotales {
+  height: 40px;
+}
+
+.THIS {
+    background-color: 	#FFFFFF;
+    margin: auto;
+    height: auto;
+    border: 1px solid black;
+    padding: 40px 100px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+.THIS h1{
+    color: #ccc;
+    display: inline-block;
+    font-size: 36px;
+    padding: 10px;
+    text-shadow: 1px 1px 1px #fff;
+}
+.THIS .botonReg{
+    padding: 5px 55px;
+    font-size: 16px;
+}
+.THIS .anchoBienvenida {
+   min-height: 800px;
+}
+.THIS .anchoBienv {
+  height: auto;
+}
+.THIS .estiloagradecimiento{
+    padding-top: 30px;
+    text-align: center;
+    font-size: 18px;
+}

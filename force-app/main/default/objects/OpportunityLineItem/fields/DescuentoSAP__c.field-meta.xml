@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DescuentoSAP__c</fullName>
+    <description>Descuento que tiene el producto desde SAP</description>
+    <externalId>false</externalId>
+    <label>Descuento SAP</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <type>Percent</type>
+</CustomField>

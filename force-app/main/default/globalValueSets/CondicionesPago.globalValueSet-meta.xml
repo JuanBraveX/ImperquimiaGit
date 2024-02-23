@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>NT00</fullName>
+        <default>true</default>
+        <label>Pagado a la recepcion</label>
+    </customValue>
+    <customValue>
+        <fullName>NT08</fullName>
+        <default>false</default>
+        <label>Vencimiento 08 dias</label>
+    </customValue>
+    <customValue>
+        <fullName>NT15</fullName>
+        <default>false</default>
+        <label>Vencimiento 15 dias</label>
+    </customValue>
+    <customValue>
+        <fullName>NT20</fullName>
+        <default>false</default>
+        <label>Vencimiento 20 dias</label>
+    </customValue>
+    <customValue>
+        <fullName>NT30</fullName>
+        <default>false</default>
+        <label>Vencimiento 30 dias</label>
+    </customValue>
+    <customValue>
+        <fullName>NT45</fullName>
+        <default>false</default>
+        <label>Vencimiento 45 dias</label>
+    </customValue>
+    <customValue>
+        <fullName>NT60</fullName>
+        <default>false</default>
+        <label>Vencimiento 60 dias</label>
+    </customValue>
+    <customValue>
+        <fullName>NT90</fullName>
+        <default>false</default>
+        <label>Vencimiento 90 dias</label>
+    </customValue>
+    <customValue>
+        <fullName>NT120</fullName>
+        <default>false</default>
+        <label>Vencimiento 120 dias</label>
+    </customValue>
+    <masterLabel>Condiciones de Pago</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

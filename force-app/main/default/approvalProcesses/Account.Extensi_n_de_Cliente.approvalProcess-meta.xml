@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>false</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Tipo_de_Solicitud__c</field>
+        <field>id_de_sap__c</field>
+        <field>Name</field>
+        <field>clave_delcanal__c</field>
+        <field>grupo__c</field>
+        <field>Owner</field>
+        <field>Detalle_de_la_Solicitud_de_Autorizaci_n__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Extensi_n_Autorizada</name>
+                <type>Alert</type>
+            </action>
+            <action>
+                <name>Solicitud_extension_keyuser</name>
+                <type>Alert</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>rreyes@imperquimia.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <label>Aprobación Dirección General</label>
+        <name>Aprobaci_n_Direcci_n_General</name>
+        <rejectionActions>
+            <action>
+                <name>Rechazo_Extension</name>
+                <type>Alert</type>
+            </action>
+        </rejectionActions>
+    </approvalStep>
+    <description>Solicitar aprobación para extender a un cliente</description>
+    <emailTemplate>Clientes/Autorizacion_Extension_Cliente</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <criteriaItems>
+            <field>Account.Tipo_de_Solicitud__c</field>
+            <operation>equals</operation>
+            <value>Extensión de Cliente</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.Estatus__c</field>
+            <operation>equals</operation>
+            <value>Aprobada</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.Solicitud_Vacia__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+    </entryCriteria>
+    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <label>Extensión de Cliente</label>
+    <nextAutomatedApprover>
+        <useApproverFieldOfRecordOwner>true</useApproverFieldOfRecordOwner>
+        <userHierarchyField>Manager</userHierarchyField>
+    </nextAutomatedApprover>
+    <processOrder>3</processOrder>
+    <recordEditability>AdminOnly</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

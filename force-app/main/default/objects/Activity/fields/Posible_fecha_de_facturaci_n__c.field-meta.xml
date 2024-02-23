@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Posible_fecha_de_facturaci_n__c</fullName>
+    <externalId>false</externalId>
+    <label>Posible fecha de facturación</label>
+    <required>false</required>
+    <type>Date</type>
+</CustomField>

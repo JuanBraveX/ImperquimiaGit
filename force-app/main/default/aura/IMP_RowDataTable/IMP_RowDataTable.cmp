@@ -1,0 +1,188 @@
+<aura:component controller="IMP_CotizadorProductosController">
+    <aura:attribute name="index" type="Integer" />
+    <aura:attribute name="item" type="QuoteLineItem" />
+    <aura:attribute name="cotizacion" type="Quote" />
+    <aura:attribute name="quantityEditMode" type="Boolean" default="false" />
+    <aura:attribute name="descTotalEditMode" type="Boolean" default="false" />
+    <aura:attribute name="descClienteEditMode" type="Boolean" default="false" />
+    <aura:attribute name="spinner" type="Boolean"/>
+    <aura:attribute name="listQuoteLineItems" type="List" />
+    <aura:attribute name="descuentos" type="List" />
+    <aura:attribute name="cotizacionAprobada" type="boolean" default="FALSE"/>
+    <aura:attribute name="cotizacionBloqueada" type="boolean" default="FALSE"/>
+    <aura:attribute name="cotizacionSincronizada" type="boolean" default="FALSE"/> 
+    <aura:attribute name="estadoAprobacion" type="String"/>
+    <aura:attribute name="descuentoAdicional" type="Boolean" default="false" />
+    <aura:attribute name="conDescuento" type="Boolean" default="false" />
+
+    <aura:if isTrue="{!v.spinner}">  
+        <lightning:spinner alternativeText="Loading.." title="Loading.." variant="brand" size="large"/>                            
+    </aura:if> 
+
+    <tr class="slds-hint-parent estiloFontTable" id ="{!index}" >
+        <td>
+            <div class="slds-truncate" title="index">{!v.index+1}</div>
+        </td>
+        <td  style="text-align:center;visibility: visible !important;">
+        </td>
+        <td>
+            <div class="slds-truncate" title="ProductCode"><strong>{!v.item.Product2.ProductCode}</strong></div> 
+            <div class="slds-truncate" title="Name" >{!v.item.Product2.Name}</div>
+            <div class="slds-truncate" title="Familia" >  Familia: {!v.item.Product2.Family} </div>
+        </td>
+        <td>
+            <div class="slds-grid slds-grid_vertical">
+                <div class="slds-col slds-size_1-of-1 paddCantidad">
+                    <span class="slds-grid slds-grid_align-spread">
+                        <aura:if isTrue="{!v.quantityEditMode == false}">
+                            <div class="slds-grid slds-gutters slds-grid_align-center">
+                                <div class="slds-col slds-size_2-of-3 slds-large-size_3-of-3">
+                                    <span class="slds-truncate" title="Name"  > Cantidad: {!v.item.Quantity}</span>
+                                </div>
+                                <div class="slds-col slds-size_1-of-3 slds-large-size_3-of-3 paddCantidadEdit">
+                                    <aura:if isTrue="{!equals(v.cotizacionSincronizada, false)}">
+                                    <button onclick="{!c.inlineEditQuantity}" class="slds-button slds-button_icon slds-cell-edit__button " tabindex="0" title="Edit Name" >
+                                        <lightning:icon iconName="utility:edit" size="xx-small" alternativeText="edit"/>
+                                    </button>
+                                    </aura:if>
+                                </div>
+                            </div>
+                            <aura:set attribute="else">
+                                <div class="slds-grid slds-gutters slds-grid_align-center">
+                                    <div class="slds-col slds-size_2-of-3 slds-large-size_3-of-3 slds-align_absolute-center">
+                                        <span class="slds-truncate" title="Name"  > Cantidad: {!v.item.Quantity}</span>
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-3 slds-large-size_3-of-3 paddCantidad">
+                                        <section  tabindex="0" role="dialog" class="slds-popover slds-popover_edit" style="position: absolute; top: 0px;height: 1px;width: 25%;">
+                                            <div class="slds-popover__body" >
+                                                <div class="slds-form-element slds-grid slds-wrap">
+                                                    <div class="slds-form-element__control">
+                                                        <ui:inputNumber class="slds-input inputFieldWidth"
+                                                                        labelClass="slds-form-element__label slds-form-element__label_edit slds-no-flex"
+                                                                        aura:id="inputId"
+                                                                        blur="{!c.closeQuantityBox}"
+                                                                        value="{!v.item.Quantity}" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <span id="form-end" tabindex="0"></span>
+                                        </section>  
+                                    </div>
+                                </div>
+                            </aura:set>  
+                        </aura:if> 
+                    </span>
+                </div> 
+                <div class="slds-col slds-size_1-of-1">
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col slds-size_2-of-3 slds-large-size_9-of-12">
+                            <span class="slds-grid slds-grid_align-spread" style="position: relative;">
+                                <aura:if isTrue="{!v.descTotalEditMode == false}">
+                                    <div class="slds-grid slds-wrap">
+                                        <div class="slds-col slds-size_8-of-12 slds-large-size_3-of-3 slds-var-m-top_medium">
+
+                                            <span class="{! if(v.item.IMP_OmitirDescuentoSAP__c, 'slds-truncate SkipText', 'slds-truncate' )}" title="Name" >                
+                                                Descuento SAP: <lightning:formattedNumber value="{!v.item.DescuentoSAP__c}" minimumFractionDigits="3" />%
+                                            </span>
+                                        </div>
+                                        <div class="slds-col slds-size_2-of-12 slds-large-size_3-of-3 paddIcon">
+                                            <aura:if isTrue="{!v.item.DescuentoEditable__c}">
+                                                <button onclick="{!c.inlineEditDescTotal}" class="slds-button slds-button_icon slds-cell-edit__button slds-var-p-left_x-small" tabindex="0" title="Edit Name">
+                                                    <lightning:icon iconName="utility:edit" size="xx-small" alternativeText="edit"/>
+                                                </button>
+                                            </aura:if>
+                                        </div>
+                                    </div>
+                                </aura:if> 
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_1-of-1">
+                    <span class="slds-grid slds-grid_align-spread">
+                        <aura:if isTrue="{!v.descuentoAdicional == false}">
+                            <div class="slds-grid slds-gutters slds-grid_align-center paddCantidadDescSap">
+                                <div class="slds-col slds-size_2-of-3">
+                                    Descuento adicional: <lightning:formattedNumber value="{!v.item.Descuento_adicional__c}" minimumFractionDigits="3" />%
+                                </div>
+                                <div class="slds-col slds-size_1-of-3 slds-large-size_3-of-3 paddCantidadEdit">
+                                    <aura:if isTrue="{!equals(v.cotizacionSincronizada, false)}">
+                                    <button onclick="{!c.ingresaDescuento}" class="slds-button slds-button_icon slds-cell-edit__button " tabindex="0" title="Edit Name" >
+                                        <lightning:icon iconName="utility:edit" size="xx-small" alternativeText="edit"/>
+                                    </button>
+                                    </aura:if>
+                                </div>
+                            </div>
+                            <aura:set attribute="else">
+                                <div class="slds-grid slds-gutters slds-grid_align-center paddCantidadDescSap">
+                                    <div class="slds-col slds-size_2-of-3 slds-large-size_3-of-3 slds-align_absolute-center">
+                                        <span class="slds-truncate" title="Name"  > Descuento adicional: {!v.item.Descuento_adicional__c}</span>
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-3 slds-large-size_3-of-3">
+                                        <section  tabindex="0" role="dialog" class="slds-popover slds-popover_edit" style="position: absolute; top: 46px;height: 1px;width: 30%;">
+                                            <div class="slds-popover__body" >
+                                                <div class="slds-form-element slds-grid slds-wrap">
+                                                    <div class="slds-form-element__control">
+                                                        <ui:inputNumber class="slds-input inputFieldWidth"
+                                                                        labelClass="slds-form-element__label slds-form-element__label_edit slds-no-flex"
+                                                                        aura:id="inputIdDesc"
+                                                                        blur="{!c.closeDiscountBox}"
+                                                                        value="{!v.item.Descuento_adicional__c}" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <span id="form-end" tabindex="0"></span>
+                                        </section>  
+                                    </div>
+                                </div>
+                            </aura:set>  
+                        </aura:if> 
+                    </span>
+                </div> 
+                <!--Inicio modificacion Roz -->
+                <aura:if isTrue="{! greaterthan(v.item.IMP_DescuentoPromo__c, 0)  }" >
+                    <div class="slds-col slds-size_1-of-1">
+                        <div class="slds-grid slds-gutters">
+                            <div class="slds-col slds-size_2-of-3 slds-large-size_9-of-12">
+                                <span class="slds-grid slds-grid_align-spread" style="position: relative;">
+                                    <div class="slds-grid slds-wrap">
+                                        <div class="slds-col slds-size_8-of-12 slds-large-size_3-of-3 slds-var-m-top_medium">
+                                            <span class="slds-truncate " title="Name" >                
+                                                Descuento promoci&oacute;n: <lightning:formattedNumber value="{!v.item.IMP_DescuentoPromo__c}" minimumFractionDigits="3" />%
+                                            </span>
+                                        </div>
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </aura:if>
+                <!--Fin modificacion Roz -->
+
+            </div>      
+        </td>
+        <td>
+            <div class="slds-truncate" title="ProductCode">Unidades Disponibles : {!v.item.IMP_Disponibilidad__c }</div> 
+        </td>
+        <td>
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_1-of-1">
+                    <div class="slds-truncate" title="totalPrice2">
+                        Precio Un: <lightning:formattedNumber value="{!v.item.UnitPrice}" style="currency" currencyCode="{!v.cotizacion.CurrencyIsoCode}" minimumFractionDigits="2"/>
+                    </div> 
+                </div>
+                <div class="slds-col slds-size_1-of-1">
+                    <div class="slds-truncate" title="totalPrice">
+                        Total: <lightning:formattedNumber value="{!v.item.PrecioTotalConDescuentos__c}" style="currency" currencyCode="{!v.cotizacion.CurrencyIsoCode}" minimumFractionDigits="2"/>
+                        
+                    </div> 
+                </div>
+            </div>
+        </td>
+        <td>
+            <aura:if isTrue="{!equals(v.cotizacionSincronizada, false)}">
+            <lightning:buttonIcon name="removeProduct" class="estiloImgEliminar" iconName="utility:delete" variant="delete" onclick="{!c.delProduct}" alternativeText="Eliminar" />
+            </aura:if>
+        </td>
+    </tr>
+</aura:component>

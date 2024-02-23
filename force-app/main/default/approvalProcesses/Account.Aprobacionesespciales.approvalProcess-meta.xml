@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <allowRecall>false</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Owner</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>distribuidores@imperquimia.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <label>Primera aprobación</label>
+        <name>Paso_1</name>
+        <rejectionActions>
+            <action>
+                <name>Rechazo_de_Alta_de_Cliente</name>
+                <type>Alert</type>
+            </action>
+        </rejectionActions>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Solicitud_de_Alta_de_Cliente_Autorizada</name>
+                <type>Alert</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>rreyes@imperquimia.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Aprobación enviada al actor 2</description>
+        <label>Segunda Aprobación</label>
+        <name>SegundaAprobacion</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+        <rejectionActions>
+            <action>
+                <name>Rechazo_de_Alta_de_Cliente</name>
+                <type>Alert</type>
+            </action>
+        </rejectionActions>
+    </approvalStep>
+    <emailTemplate>Clientes/Sol_Alta_de_Clientes</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <criteriaItems>
+            <field>Account.Estatus__c</field>
+            <operation>equals</operation>
+            <value>Sujeta a aprobación</value>
+        </criteriaItems>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Alerta_de_creaci_n_exitosa</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Aprobada</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Etapa_actualizada</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <label>Solicitud de Aprobaciones  especiales</label>
+    <processOrder>1</processOrder>
+    <recordEditability>AdminOnly</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

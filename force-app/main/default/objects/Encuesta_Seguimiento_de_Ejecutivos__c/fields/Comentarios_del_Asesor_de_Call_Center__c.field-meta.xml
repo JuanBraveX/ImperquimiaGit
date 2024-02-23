@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Comentarios_del_Asesor_de_Call_Center__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Registrar por parte del asesor de Call Center alguna percepción que halla tenido respecto a la persona encuestada.
+Por ejemplo: Molestia del cliente, Poco interés a la encuesta, Respuestas agresivas, etc</inlineHelpText>
+    <label>Comentarios del Asesor de Call Center</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

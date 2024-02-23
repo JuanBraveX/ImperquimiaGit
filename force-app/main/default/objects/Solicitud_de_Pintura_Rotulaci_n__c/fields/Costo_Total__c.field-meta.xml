@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Costo_Total__c</fullName>
+    <externalId>false</externalId>
+    <label>Costo Total</label>
+    <summarizedField>Productos__c.Costo_Total__c</summarizedField>
+    <summaryForeignKey>Productos__c.Solicitud_de_Pintura_Rotulaci_n__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

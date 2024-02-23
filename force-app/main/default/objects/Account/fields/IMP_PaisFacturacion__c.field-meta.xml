@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IMP_PaisFacturacion__c</fullName>
+    <defaultValue>&quot;MX&quot;</defaultValue>
+    <description>Este campo servirá para enviar el código de País en la integración de SAP -SF</description>
+    <externalId>false</externalId>
+    <label>País de Facturación</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>MX</fullName>
+                <default>false</default>
+                <label>MÉXICO</label>
+            </value>
+            <value>
+                <fullName>CO</fullName>
+                <default>false</default>
+                <label>COLOMBIA</label>
+            </value>
+            <value>
+                <fullName>CR</fullName>
+                <default>false</default>
+                <label>COSTA RICA</label>
+            </value>
+            <value>
+                <fullName>US</fullName>
+                <default>false</default>
+                <label>ESTADOS UNIDOS</label>
+            </value>
+            <value>
+                <fullName>GT</fullName>
+                <default>false</default>
+                <label>GUATEMALA</label>
+            </value>
+            <value>
+                <fullName>SV</fullName>
+                <default>false</default>
+                <label>EL SALVADOR</label>
+            </value>
+            <value>
+                <fullName>DO</fullName>
+                <default>false</default>
+                <label>REP. DOMINICANA</label>
+            </value>
+            <value>
+                <fullName>NI</fullName>
+                <default>false</default>
+                <label>NICARAGUA</label>
+            </value>
+            <value>
+                <fullName>HN</fullName>
+                <default>false</default>
+                <label>HONDURAS</label>
+            </value>
+            <value>
+                <fullName>PR</fullName>
+                <default>false</default>
+                <label>PUERTO RICO</label>
+            </value>
+            <value>
+                <fullName>ES</fullName>
+                <default>false</default>
+                <label>ESPAÑA</label>
+            </value>
+            <value>
+                <fullName>BR</fullName>
+                <default>false</default>
+                <label>BRASIL</label>
+            </value>
+            <value>
+                <fullName>CA</fullName>
+                <default>false</default>
+                <label>CANADÁ</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

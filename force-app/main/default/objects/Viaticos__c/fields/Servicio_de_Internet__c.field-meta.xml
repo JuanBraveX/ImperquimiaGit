@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Servicio_de_Internet__c</fullName>
+    <externalId>false</externalId>
+    <formula>Internet1__c + Internet2__c + Internet3__c + Internet4__c + Internet5__c + Internet6__c + Internet7__c + Internet8__c + Internet9__c + Internet10__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Servicio de Internet</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

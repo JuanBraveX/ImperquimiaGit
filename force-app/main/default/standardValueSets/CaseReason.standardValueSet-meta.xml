@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Producto defectuoso</fullName>
+        <default>false</default>
+        <label>Producto defectuoso</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Problemas en entrega</fullName>
+        <default>false</default>
+        <label>Problemas en entrega</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Problema de caducidad</fullName>
+        <default>false</default>
+        <label>Problema de caducidad</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Calidad en el servicio</fullName>
+        <default>false</default>
+        <label>Calidad en el servicio</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+</StandardValueSet>

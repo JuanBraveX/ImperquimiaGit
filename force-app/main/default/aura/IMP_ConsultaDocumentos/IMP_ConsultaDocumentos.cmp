@@ -1,0 +1,44 @@
+<aura:component controller="IMP_FlujoDocumentos" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickActionWithoutHeader" access="global" >
+    <aura:html tag="style">
+        .cuf-content {
+        padding: 0 0rem !important;
+        }
+        .slds-p-around--medium {
+        padding: 0rem !important;
+        }       
+        .slds-modal__content{
+        overflow-y:hidden !important;
+        height:unset !important;
+        max-height:unset !important;
+        }
+    </aura:html>	
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="showSpinner" type="boolean" default="true" />
+    <aura:attribute name="currentOrder" type="Order" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <div class="slds-col modal-header slds-modal__header">
+        <h2 class="title slds-text-heading--medium">Consultar Documentos</h2>
+    </div>
+    <aura:if isTrue="{!v.showSpinner}">
+        <div class="spinnerCss">
+            <lightning:spinner alternativeText="Loading" size="medium" />
+        </div>
+    </aura:if>
+    <div class="slds-col modal-body ">
+        <aura:if isTrue="{!v.currentOrder.pedido__c == null}">
+            <div class="slds-text-heading_small" style="padding:0.5rem;color:#585858"><center>El Pedido #{!v.currentOrder.OrderNumber} no ha sido enviado a SAP.</center></div>
+            <aura:set attribute="else">
+                <div style="padding:0.5rem;color:#585858">
+                    <p>Si continúa, obtendrá el listado de facturas del pedido y actualizará el estatus de las partidas del pedido.</p>
+                </div>
+            </aura:set>
+        </aura:if> 
+    </div>
+    <div class="slds-col modal-footer slds-modal__footer">        
+        <lightning:button variant="neutral" label="Cancelar" onclick="{!c.cancelClick }" /> 
+        <aura:if isTrue="{!v.currentOrder.pedido__c != null}">
+            <lightning:button variant="brand" label="¿Desea continuar?" onclick="{!c.handleDocuments}" />
+        </aura:if> 
+
+    </div>
+</aura:component>

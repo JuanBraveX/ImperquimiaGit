@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Taxis_Autobuses_Avi_n__c</fullName>
+    <externalId>false</externalId>
+    <formula>Taxi__c + Taxi2__c + Taxi3__c + Taxi4__c + Taxi5__c + Taxi6__c + Taxi7__c + Taxi8__c + Taxi9__c + Taxi10__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Taxis, Autobuses,Avión</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

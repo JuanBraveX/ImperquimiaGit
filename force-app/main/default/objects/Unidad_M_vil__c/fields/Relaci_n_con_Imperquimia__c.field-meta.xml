@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Relaci_n_con_Imperquimia__c</fullName>
+    <externalId>false</externalId>
+    <label>Relación con Imperquimia</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Distribuidor A</fullName>
+                <default>false</default>
+                <label>Distribuidor A</label>
+            </value>
+            <value>
+                <fullName>Distribuidor B</fullName>
+                <default>false</default>
+                <label>Distribuidor B</label>
+            </value>
+            <value>
+                <fullName>Distribuidor C</fullName>
+                <default>false</default>
+                <label>Distribuidor C</label>
+            </value>
+            <value>
+                <fullName>Distribuidor D</fullName>
+                <default>false</default>
+                <label>Distribuidor D</label>
+            </value>
+            <value>
+                <fullName>Contratistas A</fullName>
+                <default>false</default>
+                <label>Contratistas A</label>
+            </value>
+            <value>
+                <fullName>Contratistas B</fullName>
+                <default>false</default>
+                <label>Contratistas B</label>
+            </value>
+            <value>
+                <fullName>Contratistas C</fullName>
+                <default>false</default>
+                <label>Contratistas C</label>
+            </value>
+            <value>
+                <fullName>Multimarcas A</fullName>
+                <default>false</default>
+                <label>Multimarcas A</label>
+            </value>
+            <value>
+                <fullName>Multimarcas B</fullName>
+                <default>false</default>
+                <label>Multimarcas B</label>
+            </value>
+            <value>
+                <fullName>Multimarcas C</fullName>
+                <default>false</default>
+                <label>Multimarcas C</label>
+            </value>
+            <value>
+                <fullName>Obras y Proyectos</fullName>
+                <default>false</default>
+                <label>Obras y Proyectos</label>
+            </value>
+            <value>
+                <fullName>Industriales</fullName>
+                <default>false</default>
+                <label>Industriales</label>
+            </value>
+            <value>
+                <fullName>Exportación</fullName>
+                <default>false</default>
+                <label>Exportación</label>
+            </value>
+            <value>
+                <fullName>Mostrador</fullName>
+                <default>false</default>
+                <label>Mostrador</label>
+            </value>
+            <value>
+                <fullName>Desarrollo de Negoci</fullName>
+                <default>false</default>
+                <label>Desarrollo de Negoci</label>
+            </value>
+            <value>
+                <fullName>Call Center</fullName>
+                <default>false</default>
+                <label>Call Center</label>
+            </value>
+            <value>
+                <fullName>Aplicador A</fullName>
+                <default>false</default>
+                <label>Aplicador A</label>
+            </value>
+            <value>
+                <fullName>Contratistas Plus</fullName>
+                <default>false</default>
+                <label>Contratistas Plus</label>
+            </value>
+            <value>
+                <fullName>Retail</fullName>
+                <default>false</default>
+                <label>Retail</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

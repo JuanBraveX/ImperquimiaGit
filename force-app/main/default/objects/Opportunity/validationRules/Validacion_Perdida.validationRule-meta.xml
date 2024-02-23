@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validacion_Perdida</fullName>
+    <active>true</active>
+    <description>Validar que la oportunidad tenga una razón de pérdida</description>
+    <errorConditionFormula>Perdida__c =true</errorConditionFormula>
+    <errorDisplayField>Loss_Reason__c</errorDisplayField>
+    <errorMessage>Es importante que coloque la razón de pérdida y un comentario adicional en &quot;Detalle de Pérdida&quot;</errorMessage>
+</ValidationRule>

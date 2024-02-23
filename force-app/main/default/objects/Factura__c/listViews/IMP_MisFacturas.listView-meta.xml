@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IMP_MisFacturas</fullName>
+    <columns>NAME</columns>
+    <columns>IMP_CanalVentas__c</columns>
+    <columns>IMP_ClaseFactura__c</columns>
+    <columns>IMP_NombreCliente__c</columns>
+    <columns>Monto_Factura__c</columns>
+    <filterScope>Mine</filterScope>
+    <label>Mis Facturas</label>
+</ListView>

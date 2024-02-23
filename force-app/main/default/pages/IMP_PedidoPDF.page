@@ -1,0 +1,436 @@
+<apex:page controller="IMP_PedidoPDF_CC" renderAs="pdf" docType="html-5.0" applyHtmlTag="false" applyBodyTag="false" showHeader="false" sidebar="false" standardStylesheets="false" title="PDF Pedido" >
+   
+        <head>
+            <style type="text/css" media="print">
+                @page {
+                    margin-top: 5cm;
+                    margin-bottom:1.5cm;
+                    margin-left:1.5cm;
+                    margin-right:1.5cm;
+                    font-family: sans-serif; 
+                    padding: 0px;
+
+                    
+                    @top-left{
+                        content: element(headerLeft);
+                    }
+
+                    @top-center{
+                        content: element(headerCenter);
+                    }
+
+                    @top-right{
+                        content: element(headerRight);
+                    }
+                    
+                  
+                    @bottom-center {
+                    content:element(footerPDF);
+                    }
+                }
+
+                .pageNumber:before {
+                    content:counter(page);
+                }
+                .pageCount:before {
+                    content:counter(pages);
+                }
+                .PaginadorSuperior{
+                    font-weight:normal;
+                    font-size:12px;
+                    position:relative;
+                }
+
+                .titleOrder{
+                    font-weight:normal;
+                    font-family:sans-serif; 
+                    font-size:33px; 
+                    vertical-align:bottom;
+                    text-align: right;
+                    position:relative;
+                    top:38px;
+                    height: 30px;
+                }
+
+                .headerLeft{
+                        position: running(headerLeft);
+                        margin-top: 10px;
+                        padding: 0px;
+                        margin-left: 14px;
+                }
+
+                .headerCenter{
+                    position: running(headerCenter);
+                    margin-top: -35px;
+                    margin-bottom: 45px;
+                    display: block;
+                    width: 375px;
+                }
+
+                .headerRight{
+                    position: running(headerRight);
+                    top:10px;
+                    padding: 0px;
+                    margin-right: 14px;
+                    height: 135px;
+                }
+
+                div.footerPDF {
+                    display: inline-block;
+                    padding: 5px;
+                    position: running(footerPDF);
+                }
+
+                .displayBlock {
+                    display: inline-block;
+                }
+                .box1 {
+                    width:50%;
+                    margin: 3px;
+                    border: 1px solid #000000;
+                    padding: 0px 3px 2px 3px;
+                    
+                }
+                .box2 {
+                    width:50%;
+                    margin: 3px;
+                    margin-top: 10px;
+                    border: 1px solid #000000;
+                    padding: 0px 3px 2px 3px;
+                    
+                }
+                .box3 {
+                    width:50%;
+                    margin: 3px;
+                    border: 1px solid #000000;
+                    padding: 0px 3px 2px 3px;
+                    margin-left: 10px;
+                }
+                .styleHeaderT {
+                    width:50%;
+                    font-weight:bold;
+                    font-size:16px;
+                    background:#E5E3E3;
+                    font-family:sans-serif;
+                }
+                .styleFontTC {
+                    width:50%;
+                    font-weight:normal;
+                    font-size:14px;
+                    color:#0c0cff;
+                    height: 100px;
+                }
+
+                .content{
+                    padding: 0px;
+                    margin: 0px;
+                    width:100%;
+                }
+
+                .styleInfoGral {
+                    background:#EFEFEF;
+                    height:30px;
+                    font-size: 15px;
+                    width:800px;
+                    color:#000000;
+                    font-family: sans-serif; 
+                    font-weight:bold;
+                }
+
+                .styleColumn {
+                    text-align: center;
+                    font-size: 15px;
+                    font-family: sans-serif;
+                    line-height: 100%;
+                    margin:6px;
+                    color:#000000;
+                }
+                .styleColumnPos {
+                    
+                    border-left: 1px solid #000000;
+                    text-align: left;
+                    font-size: 15px;
+                    font-family: sans-serif;
+                    line-height: 100%;
+                    margin:6px;
+                    color:#000000;
+                }
+                .styleColumnTotal {
+                    border-top: 1px solid #000000;
+                    border-bottom: 1px solid #000000;
+                    border-right: 1px solid #000000;
+                    text-align: center;
+                    font-size: 15px;
+                    line-height: 100%;
+                    margin:6px;
+                    color:#000000;
+                }
+                .styleBorderBotom{
+                    border-bottom: 1px solid #000000;
+                }
+                .styleBorderTop{
+                    border-top: 1px solid #000000;
+                }
+                .styleColumnPrice
+                {
+                    border-right: 1px solid #000000;
+                    text-align: center;
+                    font-size: 15px;
+                    font-family: sans-serif;
+                    line-height: 100%;
+                    margin:6px;
+                    color:#000000;
+                }
+                .styleLines {
+                    font-size: 15px;
+                    font-weight:bold;
+                    font-family: sans-serif;
+                    width:500px;
+                }
+                .styleLines2 {
+                    font-size: 15px;
+                    font-weight:normal;
+                    font-family: sans-serif;
+                    width:500px;
+                    border-top: 1px solid #000000;
+                    text-align:right;
+                }
+                .styleBody {
+                    text-align: center;
+                    font-size: 14px;
+                    font-family: sans-serif;
+                    line-height: 100%;
+                    border-collapse:collapse;
+                    color:#000000;
+                }
+                .styleBodyPos {
+                    text-align: center;
+                    font-size: 14px;
+                    font-family: sans-serif;
+                    line-height: 100%;
+                    border-collapse:collapse;
+                    color:#000000;
+                    border-left: 1px solid #000000;
+                }
+
+                .styleLabelDiscount {
+                    text-align: right;
+                    font-size: 14px;
+                    font-family: sans-serif;
+                    line-height: 100%;
+                    border-collapse:collapse;
+                    color:#000000;
+                    border-left: 1px solid #000000;
+                }
+
+                .styleBodyTotal {
+                    text-align: center;
+                    font-size: 14px;
+                    font-family: sans-serif;
+                    line-height: 100%;
+                    border-collapse:collapse;
+                    border: 0px solid #9E9C9C;
+                    color:#000000;
+                    border-right: 1px solid #000000;
+                    border-bottom: 1px solid #000000;
+                }
+                
+                .RowCompleteByPage tr{
+                    page-break-inside: avoid !important;
+                }
+            </style>
+        </head>
+        
+        <div class="headerLeft">
+            <apex:image id="headerComer" style="margin-top:9px;" url="{!$Resource.IMP_LogoImperquimiaOrderPDF}" width="150px"/>
+        </div>
+
+        <div class="headerCenter">
+            <apex:image id="headerC" url="{!$Resource.IMP_HeaderImperquimiaOrderPDF}" width="375px"/>
+        </div>
+
+        <div class="headerRight" style="text-align:right">
+            <p class="PaginadorSuperior">
+                Página <span class="pageNumber"/> de <span class="pageCount"/>
+            </p>
+
+            <p class="titleOrder">Pedido</p>
+        </div>
+
+
+        <div class="content">
+            <table style="width:100%;border-spacing: 10px;">
+                <tr>
+                    <td style="border: 1px solid black;width:50%;height:145px" valign="top" >
+                        <table style="width:100%;outline:none;">
+                            <tr>
+                                <td class="styleHeaderT">Empresa</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                <p style="font-weight:blue; color:#0c0cff;font-size:14px; font-family: sans-serif">{!cuenta.Name}</p>
+                                <p style="font-weight:blue; color:#0c0cff;font-size:14px; font-family: sans-serif">{!direccionCompleta}</p>
+                                </td>
+
+                            </tr>
+                        </table>
+                    </td>
+                    <td style="border: 1px solid black;width:50%" rowspan="2" valign="top">
+                        <table style="width:100%;">
+                            <tr>
+                                <td class="styleHeaderT">Información</td>
+                            </tr>
+                             <tr>
+                                <td style="font-style: sans-serif">
+                                         <p style="font-weight:bold; color:#000000;font-size:14px; font-family: sans-serif"> Pedido SAP: <span style="font-weight:normal;">{!datosOrder.pedido__c}</span> </p>
+                                    <p style="font-weight:bold; color:#000000;font-size:14px; font-family: sans-serif"> Pedido Salesforce: <span style="font-weight:normal;">{!datosOrder.OrderNumber}</span> </p>
+                                    <p style="font-weight:bold; color:#000000;font-size:14px; font-family: sans-serif"> Fecha Documento: <span style="font-weight:normal;"><apex:outputText value="{0,date,dd'.'MM'.'yyyy}"><apex:param value="{!datosOrder.createdDate}" /></apex:outputText></span> </p>
+                                    <p style="font-weight:bold; color:#000000;font-size:14px; font-family: sans-serif"> No. Cliente: <span style="font-weight:normal;">{!cuenta.id_de_sap__c}</span> </p>
+                                    <p style="font-weight:bold; color:#000000;font-size:14px; font-family: sans-serif"> Sucursal: <span style="font-weight:normal;"><apex:outputField value="{!datosOrder.Pricebook2.Sucursal__c}"/></span></p>  
+                                    <p style="font-weight:bold; color:#000000;font-size:14px; font-family: sans-serif"> Teléfono: <span style="font-weight:normal;">{!cuenta.Phone}</span> </p>
+                           
+                                    <p style="font-weight:bold; color:#000000;font-size:14px; font-family: sans-serif"> Correo: <span style="font-weight:normal;">{!cuenta.CorreoElectronico__c}</span> </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top" style="border: 1px solid black;">
+                        <table style="width:100%;">
+                            <tr>
+                                <td class="styleHeaderT"> Destinatario de Mercancia</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                <p style="color:#0c0cff;font-size:14px; font-family: sans-serif">{!cuenta.Name}</p>
+                                <p style="color:#0c0cff;font-size:14px; font-family: sans-serif">{!direccionCompleta}</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+
+            <div style="padding-left:9px;padding-right:6px;">
+                <table style="background:#E5E3E3;margin-top:6px;border-left: 1px solid #000000;border-right: 1px solid #000000;border-top: 1px solid #000000;width:100%;">
+                    <tr>
+                        <td class="styleInfoGral">Info. Cabecera</td>
+                    </tr>
+                </table>
+                <table style="border: 1px solid #000000;width:100%;">
+                    <tr>
+                        <td style="font-weight:bold; color:#000000;font-size:14px; font-family: sans-serif">No Orden compra.</td>
+                        <td style="font-weight:normal; color:#000000;font-size:14px; font-family: sans-serif">{!datosOrder.OrderNumber}</td>
+                        <td style="font-weight:bold; color:#000000;font-size:14px; font-family: sans-serif">Fecha orden comp.</td>
+                        <td style="font-weight:normal; color:#000000;font-size:14px; font-family: sans-serif"><apex:outputText value="{0,date,dd'.'MM'.'yyyy}"><apex:param value="{!datosOrder.createdDate}"/></apex:outputText></td>
+                    </tr>                   
+                    <tr>
+                        <td style="font-weight:bold; color:#000000;font-size:14px; font-family: sans-serif">Peso Bruto:</td>
+                        <td style="font-weight:normal; color:#000000;font-size:14px; font-family: sans-serif">{!resultadoPesos} KG</td>
+                      
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold; color:#000000;font-size:14px; font-family: sans-serif">Condición de pago:</td>
+                        <td style="font-weight:normal; color:#000000;font-size:14px; font-family: sans-serif"><apex:outputField value="{!datosOrder.condiciones_de_pago__c}"/> </td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold; color:#000000;font-size:14px; font-family: sans-serif">Condiciones de entrega:</td>
+                        <td style="font-weight:normal; color:#000000;font-size:14px; font-family: sans-serif">{!cuenta.Intercoms_1__c}  {!cuenta.Intercoms_2__c}</td>
+                    </tr>
+                </table>
+            </div>
+            <div style="padding-left:9px;padding-right:6px;padding-top:10px; ">
+                <table style="border-collapse: collapse;width:100%;"  cellspacing="10" cellpadding="10">
+                    <tr>
+                        <th class="styleColumnPos styleBorderTop styleBorderBotom">Material/Descripción</th>
+                        <th class="styleColumn styleBorderTop styleBorderBotom">Cantidad</th>
+                        <th class="styleColumn styleBorderTop styleBorderBotom">Precio Unitario</th>
+                        <th class="styleColumnPrice styleBorderTop styleBorderBotom">Precio</th>
+                    </tr>
+                </table>
+                    <apex:repeat value="{!productsOrder}" var="producto"  >
+                      
+                        <table style="border-collapse: collapse;width:100%;  page-break-inside: avoid;" cellspacing="5" cellpadding="5">
+                            <tr>
+                                <td class="styleBodyPos styleBorderTop">{!producto.ProductoCode + ' ' + producto.Name + producto.Description }</td>
+                                <td class="styleBody styleBorderTop">{!producto.Quantity} UN</td>
+                                <td class="styleBody styleBorderTop"><apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{! producto.PrecioUnit}"/></apex:outputText> UN</td>
+                                <td class="styleColumnPrice styleBorderTop">
+                                    <apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!producto.TotalPrecio}"/></apex:outputText> {!datosOrder.CurrencyIsoCode}</td>
+                            </tr>
+                            <tr>
+                                <td class="styleLabelDiscount " colspan="2">Promoci&oacute;n de ventas:</td>
+                                <td class="styleBody ">{!IF(producto.DescuentoPromo != NULL  , producto.DescuentoPromo  , 0.00)} %</td>
+                                <td class="styleColumnPrice "> 
+                                    <apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!producto.promoDesc}"/></apex:outputText> {!datosOrder.CurrencyIsoCode} 
+                                </td>
+                           
+                            <tr >
+                                <td class="styleLabelDiscount " colspan="2">Promoci&oacute;n de ventas:</td>
+                                <td class="styleBody ">{! IF(producto.DescuentoManual != NULL  , producto.DescuentoManual  , 0.00) } %</td>
+                                <td class="styleColumnPrice "> 
+                                   <apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{! producto.promoDescManual}"/></apex:outputText>  {!datosOrder.CurrencyIsoCode}</td>
+                              
+                            </tr>
+                            
+                           
+    
+                            
+                            </tr>
+    
+                            <tr>
+                                <td class="styleLabelDiscount styleBorderBotom" colspan="2">Valor Neto del Item:</td>
+                                <td class="styleBody styleBorderBotom"><apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{! producto.valorNetoItem}"/></apex:outputText> {!datosOrder.CurrencyIsoCode}</td>
+                                <td class="styleColumnPrice styleBorderBotom"><apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!producto.PrecioTotal}"/></apex:outputText> {!datosOrder.CurrencyIsoCode}</td>
+                            </tr>
+                        </table>
+                      
+                    </apex:repeat>
+               
+            </div>
+            <div class="row" style=" page-break-inside: avoid; padding-top:4px;padding-left:9px;padding-right:6px;">
+                <div style="border-left: 1px solid #000000;border-right: 1px solid #000000;border-top: 1px solid #000000;">
+                    <table style="border-collapse: separate; padding: 20px 3px 3px 100px;">
+                        <tr>
+                            <td class="styleLines">Subtotal:</td>
+                            <td style="width:450px;"></td>
+                            <td class="styleLines2">
+                                <apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!subtotal}"/></apex:outputText> {!datosOrder.CurrencyIsoCode}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="styleLines">IVA repercutido {!IVA} %</td>
+                            <td style="width:450px;"></td>
+                            <td class="styleLines2">
+                                <apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!impuestos}"/></apex:outputText> {!datosOrder.CurrencyIsoCode}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div style="border: 1px solid #000000;">
+                    <table style="border-collapse: separate; padding: 20px 3px 3px 100px;">
+                        <tr>
+                            <td class="styleLines">Cantidad Final:</td>
+                            <td style="width:450px;"></td>
+                            <td class="styleLines2">
+                               <apex:outputText value="{0, number, ###,###,##0.00}"><apex:param value="{!totalFinal}"/></apex:outputText> {!datosOrder.CurrencyIsoCode}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="footerPDF">
+            <table style="border-collapse: collapse; padding: 20px 3px 3px 100px;">
+                <tr>
+                    <td>Firma</td>
+                    <td style="width:450px;border-bottom: 1px solid #000000;"></td>
+                </tr>
+            </table>
+        </div>
+       
+</apex:page>

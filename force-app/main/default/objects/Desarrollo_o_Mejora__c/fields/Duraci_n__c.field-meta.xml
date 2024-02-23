@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Duraci_n__c</fullName>
+    <externalId>false</externalId>
+    <label>Duración</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1 a 2 meses</fullName>
+                <default>false</default>
+                <label>1 a 2 meses</label>
+            </value>
+            <value>
+                <fullName>2 a 4 meses</fullName>
+                <default>false</default>
+                <label>2 a 4 meses</label>
+            </value>
+            <value>
+                <fullName>4 a más meses</fullName>
+                <default>false</default>
+                <label>4 a más meses</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Viabilidad_Econ_mica__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Si cumple, describa si es un proyecto costeable, si no se necesita mucha inversión o si esta es justificada con algun proyecto de venta.
+
+Si no cumple, justifique el por que no es viable economicamente, si los gastos son excesivos o la inversión es muy alta comparado con la proyección de ventas.</inlineHelpText>
+    <label>Viabilidad Económica</label>
+    <length>131072</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mercado_Potencial__c</fullName>
+    <externalId>false</externalId>
+    <label>Mercado Potencial</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Se tiene desarrollado el mercado para su venta (Empresas)</fullName>
+                <default>false</default>
+                <label>Se tiene desarrollado el mercado para su venta (Empresas)</label>
+            </value>
+            <value>
+                <fullName>Se tiene estudiado el mercado de venta (Proyectos)</fullName>
+                <default>false</default>
+                <label>Se tiene estudiado el mercado de venta (Proyectos)</label>
+            </value>
+            <value>
+                <fullName>Se cuenta con un pronóstico para su distribución y consumo</fullName>
+                <default>false</default>
+                <label>Se cuenta con un pronóstico para su distribución y consumo</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

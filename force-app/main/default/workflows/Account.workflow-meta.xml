@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Aignaci_n_de_Cuentas</fullName>
+        <description>Aignación de Cuentas</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Clientes/Asignaci_n_Cuentas</template>
+    </alerts>
+    <alerts>
+        <fullName>Alerta_de_creaci_n_exitosa</fullName>
+        <description>Alerta de creación exitosa</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>arosas@imperquimia.com.mx</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Clientes/CuentaExitosa</template>
+    </alerts>
+    <alerts>
+        <fullName>Creaci_n_de_cuenta_exitosa</fullName>
+        <description>Creación de cuenta exitosa</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>arosas@imperquimia.com.mx</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Clientes/CuentaExitosa</template>
+    </alerts>
+    <alerts>
+        <fullName>Extensi_n_Autorizada</fullName>
+        <description>Extensión Autorizada</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Clientes/Extension_Cliente_Autorizada</template>
+    </alerts>
+    <alerts>
+        <fullName>Rechazo_Extension</fullName>
+        <description>Rechazo Extension</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Clientes/Rechazo_Extension_Cliente</template>
+    </alerts>
+    <alerts>
+        <fullName>Rechazo_de_Alta_de_Cliente</fullName>
+        <description>Rechazo de Alta de Cliente</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Clientes/Rechazo_Alta_de_Cliente</template>
+    </alerts>
+    <alerts>
+        <fullName>Solicitud_de_Alta_de_Cliente_Autorizada</fullName>
+        <description>Solicitud de Alta de Cliente Autorizada</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Clientes/Alta_de_Cliente_Autorizada</template>
+    </alerts>
+    <alerts>
+        <fullName>Solicitud_extension_keyuser</fullName>
+        <description>Solicitud extension keyuser</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>arosas@imperquimia.com.mx</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Clientes/Extensi_n_de_Cliente</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Aprobada</fullName>
+        <field>Aprobada__c</field>
+        <literalValue>1</literalValue>
+        <name>Aprobada</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Desmarca_el_Cr_dito_SAP</fullName>
+        <field>Credito_SAP__c</field>
+        <literalValue>0</literalValue>
+        <name>Desmarca el Crédito SAP</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Etapa_actualizada</fullName>
+        <field>Estatus__c</field>
+        <literalValue>Aprobada</literalValue>
+        <name>Etapa actualizada</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Marca_Campo_de_Proceso</fullName>
+        <field>Proceso_Aprobado__c</field>
+        <literalValue>1</literalValue>
+        <name>Marca Campo de Proceso</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Marca_Cr_dito_Sap</fullName>
+        <field>Credito_SAP__c</field>
+        <literalValue>1</literalValue>
+        <name>Marca Crédito Sap</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Quita_el_tipo_de_Solicitud</fullName>
+        <field>Solicitud_de_Credito__c</field>
+        <name>Quita el tipo de Solicitud</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Vacia_Casilla_de_Proceso</fullName>
+        <field>Proceso_Aprobado__c</field>
+        <literalValue>0</literalValue>
+        <name>Vacia Casilla de Proceso</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+</Workflow>

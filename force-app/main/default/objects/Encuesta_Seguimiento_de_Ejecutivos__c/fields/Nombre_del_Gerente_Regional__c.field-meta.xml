@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Nombre_del_Gerente_Regional__c</fullName>
+    <externalId>false</externalId>
+    <label>Nombre del Gerente Regional</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>No conoce el nombre del gerente</fullName>
+                <default>false</default>
+                <label>No conoce el nombre del gerente</label>
+            </value>
+            <value>
+                <fullName>Ariel Escamilla</fullName>
+                <default>false</default>
+                <label>Ariel Escamilla</label>
+            </value>
+            <value>
+                <fullName>Erik Flores</fullName>
+                <default>false</default>
+                <label>Erik Flores</label>
+            </value>
+            <value>
+                <fullName>Fernando Cedillo</fullName>
+                <default>false</default>
+                <label>Fernando Cedillo</label>
+            </value>
+            <value>
+                <fullName>Gabriela Gonzáles Araiza</fullName>
+                <default>false</default>
+                <label>Gabriela Gonzáles Araiza</label>
+            </value>
+            <value>
+                <fullName>Jose Rodriguez</fullName>
+                <default>false</default>
+                <label>Jose Rodriguez</label>
+            </value>
+            <value>
+                <fullName>Juan Pablo López</fullName>
+                <default>false</default>
+                <label>Juan Pablo López</label>
+            </value>
+            <value>
+                <fullName>Marco Mangas</fullName>
+                <default>false</default>
+                <label>Marco Mangas</label>
+            </value>
+            <value>
+                <fullName>Sergio Macias</fullName>
+                <default>false</default>
+                <label>Sergio Macias</label>
+            </value>
+            <value>
+                <fullName>Ramón Reyes</fullName>
+                <default>false</default>
+                <label>Ramón Reyes</label>
+            </value>
+            <value>
+                <fullName>Uriel Gaona</fullName>
+                <default>false</default>
+                <label>Uriel Gaona</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

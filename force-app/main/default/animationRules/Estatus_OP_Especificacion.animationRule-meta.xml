@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AnimationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <animationFrequency>always</animationFrequency>
+    <developerName>Estatus_OP_Especificacion</developerName>
+    <isActive>true</isActive>
+    <masterLabel>Estatus OP Especificacion</masterLabel>
+    <recordTypeContext>Custom</recordTypeContext>
+    <recordTypeName>Especificaci_n_Obra_Privada</recordTypeName>
+    <sobjectType>Opportunity</sobjectType>
+    <targetField>Estatus_OP__c</targetField>
+    <targetFieldChangeToValues>Cerrado</targetFieldChangeToValues>
+</AnimationRule>

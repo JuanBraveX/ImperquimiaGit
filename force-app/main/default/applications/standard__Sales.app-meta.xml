@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <defaultLandingTab>standard-home</defaultLandingTab>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <tabs>standard-Contact</tabs>
+    <tabs>standard-Account</tabs>
+    <tabs>standard-Lead</tabs>
+    <tabs>standard-Opportunity</tabs>
+    <tabs>standard-report</tabs>
+    <tabs>standard-Dashboard</tabs>
+    <tabs>standard-Chatter</tabs>
+    <tabs>standard-File</tabs>
+    <tabs>standard-Product2</tabs>
+    <tabs>standard-Forecasting3</tabs>
+    <tabs>standard-Quote</tabs>
+    <tabs>Solicitud_de_Pintura_Rotulaci_n__c</tabs>
+    <tabs>Productos__c</tabs>
+    <tabs>Unidad_M_vil__c</tabs>
+    <tabs>Encuesta_de_Satisfacci_n_UM__c</tabs>
+    <tabs>Encuesta_Seguimiento_de_Ejecutivos__c</tabs>
+    <tabs>Especificaciones__c</tabs>
+    <tabs>Folio_de_Descuentos__c</tabs>
+    <tabs>Material_Repuesto__c</tabs>
+    <tabs>Producto_Reclamado__c</tabs>
+    <tabs>Solicitud_de_Avi_n__c</tabs>
+    <tabs>Participante_de_la_Licitaci_n__c</tabs>
+    <tabs>Proyecto_Obra_Privada__c</tabs>
+    <tabs>Integration_Logs__c</tabs>
+    <tabs>Factura__c</tabs>
+    <tabs>Viaticos__c</tabs>
+    <tabs>Programa_Viaje_Rutas__c</tabs>
+    <tabs>Desgloce_de_Gastos__c</tabs>
+    <tabs>Desarrollo_o_Mejora__c</tabs>
+    <tabs>Programa_de_Facturaci_n__c</tabs>
+</CustomApplication>

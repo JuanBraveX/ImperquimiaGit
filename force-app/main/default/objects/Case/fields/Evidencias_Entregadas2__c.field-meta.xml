@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Evidencias_Entregadas2__c</fullName>
+    <externalId>false</externalId>
+    <label>Evidencias Entregadas</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Clave del tono (cuando aplique)</fullName>
+                <default>false</default>
+                <label>Clave del tono (cuando aplique)</label>
+            </value>
+            <value>
+                <fullName>Facturas</fullName>
+                <default>false</default>
+                <label>Facturas</label>
+            </value>
+            <value>
+                <fullName>Fotografía, donde se observe la dimensión del defecto</fullName>
+                <default>false</default>
+                <label>Fotografía, donde se observe la dimensión del defecto</label>
+            </value>
+            <value>
+                <fullName>Fotografía de la(s) zona(s) afectada(s)</fullName>
+                <default>false</default>
+                <label>Fotografía de la(s) zona(s) afectada(s)</label>
+            </value>
+            <value>
+                <fullName>Fotografía de la etiqueta del producto reclamado</fullName>
+                <default>false</default>
+                <label>Fotografía de la etiqueta del producto reclamado</label>
+            </value>
+            <value>
+                <fullName>Fotografía indicando defectivo reclamado</fullName>
+                <default>false</default>
+                <label>Fotografía indicando defectivo reclamado</label>
+            </value>
+            <value>
+                <fullName>Fotografía panorámica, indicando ubicación de zona afectada</fullName>
+                <default>false</default>
+                <label>Fotografía panorámica, indicando ubicación de zona afectada</label>
+            </value>
+            <value>
+                <fullName>Muestra Física</fullName>
+                <default>false</default>
+                <label>Muestra Física</label>
+            </value>
+            <value>
+                <fullName>Video sobre producto defectivo</fullName>
+                <default>false</default>
+                <label>Video sobre producto defectivo</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

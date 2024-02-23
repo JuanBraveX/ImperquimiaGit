@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Caso_Cerrado_falta_de_informacion</name>
+        <label>Caso Cerrado/falta de informacion</label>
+        <locationX>176</locationX>
+        <locationY>360</locationY>
+        <actionName>Case.Caso_Cerrado_falta_de_informaci_n</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Case.Caso_Cerrado_falta_de_informaci_n</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <apiVersion>58.0</apiVersion>
+    <environments>Default</environments>
+    <interviewLabel>Cerrar Caso por Falta de Información {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Cerrar Caso por Falta de Información</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Estatus_No_Procede_Falta_de_informaci_n</name>
+        <label>Estatus No Procede/Falta de información</label>
+        <locationX>176</locationX>
+        <locationY>252</locationY>
+        <connector>
+            <targetReference>Caso_Cerrado_falta_de_informacion</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>No procede/Falta de Información</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Estatus_No_Procede_Falta_de_informaci_n</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Status</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Rechazado por evidencia</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Tiempo_caso_abierto_dias__c</field>
+            <operator>GreaterThanOrEqualTo</operator>
+            <value>
+                <numberValue>3.0</numberValue>
+            </value>
+        </filters>
+        <object>Case</object>
+        <schedule>
+            <frequency>Daily</frequency>
+            <startDate>2023-06-29</startDate>
+            <startTime>00:00:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

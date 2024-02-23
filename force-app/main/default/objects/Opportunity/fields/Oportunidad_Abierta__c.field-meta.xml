@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Oportunidad_Abierta__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( OR( TEXT( StageName )=&quot;Prospección&quot;,TEXT( StageName )=&quot;Evaluación Técnica&quot;,TEXT( StageName )=&quot;Cotización presentada&quot;,TEXT( StageName )=&quot;Primera revisión&quot;,TEXT( StageName )=&quot;Negociación&quot;,TEXT( StageName )=&quot;Segunda Revisión&quot;,TEXT( StageName )=&quot;Orden de Compra&quot;,TEXT( StageName )=&quot;Pendiente de Pago&quot;),true,false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Oportunidad Abierta</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

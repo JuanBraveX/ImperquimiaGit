@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IMP_Estado__c</fullName>
+    <externalId>false</externalId>
+    <label>Estado o provincia</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>AGUASCALIENTES</fullName>
+                <default>false</default>
+                <label>AGUASCALIENTES</label>
+            </value>
+            <value>
+                <fullName>BAJA CALIFORNIA</fullName>
+                <default>false</default>
+                <label>BAJA CALIFORNIA</label>
+            </value>
+            <value>
+                <fullName>BAJA CALIFORNIA S</fullName>
+                <default>false</default>
+                <label>BAJA CALIFORNIA S</label>
+            </value>
+            <value>
+                <fullName>CHIHUAHUA</fullName>
+                <default>false</default>
+                <label>CHIHUAHUA</label>
+            </value>
+            <value>
+                <fullName>CHIAPAS</fullName>
+                <default>false</default>
+                <label>CHIAPAS</label>
+            </value>
+            <value>
+                <fullName>CAMPECHE</fullName>
+                <default>false</default>
+                <label>CAMPECHE</label>
+            </value>
+            <value>
+                <fullName>CIUDAD DE MÉXICO</fullName>
+                <default>false</default>
+                <label>CIUDAD DE MÉXICO</label>
+            </value>
+            <value>
+                <fullName>COAHUILA</fullName>
+                <default>false</default>
+                <label>COAHUILA</label>
+            </value>
+            <value>
+                <fullName>COLIMA</fullName>
+                <default>false</default>
+                <label>COLIMA</label>
+            </value>
+            <value>
+                <fullName>DURANGO</fullName>
+                <default>false</default>
+                <label>DURANGO</label>
+            </value>
+            <value>
+                <fullName>GUERRERO</fullName>
+                <default>false</default>
+                <label>GUERRERO</label>
+            </value>
+            <value>
+                <fullName>GUANAJUATO</fullName>
+                <default>false</default>
+                <label>GUANAJUATO</label>
+            </value>
+            <value>
+                <fullName>HIDALGO</fullName>
+                <default>false</default>
+                <label>HIDALGO</label>
+            </value>
+            <value>
+                <fullName>JALISCO</fullName>
+                <default>false</default>
+                <label>JALISCO</label>
+            </value>
+            <value>
+                <fullName>MICHOACÁN</fullName>
+                <default>false</default>
+                <label>MICHOACÁN</label>
+            </value>
+            <value>
+                <fullName>ESTADO DE MÉXICO</fullName>
+                <default>false</default>
+                <label>ESTADO DE MÉXICO</label>
+            </value>
+            <value>
+                <fullName>MORELOS</fullName>
+                <default>false</default>
+                <label>MORELOS</label>
+            </value>
+            <value>
+                <fullName>NAYARIT</fullName>
+                <default>false</default>
+                <label>NAYARIT</label>
+            </value>
+            <value>
+                <fullName>NUEVO LEÓN</fullName>
+                <default>false</default>
+                <label>NUEVO LEÓN</label>
+            </value>
+            <value>
+                <fullName>OAXACA</fullName>
+                <default>false</default>
+                <label>OAXACA</label>
+            </value>
+            <value>
+                <fullName>PUEBLA</fullName>
+                <default>false</default>
+                <label>PUEBLA</label>
+            </value>
+            <value>
+                <fullName>QUINTANA ROO</fullName>
+                <default>false</default>
+                <label>QUINTANA ROO</label>
+            </value>
+            <value>
+                <fullName>QUERÉTARO</fullName>
+                <default>false</default>
+                <label>QUERÉTARO</label>
+            </value>
+            <value>
+                <fullName>SINALOA</fullName>
+                <default>false</default>
+                <label>SINALOA</label>
+            </value>
+            <value>
+                <fullName>SAN LUIS POTOSÍ</fullName>
+                <default>false</default>
+                <label>SAN LUIS POTOSÍ</label>
+            </value>
+            <value>
+                <fullName>SONORA</fullName>
+                <default>false</default>
+                <label>SONORA</label>
+            </value>
+            <value>
+                <fullName>TABASCO</fullName>
+                <default>false</default>
+                <label>TABASCO</label>
+            </value>
+            <value>
+                <fullName>TLAXCALA</fullName>
+                <default>false</default>
+                <label>TLAXCALA</label>
+            </value>
+            <value>
+                <fullName>TAMAULIPAS</fullName>
+                <default>false</default>
+                <label>TAMAULIPAS</label>
+            </value>
+            <value>
+                <fullName>VERACRUZ</fullName>
+                <default>false</default>
+                <label>VERACRUZ</label>
+            </value>
+            <value>
+                <fullName>YUCATÁN</fullName>
+                <default>false</default>
+                <label>YUCATÁN</label>
+            </value>
+            <value>
+                <fullName>ZACATECAS</fullName>
+                <default>false</default>
+                <label>ZACATECAS</label>
+            </value>
+            <value>
+                <fullName>ONTARIO</fullName>
+                <default>false</default>
+                <label>ONTARIO</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

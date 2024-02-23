@@ -1,0 +1,42 @@
+.THIS .imagenTable{
+    max-width: none;
+}
+.THIS .estiloImgEliminar{
+    color: #ff0000 ;
+}
+.THIS .estiloImgDispGreen{
+    color: #42AB49 ;
+}
+.THIS .estiloImgDispRed{
+    color: #ff0000;
+}
+@media screen and (min-width: 768px) {
+  .THIS .paddIcon {
+    padding-top:1rem;
+  }
+  .THIS .paddCantidad {
+    margin-left:5.3rem;
+  }
+  .THIS .paddCantidadDescSap {
+    margin-left:5rem;
+  }
+  .THIS .paddinLeftEdit {
+  	margin-left: 3.8rem;
+  }
+   .THIS .paddCantidadEdit {
+    padding-left:2rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  
+  .THIS .paddCantidad {
+    margin-left:1.7rem;
+  }
+   .THIS .paddCantidadEdit {
+    padding-left:0.6rem;
+  }
+}
+
+.THIS .SkipText{
+  text-decoration: line-through !important;
+}

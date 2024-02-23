@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RegimenFiscal__c</fullName>
+    <description>Tipo de regimen fiscal de la cuenta</description>
+    <externalId>false</externalId>
+    <label>Regímen Fiscal</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>601</fullName>
+                <default>false</default>
+                <label>General de Ley Personales Morales</label>
+            </value>
+            <value>
+                <fullName>603</fullName>
+                <default>false</default>
+                <label>Personas Morales con fines no lucrativos</label>
+            </value>
+            <value>
+                <fullName>605</fullName>
+                <default>false</default>
+                <label>Sueldos y Salarios e ingresos Asimilados a Salarios</label>
+            </value>
+            <value>
+                <fullName>606</fullName>
+                <default>false</default>
+                <label>Arrendamiento</label>
+            </value>
+            <value>
+                <fullName>607</fullName>
+                <default>false</default>
+                <label>Régimen de Enajenación o Adquisición de Bienes</label>
+            </value>
+            <value>
+                <fullName>608</fullName>
+                <default>false</default>
+                <label>Demás Ingresos</label>
+            </value>
+            <value>
+                <fullName>610</fullName>
+                <default>false</default>
+                <label>Residentes en el Extranjero Sin Establecimiento Permanente en México</label>
+            </value>
+            <value>
+                <fullName>611</fullName>
+                <default>false</default>
+                <label>Ingresos por Dividendos (Socios y Accionistas)</label>
+            </value>
+            <value>
+                <fullName>612</fullName>
+                <default>false</default>
+                <label>Personas Físicas con Actividades Empresariales y Profesionales</label>
+            </value>
+            <value>
+                <fullName>614</fullName>
+                <default>false</default>
+                <label>Ingresos por intereses</label>
+            </value>
+            <value>
+                <fullName>615</fullName>
+                <default>false</default>
+                <label>Régimen de los ingresos por obtención de premios</label>
+            </value>
+            <value>
+                <fullName>616</fullName>
+                <default>false</default>
+                <label>Sin obligaciones fiscales</label>
+            </value>
+            <value>
+                <fullName>620</fullName>
+                <default>false</default>
+                <label>Sociedad Cooperativas de Producción que optan por diferir sus ingresos</label>
+            </value>
+            <value>
+                <fullName>621</fullName>
+                <default>false</default>
+                <label>Incorporación Fiscal</label>
+            </value>
+            <value>
+                <fullName>622</fullName>
+                <default>false</default>
+                <label>Actividades Agrícolas, Ganaderas, Silvícolas y Pesqueras</label>
+            </value>
+            <value>
+                <fullName>623</fullName>
+                <default>false</default>
+                <label>Opcional para Grupos de Sociedades</label>
+            </value>
+            <value>
+                <fullName>624</fullName>
+                <default>false</default>
+                <label>Coordinados</label>
+            </value>
+            <value>
+                <fullName>625</fullName>
+                <default>false</default>
+                <label>Régimen de las Actividades Empresariales con Ingresos a través de Plataformas Tecnológicas</label>
+            </value>
+            <value>
+                <fullName>626</fullName>
+                <default>false</default>
+                <label>Régimen Simplificado de Confianza</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

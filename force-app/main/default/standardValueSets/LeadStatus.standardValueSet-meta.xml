@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Nuevo</fullName>
+        <default>true</default>
+        <label>Nuevo</label>
+        <converted>false</converted>
+    </standardValue>
+    <standardValue>
+        <fullName>Contactado</fullName>
+        <default>false</default>
+        <label>Contactado</label>
+        <converted>false</converted>
+    </standardValue>
+    <standardValue>
+        <fullName>Trabajando</fullName>
+        <default>false</default>
+        <label>Trabajando</label>
+        <converted>false</converted>
+    </standardValue>
+    <standardValue>
+        <fullName>Perdido</fullName>
+        <default>false</default>
+        <label>Perdido</label>
+        <converted>false</converted>
+    </standardValue>
+    <standardValue>
+        <fullName>Convertido</fullName>
+        <default>false</default>
+        <label>Convertido</label>
+        <converted>true</converted>
+    </standardValue>
+</StandardValueSet>

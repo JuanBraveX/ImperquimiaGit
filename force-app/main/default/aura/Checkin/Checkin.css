@@ -1,0 +1,17 @@
+.THIS.changeMe {
+    width : 100%;
+}
+
+.THIS .AlinearDer {
+    float:right;
+}
+
+.THIS .TitleCheck{
+    text-decoration: underline;
+    font-size: large;
+    font-weight: bold;
+}
+
+.THIS .slds-spinner_container {
+    position: inherit !important;
+}

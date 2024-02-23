@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_de_Venta_Estimada__c</fullName>
+    <externalId>false</externalId>
+    <formula>Monto_de_Venta1__c + Monto_de_Venta2__c +Monto_de_Venta3__c+Monto_de_Venta4__c+Monto_de_Venta5__c+Monto_de_Venta6__c+Monto_de_Venta7__c+Monto_de_Venta8__c+Monto_de_Venta9__c+Monto_de_Venta10__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Total Monto de Venta Esperado</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

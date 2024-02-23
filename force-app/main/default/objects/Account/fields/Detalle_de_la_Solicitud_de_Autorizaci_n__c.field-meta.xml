@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Detalle_de_la_Solicitud_de_Autorizaci_n__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>En caso de que requiera solicitar alguna autorización, favor de detallar la solicitud</inlineHelpText>
+    <label>Detalle de la Solicitud de Autorización</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>TextArea</type>
+</CustomField>

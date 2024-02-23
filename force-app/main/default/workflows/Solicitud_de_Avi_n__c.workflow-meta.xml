@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Aprobacion_Dra_Aurora</fullName>
+        <ccEmails>agomez@imperquimia.com.mx</ccEmails>
+        <description>Aprobacion Dra Aurora</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>pesquivel@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Solicitud_de_Avi_n/Aprobaci_n_Dra_Aurora</template>
+    </alerts>
+    <alerts>
+        <fullName>Aprobado</fullName>
+        <description>Aprobado</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Solicitud_de_Avi_n/Aprobado</template>
+    </alerts>
+    <alerts>
+        <fullName>Confirmaci_n_del_Vuelo</fullName>
+        <description>Confirmación del Vuelo</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Solicitud_de_Avi_n/Confirmaci_n_del_Vuelo</template>
+    </alerts>
+    <alerts>
+        <fullName>Gesti_n_de_Vuelo</fullName>
+        <description>Gestión de Vuelo</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>pesquivel@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Solicitud_de_Avi_n/Solicitud_de_Avi_n_Aprobada_Noti</template>
+    </alerts>
+    <alerts>
+        <fullName>Rechazado</fullName>
+        <description>Rechazado</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Solicitud_de_Avi_n/Rechazado</template>
+    </alerts>
+    <alerts>
+        <fullName>Rechazo_Final</fullName>
+        <description>Rechazo Final</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>pesquivel@imperquimia.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Solicitud_de_Avi_n/Rechazado</template>
+    </alerts>
+    <alerts>
+        <fullName>Solicitud_enviada</fullName>
+        <description>Solicitud enviada</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Solicitud_de_Avi_n/Solicitud_enviada</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Aprobado</fullName>
+        <field>Estatus__c</field>
+        <literalValue>Aprobado</literalValue>
+        <name>Aprobado</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Pendiente_de_aprobaci_n</fullName>
+        <field>Estatus__c</field>
+        <literalValue>Pendiente de aprobación</literalValue>
+        <name>Pendiente de aprobación</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Rechazado</fullName>
+        <field>Estatus__c</field>
+        <literalValue>Rechazado</literalValue>
+        <name>Rechazado</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Revisi_n_de_solicitud</fullName>
+        <field>Estatus__c</field>
+        <literalValue>En revisión</literalValue>
+        <name>Revisión de solicitud</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+</Workflow>
