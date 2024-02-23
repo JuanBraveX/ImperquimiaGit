@@ -275,7 +275,7 @@ public without sharing class IMP_ConsultaCredito {
       );
       System.debug('Antes de deserialize');
       system.debug('show the ' + response.getBody());
-      Messaging.SingleEmailMessage mymail = new Messaging.SingleEmailMessage();
+      /*Messaging.SingleEmailMessage mymail = new Messaging.SingleEmailMessage();
       String[] toaddresses = new List<String>{ 'jpedraza@ts4.mx' };
       mymail.setToAddresses(toAddresses);
       mymail.setSenderDisplayName('Salesforce Support');
@@ -283,7 +283,7 @@ public without sharing class IMP_ConsultaCredito {
       mymail.setPlainTextBody('This email has been sent through Apex');
       mymail.setHtmlBody('<p>' + response.getBody() + '</p>');
 
-      Messaging.sendEmail(new List<Messaging.SingleEmailMessage>{ mymail });
+      Messaging.sendEmail(new List<Messaging.SingleEmailMessage>{ mymail });*/
       //IMP_ConsultaCredito responseCredito = (IMP_ConsultaCredito)JSON.deserialize(response.getBody(), IMP_ConsultaCredito.class);
       Map<String, Object> responseCredito = (Map<String, Object>) JSON.deserializeUntyped(
         response.getBody()
