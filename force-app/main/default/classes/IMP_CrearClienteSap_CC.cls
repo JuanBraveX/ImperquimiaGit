@@ -274,7 +274,7 @@ Messaging.sendEmail(new Messaging.SingleEmailMessage[] { mymail });*/
           exc.getCause() +
           ' ' +
           exc.getStackTraceString(),
-        /*Mensaje_SFDC__c=exc.getMessage()*/ Body_JSON__c = returnData.responseAccount,
+         Body_JSON__c = returnData.responseAccount,
         Tipo__c = 'CREACION_CLIENTES_SFDC'
       );
       insert systemLog;
