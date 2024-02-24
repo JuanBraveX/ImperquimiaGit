@@ -71,7 +71,7 @@ public class IMP_InventarioManager {
     public static cls_ZINVENTARIOS[] getInventario(List<String> listaCodigos,String almacen){
         IMP_InventarioManager inventario = new IMP_InventarioManager();
         try{
-            //inicio mi documentacion
+            //inicio mi documentacion 02232024
             String body = generateJSON(listaCodigos,almacen); 
             HttpResponse response = IMP_CalloutUtils.getResponse(body,IMP_ServiceConstants.INVENTARIO_API_URL);
             inventario = new IMP_InventarioManager();
