@@ -41,7 +41,7 @@ public class IMP_InventarioManager {
     Information about changes (versions) []:
     ********************************************************************/
     
-    Public static String generateJSON(List<String> listaCodigos,String almacen){
+    public static String generateJSON(List<String> listaCodigos,String almacen){
         List<cls_I_MATNR> listaMateriales = new List<cls_I_MATNR>();
         for(String item : listaCodigos){
             cls_I_MATNR newProd = new cls_I_MATNR();
@@ -74,10 +74,73 @@ public class IMP_InventarioManager {
             //inicio mi documentacion 02232024
             String body = generateJSON(listaCodigos,almacen); 
             HttpResponse response = IMP_CalloutUtils.getResponse(body,IMP_ServiceConstants.INVENTARIO_API_URL);
-            inventario = new IMP_InventarioManager();
-            inventario = (IMP_InventarioManager)JSON.deserialize(response.getBody(), IMP_InventarioManager.class);                    
+            
+            Map<String, Object> responseInventario = (Map<String, Object>) JSON.deserializeUntyped(
+          response.getBody()
+        );
+  
+  
+        List<cls_I_MATNR> resposeIs_MATNRs = new List<cls_I_MATNR>();
+        Map<String, Object> Is_MATNR = new Map<String, Object>();
+  
+        if(String.valueOf(responseInventario.get('I_MATNR'))!=''){
+          Is_MATNR = (Map<String, Object>) responseInventario.get(
+            'I_MATNR'
+          );
+        }
+  
+        List<Object> itemObjects = (List<Object>) Is_MATNR.get('item');
+        if (itemObjects != null) {
+          List<cls_I_MATNR> Is_MATNRs = new List<cls_I_MATNR>();
+          for (Object itemObject : itemObjects) {
+            Map<String, Object> itemMap = (Map<String, Object>) itemObject;
+            IMP_InventarioManager.cls_I_MATNR item = new IMP_InventarioManager.cls_I_MATNR();
+            item.MATNR = (String) itemMap.get('MATNR');
+            Is_MATNRs.add(item);
+          }
+          // Asigna la lista de objetos a tu objeto principal
+          resposeIs_MATNRs = Is_MATNRs;
+        }
+  
+        List<cls_ZINVENTARIOS> resposeZINVENTARIOSs = new List<cls_ZINVENTARIOS>();
+        Map<String, Object> ZINVENTARIOS = new Map<String, Object>();
+  
+        if(String.valueOf(responseInventario.get('ZINVENTARIOS'))!=''){
+          ZINVENTARIOS = (Map<String, Object>) responseInventario.get(
+            'ZINVENTARIOS'
+          );
+        }
+  
+        List<Object> itemObjectsZINV = (List<Object>) ZINVENTARIOS.get('item');
+        if (itemObjectsZINV != null) {
+          List<cls_ZINVENTARIOS> ZINVENTARIOSs = new List<cls_ZINVENTARIOS>();
+          for (Object itemObject : itemObjectsZINV) {
+            Map<String, Object> itemMap = (Map<String, Object>) itemObject;
+            IMP_InventarioManager.cls_ZINVENTARIOS item = new IMP_InventarioManager.cls_ZINVENTARIOS();
+            item.CHARG= (String) itemMap.get('CHARG'); //
+            item.CLABS= (Decimal) itemMap.get('CLABS'); //0
+            item.HSDAT= (String) itemMap.get('HSDAT'); //
+            item.LGORT= (String) itemMap.get('LGORT'); //
+            item.MAKTX= (String) itemMap.get('MAKTX'); //
+            item.MATNR= (String) itemMap.get('MATNR'); //
+            item.MEINS= (String) itemMap.get('MEINS'); //
+            item.NAME= (String) itemMap.get('NAME'); //
+            item.VFDAT= (String) itemMap.get('VFDAT'); //
+            item.WERKS= (String) itemMap.get('WERKS'); //
+            ZINVENTARIOSs.add(item);
+          }
+          // Asigna la lista de objetos a tu objeto principal
+          resposeZINVENTARIOSs = ZINVENTARIOSs;
+        }
+            
+            inventario.ZINVENTARIOS = resposeZINVENTARIOSs;
+            //inventario = (IMP_InventarioManager)JSON.deserialize(response.getBody(), IMP_InventarioManager.class);                    
         }catch(Exception ex) {
+            System.debug(ex.getMessage());
         }
         return inventario.ZINVENTARIOS;
     }      
 }
+
+
+
