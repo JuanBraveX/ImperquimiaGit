@@ -78,6 +78,7 @@ public without sharing class IMP_IntegracionMateriales {
             insert systemLog;
         }
     }
+    //Juan Pedraza
     public cls_IT_MATERIALES[] IT_MATERIALES;
 	public class cls_IT_MATERIALES {
 		public String MATNR;//MATERIAL
