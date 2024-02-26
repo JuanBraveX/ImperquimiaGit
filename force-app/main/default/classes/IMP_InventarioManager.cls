@@ -73,8 +73,9 @@ public class IMP_InventarioManager {
         try{
             //inicio mi documentacion 02232024
             String body = generateJSON(listaCodigos,almacen); 
+            System.debug(body);
             HttpResponse response = IMP_CalloutUtils.getResponse(body,IMP_ServiceConstants.INVENTARIO_API_URL);
-            
+            System.debug(response.getBody());
             Map<String, Object> responseInventario = (Map<String, Object>) JSON.deserializeUntyped(
           response.getBody()
         );
@@ -118,7 +119,7 @@ public class IMP_InventarioManager {
             Map<String, Object> itemMap = (Map<String, Object>) itemObject;
             IMP_InventarioManager.cls_ZINVENTARIOS item = new IMP_InventarioManager.cls_ZINVENTARIOS();
             item.CHARG= (String) itemMap.get('CHARG'); //
-            item.CLABS= (Decimal) itemMap.get('CLABS'); //0
+            item.CLABS= Decimal.valueOf((String) itemMap.get('CLABS')); //0
             item.HSDAT= (String) itemMap.get('HSDAT'); //
             item.LGORT= (String) itemMap.get('LGORT'); //
             item.MAKTX= (String) itemMap.get('MAKTX'); //
@@ -132,7 +133,7 @@ public class IMP_InventarioManager {
           // Asigna la lista de objetos a tu objeto principal
           resposeZINVENTARIOSs = ZINVENTARIOSs;
         }
-            
+        System.debug(resposeZINVENTARIOSs);
             inventario.ZINVENTARIOS = resposeZINVENTARIOSs;
             //inventario = (IMP_InventarioManager)JSON.deserialize(response.getBody(), IMP_InventarioManager.class);                    
         }catch(Exception ex) {

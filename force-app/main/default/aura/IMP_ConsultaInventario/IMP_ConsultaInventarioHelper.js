@@ -9,7 +9,7 @@
                                    {                                       
                                        var data = component.get('v.data');
                                        var respuesta = response.getReturnValue();
-                                       if(respuesta.status==='SUCCESS'){
+                                       if(respuesta.codigo!='ERROR'){
                                            let dataRetrieved = respuesta.listProds; 
                                            for (var it = 0; it < dataRetrieved.length; it++) {
                                                var row = dataRetrieved[it];
