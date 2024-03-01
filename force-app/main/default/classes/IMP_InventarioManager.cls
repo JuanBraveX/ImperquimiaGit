@@ -102,18 +102,15 @@ public class IMP_InventarioManager {
       Map<String, Object> jsonData = (Map<String, Object>) JSON.deserializeUntyped(
         response.getBody()
       );
-
+      System.debug(String.valueOf(jsonData.get('ZINVENTARIOS')));
       // Verificar si ZINVENTARIOS es un objeto o un arreglo
       Object zinventariosObject = jsonData.get('ZINVENTARIOS');
-      if (zinventariosObject instanceof Map<String, Object>) {
+      if (String.valueOf(jsonData.get('ZINVENTARIOS')).contains('{item={')) {
         // ZINVENTARIOS es un objeto, convertirlo a un arreglo
         Map<String, Object> zinventariosMap = (Map<String, Object>) zinventariosObject;
         List<Object> itemList = new List<Object>();
         itemList.add(zinventariosMap.get('item'));
         zinventariosMap.put('item', itemList);
-      } else if (zinventariosObject instanceof List<Object>) {
-        // ZINVENTARIOS ya es un arreglo
-        // No se necesita hacer ninguna modificación
       }
 
       // Serializar el mapa de datos de nuevo a JSON
@@ -143,7 +140,7 @@ public class IMP_InventarioManager {
       System.debug('S');
       List<cls_ZINVENTARIOS> resposeZINVENTARIOSs = new List<cls_ZINVENTARIOS>();
       Map<String, Object> ZINVENTARIOS = new Map<String, Object>();
-      System.debug('1');
+      
       if (String.valueOf(responseInventario.get('ZINVENTARIOS')) != '') {
         ZINVENTARIOS = (Map<String, Object>) responseInventario.get(
           'ZINVENTARIOS'
