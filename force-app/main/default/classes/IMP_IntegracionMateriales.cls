@@ -33,6 +33,7 @@ public without sharing class IMP_IntegracionMateriales {
         Map<String,String> headers = new Map<String,String>{'Content-Type' => 'application/json', 'Authorization' => authHeader};
         try {
             body = IMP_CreateJson.createMateriales(fechaInicio,fechaFinal);
+            System.debug('Body de crearMateriales' + body);
             HttpRequest req = IMP_CalloutUtils.generateRequest(
                 IMP_CalloutConstants.METHOD_POST, 
                 urlFinal,
