@@ -102,36 +102,32 @@ public class IMP_InventarioManager {
       Map<String, Object> responseInventario = (Map<String, Object>) JSON.deserializeUntyped(
         response.getBody()
       );
+      System.debug('0');
+      List<cls_I_MATNR> responseIs_MATNRs = new List<cls_I_MATNR>();
+      Map<String, Object> Is_MATNR = (Map<String, Object>) responseInventario.get(
+        'I_MATNR'
+      );
 
-      List<cls_I_MATNR> resposeIs_MATNRs = new List<cls_I_MATNR>();
-      Map<String, Object> Is_MATNR = new Map<String, Object>();
-
-      if (String.valueOf(responseInventario.get('I_MATNR')) != '') {
-        Is_MATNR = (Map<String, Object>) responseInventario.get('I_MATNR');
-      }
-
-      List<Object> itemObjects = (List<Object>) Is_MATNR.get('item');
-      if (itemObjects != null) {
-        List<cls_I_MATNR> Is_MATNRs = new List<cls_I_MATNR>();
-        for (Object itemObject : itemObjects) {
-          Map<String, Object> itemMap = (Map<String, Object>) itemObject;
+      if (Is_MATNR != null && Is_MATNR.containsKey('item')) {
+        Map<String, Object> itemMap = (Map<String, Object>) Is_MATNR.get(
+          'item'
+        );
+        if (itemMap != null && itemMap.containsKey('MATNR')) {
           IMP_InventarioManager.cls_I_MATNR item = new IMP_InventarioManager.cls_I_MATNR();
           item.MATNR = (String) itemMap.get('MATNR');
-          Is_MATNRs.add(item);
+          responseIs_MATNRs.add(item);
         }
-        // Asigna la lista de objetos a tu objeto principal
-        resposeIs_MATNRs = Is_MATNRs;
       }
-
+      System.debug('S');
       List<cls_ZINVENTARIOS> resposeZINVENTARIOSs = new List<cls_ZINVENTARIOS>();
       Map<String, Object> ZINVENTARIOS = new Map<String, Object>();
-
+      System.debug('1');
       if (String.valueOf(responseInventario.get('ZINVENTARIOS')) != '') {
         ZINVENTARIOS = (Map<String, Object>) responseInventario.get(
           'ZINVENTARIOS'
         );
       }
-
+      System.debug('2');
       List<Object> itemObjectsZINV = (List<Object>) ZINVENTARIOS.get('item');
       if (itemObjectsZINV != null) {
         List<cls_ZINVENTARIOS> ZINVENTARIOSs = new List<cls_ZINVENTARIOS>();

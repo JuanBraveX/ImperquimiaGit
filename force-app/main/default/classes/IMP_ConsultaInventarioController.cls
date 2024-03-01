@@ -49,9 +49,12 @@ public without sharing class IMP_ConsultaInventarioController {
         System.debug(salida);
       } else {
         salida.codigo = 'ERROR';
+        salida.mensaje = 'No se seleccionaron inventarios.';
       }
     } catch (Exception e) {
       System.debug(e);
+      salida.codigo = 'ERROR';
+      salida.mensaje = e.getMessage();
     }
     return salida;
   }
@@ -134,6 +137,8 @@ public without sharing class IMP_ConsultaInventarioController {
     public List<String> listCatalogo;
     @AuraEnabled
     public List<Product2> listProd2;
+    @AuraEnabled
+    public String mensaje;
   }
 
   public class Producto {

@@ -32,7 +32,7 @@
                                                "mode": 'sticky',
                                                "type":"error",
                                                "title": "",
-                                               "message": 'Servicio Inactivo, contacte a su Administrador de Salesforce para mas información.'
+                                               "message": respuesta.mensaje
                                            }); 
                                            component.set('v.spinner',false);
                                            toastEvent.fire(); 
