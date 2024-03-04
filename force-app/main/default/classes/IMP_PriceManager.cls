@@ -77,7 +77,7 @@ public without sharing class IMP_PriceManager {
     Information about changes (versions) []:
     ********************************************************************/
   public static void getPrice(String pricebook2Id) {
-    System.debug('Antrando a getPrice');
+    System.debug('Entrando a getPrice');
     String log = '';
     String fechaFinal = System.Now().format('YYYY/MM/dd');
     Pricebook2 listaPrecios = [
@@ -125,15 +125,15 @@ public without sharing class IMP_PriceManager {
 
       List<cls_MATPRECIO> resposeMATPRECIO = new List<cls_MATPRECIO>();
 
-      Map<String, Object> itMateriales = new Map<String, Object>();
+      Map<String, Object> itMatPrecios = new Map<String, Object>();
 
-      if (String.valueOf(responseMateriales.get('ET_MATERIALES')) != '') {
-        itMateriales = (Map<String, Object>) responseMateriales.get(
-          'ET_MATERIALES'
+      if (String.valueOf(responseMateriales.get('ZSDSF_MATPRECIO')) != '') {
+        itMatPrecios = (Map<String, Object>) responseMateriales.get(
+          'ZSDSF_MATPRECIO'
         );
       }
 
-      List<Object> itemObjectsMATE = (List<Object>) itMateriales.get('item');
+      List<Object> itemObjectsMATE = (List<Object>) itMatPrecios.get('item');
       if (itemObjectsMATE != null) {
         List<cls_MATPRECIO> MATPRECIOLst = new List<cls_MATPRECIO>();
         for (Object itemObject : itemObjectsMATE) {
@@ -149,7 +149,7 @@ public without sharing class IMP_PriceManager {
         // Asigna la lista de objetos a tu objeto principal
         resposeMATPRECIO = MATPRECIOLst;
       }
-      System.debug(resposeMATPRECIO);
+      System.debug('MaTPRecio: '+resposeMATPRECIO);
 
       for (IMP_PriceManager.cls_MATPRECIO newPrice : resposeMATPRECIO) {
         //  System.debug(newPrice.MATNR.replaceFirst('^0+', '')+ ' - '+newPrice.NETWR+' - '+newPrice.PLTYP);
