@@ -98,6 +98,10 @@ public without sharing class IMP_PriceManager {
       Map<String, Decimal> mapPrices = new Map<String, Decimal>();
       Map<String, String> mapListas = new Map<String, String>();
       List<String> listCodigo = new List<String>();
+      /*IMP_PriceManager priceResponse = (IMP_PriceManager) JSON.deserialize(
+        response.getBody(),
+        IMP_PriceManager.class
+      );*/
 
       Map<String, Object> jsonData = (Map<String, Object>) JSON.deserializeUntyped(
         response.getBody()
@@ -115,14 +119,39 @@ public without sharing class IMP_PriceManager {
 
       // Serializar el mapa de datos de nuevo a JSON
       String modifiedJson = JSON.serialize(jsonData);
-
-
-      IMP_PriceManager priceResponse = (IMP_PriceManager) JSON.deserialize(
-        response.getBody(),
-        IMP_PriceManager.class
+      Map<String, Object> responseMateriales = (Map<String, Object>) JSON.deserializeUntyped(
+        modifiedJson
       );
 
-      for (IMP_PriceManager.cls_MATPRECIO newPrice : priceResponse.MATPRECIO) {
+      List<cls_MATPRECIO> resposeMATPRECIO = new List<cls_MATPRECIO>();
+
+      Map<String, Object> itMateriales = new Map<String, Object>();
+
+      if (String.valueOf(responseMateriales.get('ET_MATERIALES')) != '') {
+        itMateriales = (Map<String, Object>) responseMateriales.get(
+          'ET_MATERIALES'
+        );
+      }
+
+      List<Object> itemObjectsMATE = (List<Object>) itMateriales.get('item');
+      if (itemObjectsMATE != null) {
+        List<cls_MATPRECIO> MATPRECIOLst = new List<cls_MATPRECIO>();
+        for (Object itemObject : itemObjectsMATE) {
+          Map<String, Object> itemMap = (Map<String, Object>) itemObject;
+          IMP_PriceManager.cls_MATPRECIO item = new IMP_PriceManager.cls_MATPRECIO();
+          item.VKBUR = (String) itemMap.get('VKBUR'); //
+          item.PLTYP = (String) itemMap.get('PLTYP'); //
+          item.MATNR = (String) itemMap.get('MATNR'); //
+          item.KONWA = (String) itemMap.get('KONWA'); //
+          item.NETWR = Decimal.valueOf((String) itemMap.get('NETWR')); //0
+          MATPRECIOLst.add(item);
+        }
+        // Asigna la lista de objetos a tu objeto principal
+        resposeMATPRECIO = MATPRECIOLst;
+      }
+      System.debug(resposeMATPRECIO);
+
+      for (IMP_PriceManager.cls_MATPRECIO newPrice : resposeMATPRECIO) {
         //  System.debug(newPrice.MATNR.replaceFirst('^0+', '')+ ' - '+newPrice.NETWR+' - '+newPrice.PLTYP);
         if (newPrice.PLTYP == listaPrecios.Lista_de_precios_SAP__c) {
           listCodigo.add(newPrice.MATNR.replaceFirst('^0+', ''));
@@ -132,7 +161,7 @@ public without sharing class IMP_PriceManager {
       }
       log +=
         'Cantidad de precios devueltos : ' +
-        priceResponse.MATPRECIO.size() +
+        resposeMATPRECIO.size() +
         '\n';
       // log+='Ultima modificacion : '+Date.today()+'\n';
       List<Product2> newProducts = [
@@ -232,7 +261,7 @@ public without sharing class IMP_PriceManager {
       log += 'Modificados/Creados correctamente ' + counterRight + '\n';
       log += 'Modificados/Creados con error ' + counterError + '\n';
     } catch (Exception ex) {
-      System.debug('Exception de PriceManager '+ex.getMessage());
+      System.debug('Exception de PriceManager ' + ex.getMessage());
     }
 
     listaPrecios.Log__c = log;
