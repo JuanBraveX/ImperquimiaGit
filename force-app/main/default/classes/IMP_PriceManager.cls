@@ -156,7 +156,7 @@ public without sharing class IMP_PriceManager {
         log+='Modificados/Creados correctamente '+ counterRight+'\n';
         log+='Modificados/Creados con error '+ counterError+'\n';
         }catch(Exception ex){
-            
+            System.debug(ex.getMessage());
         }
        
         listaPrecios.Log__c=log;
