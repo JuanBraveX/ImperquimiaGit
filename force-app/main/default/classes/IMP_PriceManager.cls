@@ -64,6 +64,7 @@ public without sharing class IMP_PriceManager {
     Information about changes (versions) []:
     ********************************************************************/ 
     public static void getPrice(String pricebook2Id){
+        System.debug('Antrando a getPrice');
         String log='';
         String fechaFinal=System.Now().format('YYYY/MM/dd');
         Pricebook2 listaPrecios =[SELECT Id,Name,Sucursal__c, Lista_de_precios_SAP__c  FROM Pricebook2 WHERE Id=:pricebook2Id]; 
@@ -75,7 +76,8 @@ public without sharing class IMP_PriceManager {
         price.I_FECHA=fechaFinal.replace('/','');
         price.I_VKBUR=listaPrecios.Sucursal__c;
         price.MATPRECIO=listPrice;
-        String body = JSON.serialize(price);        
+        String body = JSON.serialize(price); 
+        System.debug('Request body : '+body);       
         HttpResponse response = getResponse(body);
         Map<String,Decimal> mapPrices = new Map<String,Decimal>();
         Map<String,String > mapListas = new Map<String,String>();
@@ -238,7 +240,7 @@ public without sharing class IMP_PriceManager {
                     body
                 );
                 response = IMP_CalloutUtils.doRequest(req, true);
-                system.debug('Response body : '+response.getBody());
+                System.debug('Response body : '+response.getBody());
             }
         catch(Exception exc){ 
             System.debug(exc.getMessage());

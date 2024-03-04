@@ -128,7 +128,7 @@ public without sharing class IMP_IntegracionMateriales {
             ProductCode = prod.MATNR.replaceFirst('^0+', ''),
             IMP_IdExterno__c = prod.MATNR.replaceFirst('^0+', ''),
             Grupo_de_art_culos__c = prod.MATKL,
-            Grupo_de_Materiales_c=prod.KONDM,
+            Grupo_de_Materiales__c=prod.KONDM,
             sku__c = Decimal.valueOf(
               prod.MATNR.replaceFirst('^0+', '')
             ),
