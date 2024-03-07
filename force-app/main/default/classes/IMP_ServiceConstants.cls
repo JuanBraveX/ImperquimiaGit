@@ -25,7 +25,7 @@ public without sharing class IMP_ServiceConstants {
     public static final String FILES_NAME_API_URL  = '&name';
     public static final String FACTURA_API_URL  = '/ConsultaFactPedidos';//'/ConsultaFac_Ped';8
     public static final String DESCUENTOS_API_URL  = '/TablasDescuentos';//'/Descuentos';
-    public static final String PEDIDOS_API_URL  = '/ConsultaPedidos';
+    public static final String PEDIDOS_API_URL  = '/ConsultaFacturas';//'/ConsultaPedidos'
                 
     public static final Map<String,String> AUTHORIZE_HEADERS = new Map<String,String>{
         IMP_CalloutConstants.HEADER_CLIENT_ID => '{!$Credential.Username}',
