@@ -95,31 +95,73 @@ public inherited sharing class IMP_DescuentosManager {
         newJsonString,
         IMP_DescuentosManager.class
       );
-
+      Boolean bandera;
       for (IMP_DescuentosManager.T_A000 descuento : discountResponse.T_A305) {
-        listDescuento.add(getDescuento('A305', descuento));
-        setId.add(descuento.KNUMH);
+        bandera = true;
+        if (discountResponse.T_A305.size() == 1) {
+          bandera = validarDescuento(descuento);
+        }
+        if (bandera) {
+          listDescuento.add(getDescuento('A305', descuento));
+          setId.add(descuento.KNUMH);
+        }
       }
+      System.debug('1');
       for (IMP_DescuentosManager.T_A000 descuento : discountResponse.T_A999) {
-        listDescuento.add(getDescuento('A999', descuento));
-        setId.add(descuento.KNUMH);
+        bandera = true;
+        if (discountResponse.T_A999.size() == 1) {
+          bandera = validarDescuento(descuento);
+        }
+        if (bandera) {
+          listDescuento.add(getDescuento('A999', descuento));
+          setId.add(descuento.KNUMH);
+        }
       }
+      System.debug('1');
       for (IMP_DescuentosManager.T_A000 descuento : discountResponse.T_A993) {
-        listDescuento.add(getDescuento('A993', descuento));
+				bandera = true;
+        if (discountResponse.T_A993.size() == 1) {
+          bandera = validarDescuento(descuento);
+        }
+        if (bandera) {
+          listDescuento.add(getDescuento('A993', descuento));
         setId.add(descuento.KNUMH);
+        }
       }
+      System.debug('1');
       for (IMP_DescuentosManager.T_A000 descuento : discountResponse.T_A996) {
-        listDescuento.add(getDescuento('A996', descuento));
-        setId.add(descuento.KNUMH);
+				bandera = true;
+        if (discountResponse.T_A996.size() == 1) {
+          bandera = validarDescuento(descuento);
+        }
+        if (bandera) {
+          listDescuento.add(getDescuento('A996', descuento));
+          setId.add(descuento.KNUMH);
+        }
       }
+      System.debug('1');
       for (IMP_DescuentosManager.T_A000 descuento : discountResponse.T_A997) {
-        listDescuento.add(getDescuento('A997', descuento));
+				bandera = true;
+        if (discountResponse.T_A997.size() == 1) {
+          bandera = validarDescuento(descuento);
+        }
+        if (bandera) {
+          listDescuento.add(getDescuento('A997', descuento));
         setId.add(descuento.KNUMH);
+        }
       }
+			System.debug('1');
       for (IMP_DescuentosManager.T_A000 descuento : discountResponse.T_A940) {
-        listDescuento.add(getDescuento('A940', descuento));
+				bandera = true;
+        if (discountResponse.T_A940.size() == 1) {
+          bandera = validarDescuento(descuento);
+        }
+        if (bandera) {
+          listDescuento.add(getDescuento('A940', descuento));
         setId.add(descuento.KNUMH);
+        }
       }
+      System.debug('1');
       System.debug('LISTA DE DESC');
       System.debug(listDescuento.size());
       List<Descuento__c> listDesc = [
@@ -541,5 +583,49 @@ public inherited sharing class IMP_DescuentosManager {
       IMP_IdExterno__c = descuento.KNUMH
     );
     return descuentoSF;
+  }
+
+  public static Boolean validarDescuento(
+    IMP_DescuentosManager.T_A000 descuento
+  ) {
+    if (
+      ((descuento.KSCHL == null ||
+      descuento.KSCHL == '') &&
+      (descuento.VKORG == null ||
+      descuento.VKORG == '') &&
+      (descuento.VTWEG == null ||
+      descuento.VTWEG == '') &&
+      (descuento.KUNNR == null ||
+      descuento.KUNNR == '') &&
+      (descuento.MATNR == null ||
+      descuento.MATNR == '') &&
+      (descuento.KBETR == null ||
+      descuento.KBETR.trim() == '7-') &&
+      (descuento.KONWA == null ||
+      descuento.KONWA == '') &&
+      (descuento.DATAB == null ||
+      descuento.DATAB == '') &&
+      (descuento.DATBI == null ||
+      descuento.DATBI == '') &&
+      (descuento.VKBUR == null ||
+      descuento.VKBUR == '') &&
+      (descuento.CHARG == null ||
+      descuento.CHARG == '') &&
+      (descuento.PLTYP == null ||
+      descuento.PLTYP == '') &&
+      (descuento.KDGRP == null ||
+      descuento.KDGRP == '') &&
+      (descuento.MATKL == null ||
+      descuento.MATKL == '') &&
+      (descuento.KONDM == null ||
+      descuento.KONDM == '') &&
+      (descuento.AUART_SD == null ||
+      descuento.AUART_SD == '') &&
+      (descuento.KNUMH == null ||
+      descuento.KNUMH == ''))
+    ) {
+      return false;
+    }
+    return true;
   }
 }
