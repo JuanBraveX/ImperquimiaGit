@@ -22,8 +22,11 @@ public without sharing class IMP_PedidoSAPController {
     ********************************************************************/
     @auraEnabled
     public static Wrapper getDatosPedido(String pedidoId){
+        System.debug('Pedido ID: ' + pedidoId);
         List<OrderItem> listItems= [SELECT Id, Product2.ProductCode,DescuentoManual__c ,DescuentoSAP__c,IMP_DescuentoPromo__c, PrecioTotal__c , Product2.Name,TS4_SemaforoDisp__c , Quantity, CurrencyIsoCode, UnitPrice, ListPrice, TotalPrice, OrderItemNumber FROM OrderItem WHERE orderId=:pedidoId];
+        System.debug('List de Pedidos: ' + listItems);
         List<String> listaCodigos = new List<String>();
+        System.debug('List de Codigos: ' + listaCodigos);
         for(OrderItem item:listItems){
             listaCodigos.add(item.Product2.ProductCode);
         }        

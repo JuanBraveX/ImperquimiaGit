@@ -233,7 +233,11 @@ Messaging.sendEmail(new Messaging.SingleEmailMessage[] { mymail });*/
       );
       if (values.get('V_MSG') != '') {
         returnData.status = 'ERROR';
-        returnData.mensaje = '' + EncodingUtil.base64Decode(String.valueOf(values.get('V_MSG'))).toString();
+        Blob source = EncodingUtil.base64Decode(String.valueOf(values.get('V_MSG'))); 
+        String hexSource = EncodingUtil.convertToHex(source);
+        String urlEncoded = hexSource.replaceAll('(.{2})','%$1');
+        String recoveredText = EncodingUtil.urlDecode(urlEncoded,'iso-8859-1');
+        returnData.mensaje = '' + recoveredText;
         returnData.responseAccount = response.getBody();
       } else {
         Account acc = [

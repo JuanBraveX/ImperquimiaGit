@@ -56,7 +56,7 @@ private class IMP_Pedido_tst {
         cuenta.centro_suministrador__c = 'AC01';
         cuenta.clave_delcanal__c = '04';
         cuenta.grupo__c = '01';
-        cuenta.Sector__c='10';
+        cuenta.Sector__c='00';
         cuenta.Phone='+52 7225398962';
         cuenta.OrganizacionVentas__c='IMPQ';
         cuenta.IMP_LlaveExterna__c='10001IMPQ0110';
@@ -102,7 +102,7 @@ private class IMP_Pedido_tst {
         listProd.add(newItem);
         newOrder.I_ITEM=listProd;
         request.requestBody = Blob.valueOf(JSON.serialize(newOrder));
-        System.debug('Body');
+        System.debug('Body test');
         System.debug(JSON.serialize(newOrder));
         RestContext.request = request;
         IMP_Pedido.upsertOrder();
@@ -116,7 +116,7 @@ private class IMP_Pedido_tst {
     @isTest static void testupsertOrder2() {
         
         RestRequest request = new RestRequest();
-        request.requestUri ='https://legrand-lightning--parcial.my.salesforce.com/services/apexrest/Product2';
+        request.requestUri ='https://imperquimia--sandbox.sandbox.my.salesforce.com/services/apexrest/Product2/';
         request.httpMethod = 'POST';
         request.addHeader('Content-Type', 'application/json');
         
