@@ -83,7 +83,7 @@ public inherited sharing class IMP_HandleDescuentos {
     Information about changes (versions) []:
     ********************************************************************/
     public static Descuento__c getDiscountByLineItem(QuoteLineItem quoteLineItem, Quote quote,IMP_DescuentosManager.WrapperSecuences mapSecuences,Map<Id,PricebookEntry> mapProducts){
-       
+       System.debug('getDiscountByLineItem');
         Descuento__c descuentoPromo = new Descuento__c();
         IMP_DescuentosManager.WrapperSecuencesParam param = new IMP_DescuentosManager.WrapperSecuencesParam();
         param.OrgVentas = quote.Account.OrganizacionVentas__c;

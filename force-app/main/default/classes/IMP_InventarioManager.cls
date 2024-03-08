@@ -64,15 +64,15 @@ public class IMP_InventarioManager {
       '","I_VFDAT":"' +
       nuevaConsulta.I_VFDAT +
       '","I_MATNR":{';
-    jsonBody += '"ITEM":{';
+    jsonBody += '"item":[';
 
     for (Integer i = 0; i < listaCodigos.size(); i++) {
       if (i > 0) {
         jsonBody += ',';
       }
-      jsonBody += '"MATNR":"' + listaCodigos[i] + '"';
+      jsonBody += '{"MATNR":"' + listaCodigos[i] + '"}';
     }
-    jsonBody += '}},"I_LVORM":"' + nuevaConsulta.I_LVORM + '"}';
+    jsonBody += ']},"I_LVORM":"' + nuevaConsulta.I_LVORM + '"}';
 
     return jsonBody;
     //return body;

@@ -265,7 +265,7 @@ public inherited sharing class IMP_DescuentosManager {
         else if(DiscountsBySecuence.mapSecuence9A40.containsKey(sKey9A40)){
             descuentoPromo = DiscountsBySecuence.mapSecuence9A40.get(sKey9A40);
         }
-
+        System.debug('Descuento promo: '+ descuentoPromo);
         return descuentoPromo;
     }
     
