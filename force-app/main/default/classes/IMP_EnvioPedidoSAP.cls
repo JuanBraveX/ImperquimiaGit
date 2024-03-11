@@ -126,7 +126,7 @@ public without sharing class IMP_EnvioPedidoSAP {
     }
     //update listItems;
     newPedido.I_ITEM = listProducts;
-    System.debug('BODY PEDIDO');
+    System.debug('BODY PEDIDO Json request');
     System.debug(JSON.serialize(newPedido));
     Map<String, Object> jsonMap = (Map<String, Object>) JSON.deserializeUntyped(
       JSON.serialize(newPedido)
