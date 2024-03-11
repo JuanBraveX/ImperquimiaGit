@@ -244,7 +244,7 @@ public without sharing class IMP_CotizadorProductosController {
     public static DataQuoteWrapper updateQuoteLineItem(QuoteLineItem productEdit, String tipoACampo){
         DataQuoteWrapper returnData = new DataQuoteWrapper();
         update productEdit;
-        
+        System.debug('Id: '+productEdit.Id);
         try{
              
             QuoteLineItem quoteLine=[SELECT Id,Discount,IMP_Disponibilidad__c ,Quantity, TotalPrice,Descuento_adicional__c,

@@ -424,6 +424,7 @@ public inherited sharing class IMP_DescuentosManager {
     Throws [Exceptions]:
     Information about changes (versions) []:
     ********************************************************************/
+<<<<<<< HEAD
   public static Descuento__c getDiscountByToApply(
     WrapperSecuencesParam Param,
     WrapperSecuences DiscountsBySecuence
@@ -482,6 +483,67 @@ public inherited sharing class IMP_DescuentosManager {
       descuentoPromo = DiscountsBySecuence.mapSecuenceA997.get(sKeyA997);
     } else if (DiscountsBySecuence.mapSecuence9A40.containsKey(sKey9A40)) {
       descuentoPromo = DiscountsBySecuence.mapSecuence9A40.get(sKey9A40);
+=======
+    public static Descuento__c getDiscountByToApply(WrapperSecuencesParam Param, WrapperSecuences DiscountsBySecuence){
+       
+        Descuento__c descuentoPromo = new Descuento__c();
+        String sKeyA305 = Param.OrgVentas +'-'+ Param.canalVentas +'-'+ Param.numeroCliente +'-'+ Param.numeroMaterial; //Ok, si aplica número de material
+        String sKeyA999 = Param.OrgVentas + '-'+ Param.OficinaVentas +'-'+ Param.ListaPrecios +'-'+ Param.numeroMaterial; //Ok, si aplica número de material, aplica el lote, no se ha ubicado el campo en SF?
+        String sKeyA993 = Param.GrupoClientes +'-'+ Param.GrupoArticulos; // Gr.client.-Gpo.artíc va sin material
+        String sKeyA996 = Param.OrgVentas +'-'+ Param.OficinaVentas +'-'+ Param.ListaPrecios + '-'+Param.numeroMaterial; //OK
+        String sKeyA997 = Param.OrgVentas +'-'+ Param.OficinaVentas +'-'+ Param.GrupoClientes + '-'+ Param.GrupoMateriales; //En lugar de numeroMaterial es GrupoMateriales
+        String sKey9A40 = Param.ClaseDoc;        
+        System.debug('Secuencia sKeyA305: ' + sKeyA305);
+        System.debug('Secuencia sKeyA999: ' + sKeyA999);
+        System.debug('Secuencia sKeyA993: ' + sKeyA993);
+        System.debug('Secuencia sKeyA996: ' + sKeyA996);
+        System.debug('Secuencia sKeyA997: ' + sKeyA997);
+        System.debug('Secuencia sKey9A40: ' + sKey9A40);
+        if(DiscountsBySecuence.mapSecuenceA305.containsKey(sKeyA305) ){ 
+            descuentoPromo = DiscountsBySecuence.mapSecuenceA305.get(sKeyA305);
+            System.debug('Secuencia encontrada sKeyA305: ' + sKeyA305);
+        }
+        else if(DiscountsBySecuence.mapSecuenceA999.containsKey(sKeyA999)){
+            descuentoPromo = DiscountsBySecuence.mapSecuenceA999.get(sKeyA999);
+        }
+        else if(DiscountsBySecuence.mapSecuenceA993.containsKey(sKeyA993)){
+            descuentoPromo = DiscountsBySecuence.mapSecuenceA993.get(sKeyA993);
+        }
+        else if(DiscountsBySecuence.mapSecuenceA996.containsKey(sKeyA996)){
+            descuentoPromo = DiscountsBySecuence.mapSecuenceA996.get(sKeyA996);
+        }
+        else if(DiscountsBySecuence.mapSecuenceA997.containsKey(sKeyA997)){
+            descuentoPromo = DiscountsBySecuence.mapSecuenceA997.get(sKeyA997);
+        }
+        else if(DiscountsBySecuence.mapSecuence9A40.containsKey(sKey9A40)){
+            descuentoPromo = DiscountsBySecuence.mapSecuence9A40.get(sKey9A40);
+        }
+        System.debug('Descuento promo: '+ descuentoPromo);
+        return descuentoPromo;
+    }
+    
+    
+    public class WrapperSecuences{
+        @AuraEnabled public Map<String,Descuento__c> mapSecuenceA305;
+        @AuraEnabled public Map<String,Descuento__c> mapSecuenceA999;
+        @AuraEnabled public Map<String,Descuento__c> mapSecuenceA993;
+        @AuraEnabled public Map<String,Descuento__c> mapSecuenceA996;
+        @AuraEnabled public Map<String,Descuento__c> mapSecuenceA997;
+        @AuraEnabled public Map<String,Descuento__c> mapSecuence9A40;
+    }
+    public class WrapperSecuencesParam{
+        @AuraEnabled public String OrgVentas;
+        @AuraEnabled public String canalVentas;
+        @AuraEnabled public String numeroCliente;
+        @AuraEnabled public String numeroMaterial;
+        @AuraEnabled public String OficinaVentas;
+        @AuraEnabled public String ListaPrecios;
+        @AuraEnabled public String GrupoMateriales;
+        @AuraEnabled public String GrupoArticulos;
+        @AuraEnabled public String GrupoClientes;
+        @AuraEnabled public String ClaseDoc;
+        @AuraEnabled public String CanalPromocion;
+>>>>>>> inventario
     }
 
     return descuentoPromo;
