@@ -91,89 +91,70 @@ public class IMP_InventarioManager {
   ) {
     IMP_InventarioManager inventario = new IMP_InventarioManager();
     try {
-      //inicio mi documentacion 02232024
       String body = generateJSON(listaCodigos, almacen);
-      System.debug(body);
       HttpResponse response = IMP_CalloutUtils.getResponse(
         body,
         IMP_ServiceConstants.INVENTARIO_API_URL
       );
-
       Map<String, Object> jsonData = (Map<String, Object>) JSON.deserializeUntyped(
         response.getBody()
       );
-      System.debug(String.valueOf(jsonData.get('ZINVENTARIOS')));
-      // Verificar si ZINVENTARIOS es un objeto o un arreglo
-      Object zinventariosObject = jsonData.get('ZINVENTARIOS');
-      if (String.valueOf(jsonData.get('ZINVENTARIOS')).contains('{item={')) {
-        // ZINVENTARIOS es un objeto, convertirlo a un arreglo
-        Map<String, Object> zinventariosMap = (Map<String, Object>) zinventariosObject;
-        List<Object> itemList = new List<Object>();
-        itemList.add(zinventariosMap.get('item'));
-        zinventariosMap.put('item', itemList);
-      }
-
-      // Serializar el mapa de datos de nuevo a JSON
+      convertirAListaSiNecesario(jsonData, 'I_MATNR');
+      convertirAListaSiNecesario(jsonData, 'ZINVENTARIOS');
       String modifiedJson = JSON.serialize(jsonData);
-
-      System.debug(response.getBody());
-      System.debug(modifiedJson);
-      Map<String, Object> responseInventario = (Map<String, Object>) JSON.deserializeUntyped(
-        modifiedJson
+      System.debug('Response body Moficado 1: ' + modifiedJson);
+      String newJsonString = convertObjectToArray(modifiedJson, 'I_MATNR');
+      newJsonString = convertObjectToArray(newJsonString, 'ZINVENTARIOS');
+      System.debug('Response body Moficado 2: ' + newJsonString);
+      inventario = new IMP_InventarioManager();
+      inventario = (IMP_InventarioManager) JSON.deserialize(
+        newJsonString,
+        IMP_InventarioManager.class
       );
-
-      List<cls_I_MATNR> responseIs_MATNRs = new List<cls_I_MATNR>();
-      Map<String, Object> Is_MATNR = (Map<String, Object>) responseInventario.get(
-        'I_MATNR'
-      );
-
-      if (Is_MATNR != null && Is_MATNR.containsKey('item')) {
-        Map<String, Object> itemMap = (Map<String, Object>) Is_MATNR.get(
-          'item'
-        );
-        if (itemMap != null && itemMap.containsKey('MATNR')) {
-          IMP_InventarioManager.cls_I_MATNR item = new IMP_InventarioManager.cls_I_MATNR();
-          item.MATNR = (String) itemMap.get('MATNR');
-          responseIs_MATNRs.add(item);
-        }
-      }
-      System.debug('S');
-      List<cls_ZINVENTARIOS> resposeZINVENTARIOSs = new List<cls_ZINVENTARIOS>();
-      Map<String, Object> ZINVENTARIOS = new Map<String, Object>();
-      
-      if (String.valueOf(responseInventario.get('ZINVENTARIOS')) != '') {
-        ZINVENTARIOS = (Map<String, Object>) responseInventario.get(
-          'ZINVENTARIOS'
-        );
-      }
-      System.debug('2');
-      List<Object> itemObjectsZINV = (List<Object>) ZINVENTARIOS.get('item');
-      if (itemObjectsZINV != null) {
-        List<cls_ZINVENTARIOS> ZINVENTARIOSs = new List<cls_ZINVENTARIOS>();
-        for (Object itemObject : itemObjectsZINV) {
-          Map<String, Object> itemMap = (Map<String, Object>) itemObject;
-          IMP_InventarioManager.cls_ZINVENTARIOS item = new IMP_InventarioManager.cls_ZINVENTARIOS();
-          item.CHARG = (String) itemMap.get('CHARG'); //
-          item.CLABS = Decimal.valueOf((String) itemMap.get('CLABS')); //0
-          item.HSDAT = (String) itemMap.get('HSDAT'); //
-          item.LGORT = (String) itemMap.get('LGORT'); //
-          item.MAKTX = (String) itemMap.get('MAKTX'); //
-          item.MATNR = (String) itemMap.get('MATNR'); //
-          item.MEINS = (String) itemMap.get('MEINS'); //
-          item.NAME = (String) itemMap.get('NAME'); //
-          item.VFDAT = (String) itemMap.get('VFDAT'); //
-          item.WERKS = (String) itemMap.get('WERKS'); //
-          ZINVENTARIOSs.add(item);
-        }
-        // Asigna la lista de objetos a tu objeto principal
-        resposeZINVENTARIOSs = ZINVENTARIOSs;
-      }
-      System.debug(resposeZINVENTARIOSs);
-      inventario.ZINVENTARIOS = resposeZINVENTARIOSs;
-      //inventario = (IMP_InventarioManager)JSON.deserialize(response.getBody(), IMP_InventarioManager.class);
     } catch (Exception ex) {
       System.debug(ex.getMessage());
     }
     return inventario.ZINVENTARIOS;
+  }
+
+  public static void convertirAListaSiNecesario(
+    Map<String, Object> jsonData,
+    String clave
+  ) {
+    Object objeto = jsonData.get(clave);
+    if (String.valueOf(objeto).contains('{item={')) {
+      Map<String, Object> mapa = (Map<String, Object>) objeto;
+      List<Object> lista = new List<Object>();
+      lista.add(mapa.get('item'));
+      mapa.put('item', lista);
+    }
+  }
+
+  public static String convertObjectToArray(
+    String jsonString,
+    String objectKey
+  ) {
+    // Convertir el JSON original a un mapa de objetos sin tipo
+    Map<String, Object> jsonData = (Map<String, Object>) JSON.deserializeUntyped(
+      jsonString
+    );
+    if (jsonData.containsKey(objectKey)) {
+      Object ObjectJson = jsonData.get(objectKey);
+      if (ObjectJson instanceof Map<String, Object>) {
+        Map<String, Object> MapObject = (Map<String, Object>) ObjectJson;
+        if (
+          MapObject.containsKey('item') &&
+          MapObject.get('item') instanceof List<Object>
+        ) {
+          List<Object> itemList = (List<Object>) MapObject.get('item');
+          jsonData.put(objectKey, itemList);
+          jsonData.remove('item');
+        }
+      }
+    }
+    String updatedJsonDataString = JSON.serialize(jsonData);
+
+    // Paso 4: Convertir el mapa en formato JSON
+    return JSON.serialize(jsonData);
   }
 }

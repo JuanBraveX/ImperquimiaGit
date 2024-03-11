@@ -26,10 +26,11 @@ public without sharing class IMP_PedidoSAPController {
         List<OrderItem> listItems= [SELECT Id, Product2.ProductCode,DescuentoManual__c ,DescuentoSAP__c,IMP_DescuentoPromo__c, PrecioTotal__c , Product2.Name,TS4_SemaforoDisp__c , Quantity, CurrencyIsoCode, UnitPrice, ListPrice, TotalPrice, OrderItemNumber FROM OrderItem WHERE orderId=:pedidoId];
         System.debug('List de Pedidos: ' + listItems);
         List<String> listaCodigos = new List<String>();
-        System.debug('List de Codigos: ' + listaCodigos);
+        
         for(OrderItem item:listItems){
             listaCodigos.add(item.Product2.ProductCode);
         }        
+        System.debug('List de Codigos: ' + listaCodigos);
         Wrapper newWrapper = new Wrapper();
         try{ 
             Order pedido=[SELECT Id,Ordernumber,Pricebook2Id,pedido__c,Account.clave_delcanal__c, EffectiveDate,TotalAmount,Account.Credito_Disponible__c,Account.Credito_Acumulado__c ,TotalPedido__c, Account.Name,Account.id_de_sap__c,ViaPago__c,Pricebook2.Sucursal__c,
