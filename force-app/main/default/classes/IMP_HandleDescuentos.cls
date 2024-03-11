@@ -20,16 +20,18 @@ public inherited sharing class IMP_HandleDescuentos {
     Information about changes (versions) []:
     ********************************************************************/
     public static void applyDiscounts(List<QuoteLineItem> listOrderItem){
-        
+        System.debug('applyDiscounts');
         Quote quote = [SELECT Id,Account.clave_delcanal__c, Account.id_de_sap__c,Account.OrganizacionVentas__c,
                        Pricebook2.Sucursal__c,Pricebook2.Lista_de_precios_SAP__c,Account.grupo__c
                        FROM Quote WHERE Id=: listOrderItem[0].QuoteId];
         set<Id> setProdIds = new set<Id>();
         set<Id> setPbeIds = new set<Id>();
+        
         for(QuoteLineItem quoteLineItem : listOrderItem){
             setProdIds.add(quoteLineItem.Product2Id);
             setPbeIds.add(quoteLineItem.PricebookEntryId);
         }
+        System.debug('IDs: '+ setPbeIds);
         Map<Id,PricebookEntry> mapPbe = new Map<Id,PricebookEntry>([SELECT Id,Product2.Grupo_de_art_culos__c,UnitPrice,Product2.Grupo_de_Materiales__c,Product2.ProductCode FROM PricebookEntry WHERE Id IN:setPbeIds]);
         Map<String,PoliticaDescuento__c> mapPoliticas =  getDiscountPolitica(quote);
         IMP_DescuentosManager.WrapperSecuences mapSecuences = IMP_DescuentosManager.getDiscountByQuote(quote);
@@ -83,7 +85,7 @@ public inherited sharing class IMP_HandleDescuentos {
     Information about changes (versions) []:
     ********************************************************************/
     public static Descuento__c getDiscountByLineItem(QuoteLineItem quoteLineItem, Quote quote,IMP_DescuentosManager.WrapperSecuences mapSecuences,Map<Id,PricebookEntry> mapProducts){
-       
+       System.debug('getDiscountByLineItem');
         Descuento__c descuentoPromo = new Descuento__c();
         IMP_DescuentosManager.WrapperSecuencesParam param = new IMP_DescuentosManager.WrapperSecuencesParam();
         param.OrgVentas = quote.Account.OrganizacionVentas__c;

@@ -119,18 +119,18 @@ public inherited sharing class IMP_DescuentosManager {
       }
       System.debug('1');
       for (IMP_DescuentosManager.T_A000 descuento : discountResponse.T_A993) {
-				bandera = true;
+        bandera = true;
         if (discountResponse.T_A993.size() == 1) {
           bandera = validarDescuento(descuento);
         }
         if (bandera) {
           listDescuento.add(getDescuento('A993', descuento));
-        setId.add(descuento.KNUMH);
+          setId.add(descuento.KNUMH);
         }
       }
       System.debug('1');
       for (IMP_DescuentosManager.T_A000 descuento : discountResponse.T_A996) {
-				bandera = true;
+        bandera = true;
         if (discountResponse.T_A996.size() == 1) {
           bandera = validarDescuento(descuento);
         }
@@ -141,24 +141,24 @@ public inherited sharing class IMP_DescuentosManager {
       }
       System.debug('1');
       for (IMP_DescuentosManager.T_A000 descuento : discountResponse.T_A997) {
-				bandera = true;
+        bandera = true;
         if (discountResponse.T_A997.size() == 1) {
           bandera = validarDescuento(descuento);
         }
         if (bandera) {
           listDescuento.add(getDescuento('A997', descuento));
-        setId.add(descuento.KNUMH);
+          setId.add(descuento.KNUMH);
         }
       }
-			System.debug('1');
+      System.debug('1');
       for (IMP_DescuentosManager.T_A000 descuento : discountResponse.T_A940) {
-				bandera = true;
+        bandera = true;
         if (discountResponse.T_A940.size() == 1) {
           bandera = validarDescuento(descuento);
         }
         if (bandera) {
           listDescuento.add(getDescuento('A940', descuento));
-        setId.add(descuento.KNUMH);
+          setId.add(descuento.KNUMH);
         }
       }
       System.debug('1');
@@ -251,169 +251,183 @@ public inherited sharing class IMP_DescuentosManager {
     Information about changes (versions) []:
     ********************************************************************/
   public static WrapperSecuences getDiscountByQuote(Quote quote) {
+    System.debug('getDiscountByQuote '+quote + '\n'+quote.Account.OrganizacionVentas__c + ' quote.Account.OrganizacionVentas__c,' +
+    quote.Account.clave_delcanal__c + ' quote.Account.clave_delcanal__c,' +
+    quote.Account.id_de_sap__c + ' quote.Account.id_de_sap__c,' +
+    quote.Account.OrganizacionVentas__c + ' quote.Account.OrganizacionVentas__c,' +
+    quote.Pricebook2.Sucursal__c + ' quote.Pricebook2.Sucursal__c,' +
+    quote.Pricebook2.Lista_de_precios_SAP__c + ' quote.Pricebook2.Lista_de_precios_SAP__c,' +
+    quote.Account.grupo__c + ' quote.Account.grupo__c,' +
+    quote.Account.OrganizacionVentas__c + ' quote.Account.OrganizacionVentas__c,' +
+    quote.Pricebook2.Sucursal__c + ' quote.Pricebook2.Sucursal__c,' +
+    quote.Account.grupo__c + ' quote.Account.grupo__c');
     WrapperSecuences wrapperReturn = new WrapperSecuences();
-    Map<String, Descuento__c> mapSecuenceA305 = new Map<String, Descuento__c>();
-    Map<String, Descuento__c> mapSecuenceA999 = new Map<String, Descuento__c>();
-    Map<String, List<Descuento__c>> mapSecuenceA999Aux = new Map<String, List<Descuento__c>>();
-    Map<String, Descuento__c> mapSecuenceA993 = new Map<String, Descuento__c>();
-    Map<String, Descuento__c> mapSecuenceA996 = new Map<String, Descuento__c>();
-    Map<String, Descuento__c> mapSecuenceA997 = new Map<String, Descuento__c>();
-    Map<String, Descuento__c> mapSecuence9A40 = new Map<String, Descuento__c>();
+    try {
+      Map<String, Descuento__c> mapSecuenceA305 = new Map<String, Descuento__c>();
+      Map<String, Descuento__c> mapSecuenceA999 = new Map<String, Descuento__c>();
+      Map<String, List<Descuento__c>> mapSecuenceA999Aux = new Map<String, List<Descuento__c>>();
+      Map<String, Descuento__c> mapSecuenceA993 = new Map<String, Descuento__c>();
+      Map<String, Descuento__c> mapSecuenceA996 = new Map<String, Descuento__c>();
+      Map<String, Descuento__c> mapSecuenceA997 = new Map<String, Descuento__c>();
+      Map<String, Descuento__c> mapSecuence9A40 = new Map<String, Descuento__c>();
 
-    for (Descuento__c disc : [
-      SELECT
-        Id,
-        IMP_ClaseCondicion__c,
-        IMP_OrganizacionVentas__c,
-        IMP_CanalVentas__c,
-        IMP_NumeroCliente__c,
-        IMP_NumeroMaterial__c,
-        IMP_ImportePorcentaje__c,
-        IMP_UnidadCondicion__c,
-        IMP_FechaInicial__c,
-        IMP_FechaFinal__c,
-        IMP_OficinaVentas__c,
-        IMP_Lote__c,
-        IMP_ListaPrecios__c,
-        IMP_GrupoClientes__c,
-        IMP_GrupoArticulos__c,
-        IMP_GrupoMateriales__c,
-        IMP_ClaseDocumentoVentas__c,
-        IMP_SecuenciaAcceso__c,
-        IMP_Valido__c
-      FROM Descuento__c
-      WHERE
-        IMP_Valido__c = TRUE
-        AND ((IMP_OrganizacionVentas__c = :quote.Account.OrganizacionVentas__c
-        AND IMP_CanalVentas__c = :quote.Account.clave_delcanal__c
-        AND IMP_NumeroCliente__c = :quote.Account.id_de_sap__c)
-        OR (IMP_OrganizacionVentas__c = :quote.Account.OrganizacionVentas__c
-        AND IMP_OficinaVentas__c = :quote.Pricebook2.Sucursal__c
-        AND IMP_ListaPrecios__c = :quote.Pricebook2.Lista_de_precios_SAP__c)
-        OR IMP_GrupoClientes__c = :quote.Account.grupo__c
-        OR (IMP_OrganizacionVentas__c = :quote.Account.OrganizacionVentas__c
-        AND IMP_OficinaVentas__c = :quote.Pricebook2.Sucursal__c
-        AND IMP_GrupoClientes__c = :quote.Account.grupo__c)
-        OR IMP_ClaseDocumentoVentas__c = 'TA')
-      ORDER BY IMP_FechaInicial__c ASC
-    ]) {
-      if (disc.IMP_SecuenciaAcceso__c == 'A305') {
-        mapSecuenceA305.put(
-          disc.IMP_OrganizacionVentas__c +
-            '-' +
-            disc.IMP_CanalVentas__c +
-            '-' +
-            disc.IMP_NumeroCliente__c +
-            '-' +
-            disc.IMP_NumeroMaterial__c,
-          disc
-        );
-      }
-      if (disc.IMP_SecuenciaAcceso__c == 'A999') {
-        // mapSecuenceA999.put(disc.IMP_OrganizacionVentas__c+'-'+disc.IMP_OficinaVentas__c+'-'+disc.IMP_ListaPrecios__c+'-'+disc.IMP_NumeroMaterial__c+'-'+disc.IMP_Lote__c, disc);
-        if (!mapSecuenceA999Aux.containsKey(disc.IMP_NumeroMaterial__c)) {
-          mapSecuenceA999Aux.put(
-            disc.IMP_NumeroMaterial__c,
-            new List<Descuento__c>()
+      for (Descuento__c disc : [
+        SELECT
+          Id,
+          IMP_ClaseCondicion__c,
+          IMP_OrganizacionVentas__c,
+          IMP_CanalVentas__c,
+          IMP_NumeroCliente__c,
+          IMP_NumeroMaterial__c,
+          IMP_ImportePorcentaje__c,
+          IMP_UnidadCondicion__c,
+          IMP_FechaInicial__c,
+          IMP_FechaFinal__c,
+          IMP_OficinaVentas__c,
+          IMP_Lote__c,
+          IMP_ListaPrecios__c,
+          IMP_GrupoClientes__c,
+          IMP_GrupoArticulos__c,
+          IMP_GrupoMateriales__c,
+          IMP_ClaseDocumentoVentas__c,
+          IMP_SecuenciaAcceso__c,
+          IMP_Valido__c
+        FROM Descuento__c
+        WHERE
+          IMP_Valido__c = TRUE
+          AND ((IMP_OrganizacionVentas__c = :quote.Account.OrganizacionVentas__c
+          AND IMP_CanalVentas__c = :quote.Account.clave_delcanal__c
+          AND IMP_NumeroCliente__c = :quote.Account.id_de_sap__c)
+          OR (IMP_OrganizacionVentas__c = :quote.Account.OrganizacionVentas__c
+          AND IMP_OficinaVentas__c = :quote.Pricebook2.Sucursal__c
+          AND IMP_ListaPrecios__c = :quote.Pricebook2.Lista_de_precios_SAP__c)
+          OR IMP_GrupoClientes__c = :quote.Account.grupo__c
+          OR (IMP_OrganizacionVentas__c = :quote.Account.OrganizacionVentas__c
+          AND IMP_OficinaVentas__c = :quote.Pricebook2.Sucursal__c
+          AND IMP_GrupoClientes__c = :quote.Account.grupo__c)
+          OR IMP_ClaseDocumentoVentas__c = 'TA')
+        ORDER BY IMP_FechaInicial__c ASC
+      ]) {
+        if (disc.IMP_SecuenciaAcceso__c == 'A305') {
+          mapSecuenceA305.put(
+            disc.IMP_OrganizacionVentas__c +
+              '-' +
+              disc.IMP_CanalVentas__c +
+              '-' +
+              disc.IMP_NumeroCliente__c +
+              '-' +
+              disc.IMP_NumeroMaterial__c,
+            disc
           );
         }
-        mapSecuenceA999Aux.get(disc.IMP_NumeroMaterial__c).add(disc);
+        if (disc.IMP_SecuenciaAcceso__c == 'A999') {
+          // mapSecuenceA999.put(disc.IMP_OrganizacionVentas__c+'-'+disc.IMP_OficinaVentas__c+'-'+disc.IMP_ListaPrecios__c+'-'+disc.IMP_NumeroMaterial__c+'-'+disc.IMP_Lote__c, disc);
+          if (!mapSecuenceA999Aux.containsKey(disc.IMP_NumeroMaterial__c)) {
+            mapSecuenceA999Aux.put(
+              disc.IMP_NumeroMaterial__c,
+              new List<Descuento__c>()
+            );
+          }
+          mapSecuenceA999Aux.get(disc.IMP_NumeroMaterial__c).add(disc);
+        }
+        if (disc.IMP_SecuenciaAcceso__c == 'A993') {
+          mapSecuenceA993.put(
+            disc.IMP_GrupoClientes__c + '-' + disc.IMP_GrupoArticulos__c,
+            disc
+          );
+        }
+        if (disc.IMP_SecuenciaAcceso__c == 'A996') {
+          mapSecuenceA996.put(
+            disc.IMP_OrganizacionVentas__c +
+              '-' +
+              disc.IMP_OficinaVentas__c +
+              '-' +
+              disc.IMP_ListaPrecios__c +
+              '-' +
+              disc.IMP_NumeroMaterial__c,
+            disc
+          );
+        }
+        if (disc.IMP_SecuenciaAcceso__c == 'A997') {
+          mapSecuenceA997.put(
+            disc.IMP_OrganizacionVentas__c +
+              '-' +
+              disc.IMP_OficinaVentas__c +
+              '-' +
+              disc.IMP_GrupoClientes__c +
+              '-' +
+              disc.IMP_GrupoMateriales__c,
+            disc
+          );
+        }
+        if (disc.IMP_SecuenciaAcceso__c == 'A940') {
+          mapSecuence9A40.put(disc.IMP_ClaseDocumentoVentas__c, disc);
+        }
       }
-      if (disc.IMP_SecuenciaAcceso__c == 'A993') {
-        mapSecuenceA993.put(
-          disc.IMP_GrupoClientes__c + '-' + disc.IMP_GrupoArticulos__c,
-          disc
+      for (String key : mapSecuenceA999Aux.keySet()) {
+        System.debug('--------------------');
+        List<String> listLotes = new List<String>();
+        System.debug('Número del Material ' + key);
+        System.debug(mapSecuenceA999Aux.get(key));
+        Map<String, Descuento__c> mapDescLote = new Map<String, Descuento__c>();
+        for (Descuento__c disc : mapSecuenceA999Aux.get(key)) {
+          listLotes.add(disc.IMP_Lote__c);
+          mapDescLote.put(disc.IMP_Lote__c, disc);
+        }
+        listLotes.sort();
+        String lote = listLotes.size() >= 1 ? listLotes.get(0) : '';
+        System.debug('LOTE CORRECTO ::' + lote);
+        mapSecuenceA999.put(
+          mapSecuenceA999Aux.get(key).get(0).IMP_OrganizacionVentas__c +
+            '-' +
+            mapSecuenceA999Aux.get(key).get(0).IMP_OficinaVentas__c +
+            '-' +
+            mapSecuenceA999Aux.get(key).get(0).IMP_ListaPrecios__c +
+            '-' +
+            key,
+          mapDescLote.get(lote)
         );
       }
-      if (disc.IMP_SecuenciaAcceso__c == 'A996') {
-        mapSecuenceA996.put(
-          disc.IMP_OrganizacionVentas__c +
-            '-' +
-            disc.IMP_OficinaVentas__c +
-            '-' +
-            disc.IMP_ListaPrecios__c +
-            '-' +
-            disc.IMP_NumeroMaterial__c,
-          disc
-        );
-      }
-      if (disc.IMP_SecuenciaAcceso__c == 'A997') {
-        mapSecuenceA997.put(
-          disc.IMP_OrganizacionVentas__c +
-            '-' +
-            disc.IMP_OficinaVentas__c +
-            '-' +
-            disc.IMP_GrupoClientes__c +
-            '-' +
-            disc.IMP_GrupoMateriales__c,
-          disc
-        );
-      }
-      if (disc.IMP_SecuenciaAcceso__c == 'A940') {
-        mapSecuence9A40.put(disc.IMP_ClaseDocumentoVentas__c, disc);
-      }
-    }
-    for (String key : mapSecuenceA999Aux.keySet()) {
-      System.debug('--------------------');
-      List<String> listLotes = new List<String>();
-      System.debug('Número del Material ' + key);
-      System.debug(mapSecuenceA999Aux.get(key));
-      Map<String, Descuento__c> mapDescLote = new Map<String, Descuento__c>();
-      for (Descuento__c disc : mapSecuenceA999Aux.get(key)) {
-        listLotes.add(disc.IMP_Lote__c);
-        mapDescLote.put(disc.IMP_Lote__c, disc);
-      }
-      listLotes.sort();
-      String lote = listLotes.size() >= 1 ? listLotes.get(0) : '';
-      System.debug('LOTE CORRECTO ::' + lote);
-      mapSecuenceA999.put(
-        mapSecuenceA999Aux.get(key).get(0).IMP_OrganizacionVentas__c +
-          '-' +
-          mapSecuenceA999Aux.get(key).get(0).IMP_OficinaVentas__c +
-          '-' +
-          mapSecuenceA999Aux.get(key).get(0).IMP_ListaPrecios__c +
-          '-' +
-          key,
-        mapDescLote.get(lote)
-      );
-    }
 
-    for (String key : mapSecuenceA305.keySet()) {
-      System.debug('Llave -> A305 (' + key + ')');
-      System.debug(mapSecuenceA305.get(key));
-    }
+      for (String key : mapSecuenceA305.keySet()) {
+        System.debug('Llave -> A305 (' + key + ')');
+        System.debug(mapSecuenceA305.get(key));
+      }
 
-    for (String key : mapSecuenceA999.keySet()) {
-      System.debug('Llave -> A999 (' + key + ')');
-      System.debug(mapSecuenceA999.get(key));
-    }
-    System.debug('-------------------------');
-    for (String key : mapSecuenceA993.keySet()) {
-      System.debug('Llave -> A993 (' + key + ')');
-      System.debug(mapSecuenceA993.get(key));
-    }
-    System.debug('-------------------------');
-    for (String key : mapSecuenceA996.keySet()) {
-      System.debug('Llave -> A996 (' + key + ')');
-      System.debug(mapSecuenceA996.get(key));
-    }
-    System.debug('-------------------------');
-    for (String key : mapSecuenceA997.keySet()) {
-      System.debug('Llave -> A997 (' + key + ')');
-      System.debug(mapSecuenceA997.get(key));
-    }
-    System.debug('-------------------------');
-    for (String key : mapSecuence9A40.keySet()) {
-      System.debug('Llave -> A940 (' + key + ')');
-      System.debug(mapSecuence9A40.get(key));
-    }
+      for (String key : mapSecuenceA999.keySet()) {
+        System.debug('Llave -> A999 (' + key + ')');
+        System.debug(mapSecuenceA999.get(key));
+      }
+      System.debug('-------------------------');
+      for (String key : mapSecuenceA993.keySet()) {
+        System.debug('Llave -> A993 (' + key + ')');
+        System.debug(mapSecuenceA993.get(key));
+      }
+      System.debug('-------------------------');
+      for (String key : mapSecuenceA996.keySet()) {
+        System.debug('Llave -> A996 (' + key + ')');
+        System.debug(mapSecuenceA996.get(key));
+      }
+      System.debug('-------------------------');
+      for (String key : mapSecuenceA997.keySet()) {
+        System.debug('Llave -> A997 (' + key + ')');
+        System.debug(mapSecuenceA997.get(key));
+      }
+      System.debug('-------------------------');
+      for (String key : mapSecuence9A40.keySet()) {
+        System.debug('Llave -> A940 (' + key + ')');
+        System.debug(mapSecuence9A40.get(key));
+      }
 
-    wrapperReturn.mapSecuenceA305 = mapSecuenceA305;
-    wrapperReturn.mapSecuenceA999 = mapSecuenceA999;
-    wrapperReturn.mapSecuenceA993 = mapSecuenceA993;
-    wrapperReturn.mapSecuenceA996 = mapSecuenceA996;
-    wrapperReturn.mapSecuenceA997 = mapSecuenceA997;
-    wrapperReturn.mapSecuence9A40 = mapSecuence9A40;
+      wrapperReturn.mapSecuenceA305 = mapSecuenceA305;
+      wrapperReturn.mapSecuenceA999 = mapSecuenceA999;
+      wrapperReturn.mapSecuenceA993 = mapSecuenceA993;
+      wrapperReturn.mapSecuenceA996 = mapSecuenceA996;
+      wrapperReturn.mapSecuenceA997 = mapSecuenceA997;
+      wrapperReturn.mapSecuence9A40 = mapSecuence9A40;
+    } catch (Exception e) {
+      System.debug(e.getMessage());
+    }
     return wrapperReturn;
   }
 
@@ -463,6 +477,7 @@ public inherited sharing class IMP_DescuentosManager {
       '-' +
       Param.GrupoMateriales; //En lugar de numeroMaterial es GrupoMateriales
     String sKey9A40 = Param.ClaseDoc;
+    System.debug(DiscountsBySecuence);
     System.debug('Secuencia sKeyA305: ' + sKeyA305);
     System.debug('Secuencia sKeyA999: ' + sKeyA999);
     System.debug('Secuencia sKeyA993: ' + sKeyA993);
@@ -483,7 +498,7 @@ public inherited sharing class IMP_DescuentosManager {
     } else if (DiscountsBySecuence.mapSecuence9A40.containsKey(sKey9A40)) {
       descuentoPromo = DiscountsBySecuence.mapSecuence9A40.get(sKey9A40);
     }
-
+    System.debug('Promo :' + descuentoPromo);
     return descuentoPromo;
   }
 
