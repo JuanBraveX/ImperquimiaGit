@@ -204,6 +204,7 @@ public without sharing class IMP_FlujoDocumentos {
     for (String key : mapFacturas.keySet()) {
       Factura__c newFactura = new Factura__c();
       newFactura.IMP_LlaveExclusiva__c = key;
+      System.debug('IMP_LlaveExclusiva__c ' + key);
       newFactura.Name = key;
       Decimal montoFactura = 0;
       for (IMP_FlujoDocumentos.T_FAC_PED factura : mapFacturas.get(key)) {
@@ -222,6 +223,7 @@ public without sharing class IMP_FlujoDocumentos {
                 : factura.STATUSG
             )
           );
+          
         }
       }
 
@@ -249,16 +251,20 @@ public without sharing class IMP_FlujoDocumentos {
           mapFacturas.get(key).get(0).KUNAG +
             mapFacturas.get(key).get(0).VKORG_AUFT +
             mapFacturas.get(key).get(0).VTWEG_AUFT +
-            mapFacturas.get(key).get(0).SPART
+            /*mapFacturas.get(key).get(0).SPART*/'00'
         )
         ? mapCuentas.get(
               mapFacturas.get(key).get(0).KUNAG +
                 mapFacturas.get(key).get(0).VKORG_AUFT +
                 mapFacturas.get(key).get(0).VTWEG_AUFT +
-                mapFacturas.get(key).get(0).SPART
+                /*mapFacturas.get(key).get(0).SPART*/'00'
             )
             .Id
         : System.label.IMP_Cuenta;
+        System.debug('Llave externa: '+ mapFacturas.get(key).get(0).KUNAG +
+        mapFacturas.get(key).get(0).VKORG_AUFT +
+        mapFacturas.get(key).get(0).VTWEG_AUFT +
+        mapFacturas.get(key).get(0).SPART);
       newFactura.IMP_NombreCliente__c =
         mapFacturas.get(key).get(0).NAME1 +
         ' ' +
@@ -267,7 +273,9 @@ public without sharing class IMP_FlujoDocumentos {
         mapFacturas.get(key).get(0).NAME3 +
         ' ' +
         mapFacturas.get(key).get(0).NAME4;
+        System.debug('Nombre del cliente '+ newFactura.IMP_NombreCliente__c);
       newFactura.IMP_NumeroCliente__c = mapFacturas.get(key).get(0).KUNAG;
+      System.debug('Id cliente '+ newFactura.IMP_NumeroCliente__c);
       newFactura.IMP_CondicionesPago__c = mapFacturas.get(key).get(0).ZTERM;
       newFactura.IMP_CentroBeneficio__c = mapFacturas.get(key).get(0).PRCTR;
       newFactura.IMP_DescGrupoVendedor__c = mapFacturas.get(key).get(0).BEZEI;

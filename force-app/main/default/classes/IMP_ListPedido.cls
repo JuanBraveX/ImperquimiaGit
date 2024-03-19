@@ -88,13 +88,13 @@ public class IMP_ListPedido {
               nuevoPedido.I_KUNNR +
                 nuevoPedido.I_VKORG +
                 nuevoPedido.I_VTWEG +
-                nuevoPedido.SPART
+                /*nuevoPedido.SPART*/+'00'
             )
             ? mapCuentas.get(
                   nuevoPedido.I_KUNNR +
                     nuevoPedido.I_VKORG +
                     nuevoPedido.I_VTWEG +
-                    nuevoPedido.SPART
+                    /*nuevoPedido.SPART*/+'00'
                 )
                 .Id
             : System.label.IMP_Cuenta,

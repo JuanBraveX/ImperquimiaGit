@@ -206,15 +206,6 @@ Information about changes (versions) []:
     };
     try {
       String body = IMP_CreateJson.createJsonAccount(lstAccount);
-      /*Messaging.SingleEmailMessage mymail = new Messaging.SingleEmailMessage();
-String[] toaddresses = new String[] {'jpedraza@ts4.mx'}; 
-mymail.setToAddresses(toAddresses);
-mymail.setSenderDisplayName('Salesforce Support');
-mymail.setSubject('An email from Salesforce');
-mymail.setPlainTextBody('This email has been sent through Apex');
-mymail.setHtmlBody('<p>'+ body +'</p>');
-
-Messaging.sendEmail(new Messaging.SingleEmailMessage[] { mymail });*/
       System.debug('CUERPO DE LA SOLICITUD');
       System.debug(body);
       HttpRequest req = IMP_CalloutUtils.generateRequest(

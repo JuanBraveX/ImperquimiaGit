@@ -22,6 +22,7 @@ public with sharing class IMP_CreateOrder_CC {
    ********************************************************************/
     @AuraEnabled
     public static String getOpportunity(String oppRec) {
+        System.debug('Opp: ' +oppRec);
         String idOrder;
         Opportunity opp =[SELECT Id,StageName,AccountId,Account.grupo__c, Account.clave_delcanal__c, CloseDate,Pricebook2Id,SyncedQuoteId FROM Opportunity WHERE Id =: oppRec ];
         list<OpportunityLineItem> lstOppL = [SELECT Id
